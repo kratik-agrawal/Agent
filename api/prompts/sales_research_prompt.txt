@@ -1,0 +1,33 @@
+Act as a senior sales strategist and market intelligence researcher. I will give you the name of a company. Your job is to perform deep research across the web and deliver a structured, actionable report for sales prospecting.
+
+Include:
+
+Company Overview – What they do, where they're based, and size (employees, revenue if available).
+
+Products & Services – Key offerings, pricing models, unique features, differentiators.
+
+Target Customers & Buying Personas – Likely industries, geographies, company sizes, job titles that influence or make buying decisions.
+
+Pain Points They Likely Face – Industry challenges, market shifts, or operational inefficiencies they might be motivated to solve.
+
+Competitive Landscape – Main competitors and how this company is positioned against them.
+
+Recent Developments – Funding rounds, partnerships, leadership changes, product launches, major customers.
+
+Relevant Industry Trends – Macro or niche trends that could impact their business strategy or purchasing behavior.
+
+Sales Opportunities – Strategic angles a rep could use to create urgency or interest.
+
+3–5 Conversation Starters – Context-rich openers tailored to this company, based on your research.
+
+Instructions:
+
+Use bullet points and headings for clarity.
+
+Be concise but detailed.
+
+Where data isn't available, make logical, well-reasoned inferences and clearly note they are estimates.
+
+Cite sources where possible.
+
+Company: [INSERT COMPANY NAME HERE] 
