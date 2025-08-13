@@ -25,7 +25,8 @@ import {
   Calendar,
   ExternalLink,
   AlertCircle,
-  RefreshCw
+  RefreshCw,
+  Loader2
 } from "lucide-react"
 
 // Flask backend URL
@@ -58,6 +59,9 @@ export default function CompanyPage() {
   const [company, setCompany] = useState<Company | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [generatingPersonas, setGeneratingPersonas] = useState(false)
+  const [personas, setPersonas] = useState<any[]>([])
+  const [personaError, setPersonaError] = useState<string | null>(null)
 
   const companyName = decodeURIComponent(params.name as string)
 
@@ -73,6 +77,11 @@ export default function CompanyPage() {
       if (response.ok) {
         const data = await response.json()
         setCompany(data)
+        
+        // Load existing personas if available
+        if (data.personas) {
+          setPersonas(data.personas)
+        }
       } else if (response.status === 404) {
         setError("Company not found")
       } else {
@@ -83,6 +92,52 @@ export default function CompanyPage() {
       setError("Failed to load company data")
     } finally {
       setLoading(false)
+    }
+  }
+
+  const generatePersonas = async () => {
+    if (!company) return
+    
+    try {
+      setGeneratingPersonas(true)
+      setPersonaError(null)
+      
+      // Prepare the request data
+      const requestData = {
+        company_name: company.name,
+        industry: company.industry,
+        scraped_content: company.scraped_data?.processed_content ? 
+          company.scraped_data.processed_content.map((item: any) => item.content).join('\n\n') : undefined,
+        ai_research: company.scraped_data?.perplexity_research?.content
+      }
+      
+      const response = await fetch(`${FLASK_BASE_URL}/api/personas/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      })
+      
+      if (response.ok) {
+        const result = await response.json()
+        
+        if (result.success) {
+          setPersonas(result.personas)
+          // Refresh company data to get updated personas
+          loadCompany()
+        } else {
+          setPersonaError(result.content || 'Failed to generate personas')
+        }
+      } else {
+        const errorData = await response.json()
+        setPersonaError(errorData.error || 'Failed to generate personas')
+      }
+    } catch (error) {
+      console.error('Error generating personas:', error)
+      setPersonaError('Error generating personas')
+    } finally {
+      setGeneratingPersonas(false)
     }
   }
 
@@ -498,13 +553,29 @@ export default function CompanyPage() {
               </CardHeader>
               <CardContent className="pt-8 px-6 pb-6">
                 <div className="space-y-3">
+                  <Button 
+                    onClick={generatePersonas}
+                    disabled={generatingPersonas || !company?.scraped_data}
+                    className="w-full justify-start" 
+                    variant="outline"
+                  >
+                    {generatingPersonas ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <Users className="h-4 w-4 mr-2" />
+                    )}
+                    {generatingPersonas ? 'Generating Personas...' : 'Generate Buyer Personas'}
+                  </Button>
+                  
+                  {personaError && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                      {personaError}
+                    </div>
+                  )}
+                  
                   <Button className="w-full justify-start" variant="outline">
                     <MessageSquare className="h-4 w-4 mr-2" />
                     Generate Sales Script
-                  </Button>
-                  <Button className="w-full justify-start" variant="outline">
-                    <Users className="h-4 w-4 mr-2" />
-                    Identify Prospects
                   </Button>
                   <Button className="w-full justify-start" variant="outline">
                     <TrendingUp className="h-4 w-4 mr-2" />
@@ -517,6 +588,72 @@ export default function CompanyPage() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Buyer Personas */}
+            {personas.length > 0 && (
+              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
+                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                    <UserCheck className="h-5 w-5" />
+                    Buyer Personas
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 text-base">
+                    AI-generated buyer personas for sales targeting
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 px-6 pb-6">
+                  <div className="space-y-4">
+                    {personas.map((persona, index) => (
+                      <div key={persona.id || index} className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="font-semibold text-gray-900">{persona.title}</h4>
+                            <p className="text-sm text-gray-600">{persona.role} • {persona.department}</p>
+                          </div>
+                          <div className="flex gap-2">
+                            <Badge variant="secondary" className="text-xs">
+                              {persona.influence_level} influence
+                            </Badge>
+                            <Badge variant="secondary" className="text-xs">
+                              {persona.budget_authority} budget
+                            </Badge>
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                          <div>
+                            <p className="font-medium text-gray-700 mb-1">Priorities</p>
+                            <ul className="space-y-1">
+                              {persona.priorities?.slice(0, 3).map((priority: string, i: number) => (
+                                <li key={i} className="text-gray-600">• {priority}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <p className="font-medium text-gray-700 mb-1">Pain Points</p>
+                            <ul className="space-y-1">
+                              {persona.pain_points?.slice(0, 3).map((pain: string, i: number) => (
+                                <li key={i} className="text-gray-600">• {pain}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <p className="font-medium text-gray-700 mb-1">Decision Criteria</p>
+                            <ul className="space-y-1">
+                              {persona.decision_criteria?.slice(0, 3).map((criteria: string, i: number) => (
+                                <li key={i} className="text-gray-600">• {criteria}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Data Sources */}
             <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
@@ -544,6 +681,12 @@ export default function CompanyPage() {
                     <span className="text-sm text-gray-600">Manual Pitch</span>
                     <Badge variant="secondary" className="bg-green-100 text-green-800">
                       {company.pitch ? '✓ Available' : '✗ Not Available'}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Buyer Personas</span>
+                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                      {personas.length > 0 ? `✓ ${personas.length} Generated` : '✗ Not Generated'}
                     </Badge>
                   </div>
                 </div>

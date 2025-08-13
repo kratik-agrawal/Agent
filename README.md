@@ -28,10 +28,6 @@ A web application that helps customize sales pitches for different buyer persona
    pip install -r requirements.txt
    ```
 
-2. API keys are already configured in `api/api.py`:
-   - Firecrawl API key: `fc-9293d60703d44e69ba17c0ced291f8aa`
-   - Perplexity API key: `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`
-
 3. Start the Flask backend:
    ```bash
    cd api

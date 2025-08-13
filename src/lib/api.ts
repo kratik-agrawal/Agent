@@ -52,6 +52,34 @@ export interface PerplexityResearch {
   usage: Record<string, unknown>
 }
 
+export interface BuyerPersona {
+  id: string
+  title: string
+  role: string
+  department: string
+  priorities: string[]
+  pain_points: string[]
+  decision_criteria: string[]
+  influence_level: 'high' | 'medium' | 'low'
+  budget_authority: 'high' | 'medium' | 'low'
+  technical_expertise: 'high' | 'medium' | 'low'
+  company_name: string
+  created_at: string
+}
+
+export interface PersonaGenerationRequest {
+  company_name: string
+  industry: string
+  scraped_content?: string
+  ai_research?: string
+}
+
+export interface PersonaGenerationResponse {
+  personas: BuyerPersona[]
+  analysis: string
+  confidence_score: number
+}
+
 export interface ApiResponse<T> {
   data?: T
   error?: string
@@ -179,6 +207,18 @@ class ApiClient {
   // Health check
   async healthCheck(): Promise<ApiResponse<{ status: string; timestamp: string }>> {
     return this.request<{ status: string; timestamp: string }>('/health')
+  }
+
+  // Persona generation endpoints
+  async generatePersonas(request: PersonaGenerationRequest): Promise<ApiResponse<PersonaGenerationResponse>> {
+    return this.request<PersonaGenerationResponse>('/api/personas/generate', {
+      method: 'POST',
+      body: JSON.stringify(request),
+    })
+  }
+
+  async getPersonas(companyName: string): Promise<ApiResponse<BuyerPersona[]>> {
+    return this.request<BuyerPersona[]>(`/api/personas/${encodeURIComponent(companyName)}`)
   }
 }
 

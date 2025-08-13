@@ -9,6 +9,7 @@ from firecrawl import AsyncFirecrawlApp, ScrapeOptions
 import threading
 import time
 import requests
+import re
 
 app = Flask(__name__)
 CORS(app)
@@ -98,40 +99,139 @@ def get_perplexity_research(company_name):
             "top_p": 0.9
         }
         
-        print(f"Making Perplexity API call for company: {company_name}")
-        print(f"Request data: {json.dumps(data, indent=2)}")
+        response = requests.post(url, headers=headers, json=data, timeout=30)
         
-        response = requests.post(url, headers=headers, json=data, timeout=60)
-        
-        print(f"Perplexity API response status: {response.status_code}")
-        print(f"Perplexity API response headers: {dict(response.headers)}")
-        
-        if response.status_code != 200:
-            print(f"Perplexity API error response: {response.text}")
-            response.raise_for_status()
-        
-        result = response.json()
-        print(f"Perplexity API response: {json.dumps(result, indent=2)}")
-        
-        if 'choices' in result and len(result['choices']) > 0:
+        if response.status_code == 200:
+            result = response.json()
             content = result['choices'][0]['message']['content']
+            
             return {
                 "success": True,
                 "content": content,
-                "model": result.get('model', 'unknown'),
+                "model": result['model'],
                 "usage": result.get('usage', {})
             }
         else:
-            raise Exception("No content in Perplexity response")
+            return {
+                "success": False,
+                "content": f"API request failed with status {response.status_code}",
+                "model": "unknown",
+                "usage": {}
+            }
             
     except Exception as e:
-        print(f"Perplexity API error: {str(e)}")
-        if hasattr(e, 'response') and e.response is not None:
-            print(f"Response status: {e.response.status_code}")
-            print(f"Response text: {e.response.text}")
         return {
             "success": False,
-            "error": str(e)
+            "content": f"Error: {str(e)}",
+            "model": "unknown",
+            "usage": {}
+        }
+
+def generate_buyer_personas(company_name, industry, scraped_content=None, ai_research=None):
+    """Generate buyer personas using Perplexity API"""
+    try:
+        # Load the persona generation prompt
+        prompt_template = load_prompt("persona_generation_prompt")
+        if not prompt_template:
+            raise Exception("Persona generation prompt not found")
+        
+        # Replace placeholders
+        prompt = prompt_template.replace("[COMPANY_NAME]", company_name)
+        prompt = prompt_template.replace("[INDUSTRY]", industry)
+        prompt = prompt_template.replace("[SCRAPED_CONTENT]", scraped_content or "No scraped content available")
+        prompt = prompt_template.replace("[AI_RESEARCH]", ai_research or "No AI research available")
+        
+        # Perplexity API endpoint
+        url = "https://api.perplexity.ai/chat/completions"
+        
+        headers = {
+            "Authorization": f"Bearer {PERPLEXITY_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "model": "sonar",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            "max_tokens": 4000,
+            "temperature": 0.1,
+            "top_p": 0.9
+        }
+        
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+        
+        if response.status_code == 200:
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            
+            # Try to parse JSON from the response
+            try:
+                # Extract JSON from the response (it might be wrapped in markdown)
+                json_match = re.search(r'```json\s*(\{.*?\})\s*```', content, re.DOTALL)
+                if json_match:
+                    json_str = json_match.group(1)
+                else:
+                    # Try to find JSON without markdown
+                    json_match = re.search(r'\{.*\}', content, re.DOTALL)
+                    if json_match:
+                        json_str = json_match.group(0)
+                    else:
+                        raise ValueError("No JSON found in response")
+                
+                personas_data = json.loads(json_str)
+                
+                # Transform the data to match our interface
+                personas = []
+                for i, persona in enumerate(personas_data.get('personas', [])):
+                    personas.append({
+                        "id": str(uuid.uuid4()),
+                        "title": persona.get('title', ''),
+                        "role": persona.get('role', ''),
+                        "department": persona.get('department', ''),
+                        "priorities": persona.get('priorities', []),
+                        "pain_points": persona.get('pain_points', []),
+                        "decision_criteria": persona.get('decision_criteria', []),
+                        "influence_level": persona.get('influence_level', 'medium'),
+                        "budget_authority": persona.get('budget_authority', 'medium'),
+                        "technical_expertise": persona.get('technical_expertise', 'medium'),
+                        "company_name": company_name,
+                        "created_at": datetime.now().isoformat()
+                    })
+                
+                return {
+                    "success": True,
+                    "personas": personas,
+                    "analysis": content,
+                    "confidence_score": 0.85  # Default confidence
+                }
+                
+            except (json.JSONDecodeError, ValueError) as e:
+                # If JSON parsing fails, return the raw content
+                return {
+                    "success": False,
+                    "content": f"Failed to parse personas from response: {str(e)}",
+                    "raw_response": content,
+                    "model": "unknown",
+                    "usage": {}
+                }
+        else:
+            return {
+                "success": False,
+                "content": f"API request failed with status {response.status_code}",
+                "model": "unknown",
+                "usage": {}
+            }
+            
+    except Exception as e:
+        return {
+            "success": False,
+            "content": f"Error: {str(e)}",
+            "model": "unknown",
+            "usage": {}
         }
 
 def run_scrape_sync(job_id, url, company_name):
@@ -731,32 +831,60 @@ def delete_prompt(prompt_name):
 
 @app.route('/api/research/company/<company_name>', methods=['GET'])
 def research_company(company_name):
-    """Get Perplexity research for a specific company without scraping"""
+    """Get AI research for a company"""
     try:
-        result = get_perplexity_research(company_name)
-        
-        if result.get("success"):
-            return jsonify({
-                "status": "success",
-                "company_name": company_name,
-                "research": result.get("content"),
-                "model": result.get("model", "unknown"),
-                "usage": result.get("usage", {}),
-                "timestamp": datetime.now().isoformat()
-            })
-        else:
-            return jsonify({
-                "status": "error",
-                "company_name": company_name,
-                "error": result.get("error", "Unknown error")
-            }), 500
-            
+        research = get_perplexity_research(company_name)
+        return jsonify(research)
     except Exception as e:
-        return jsonify({
-            "status": "error",
-            "message": "Failed to research company",
-            "error": str(e)
-        }), 500
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/personas/generate', methods=['POST'])
+def generate_personas():
+    """Generate buyer personas for a company"""
+    try:
+        data = request.get_json()
+        company_name = data.get('company_name')
+        industry = data.get('industry')
+        scraped_content = data.get('scraped_content')
+        ai_research = data.get('ai_research')
+        
+        if not company_name or not industry:
+            return jsonify({"error": "company_name and industry are required"}), 400
+        
+        # Generate personas
+        result = generate_buyer_personas(company_name, industry, scraped_content, ai_research)
+        
+        if result['success']:
+            # Save personas to company data
+            companies = load_companies()
+            company = next((c for c in companies if c['name'].lower() == company_name.lower()), None)
+            
+            if company:
+                if 'personas' not in company:
+                    company['personas'] = []
+                company['personas'].extend(result['personas'])
+                save_companies(companies)
+        
+        return jsonify(result)
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/personas/<company_name>', methods=['GET'])
+def get_personas(company_name):
+    """Get buyer personas for a company"""
+    try:
+        companies = load_companies()
+        company = next((c for c in companies if c['name'].lower() == company_name.lower()), None)
+        
+        if not company:
+            return jsonify({"error": "Company not found"}), 404
+        
+        personas = company.get('personas', [])
+        return jsonify(personas)
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
