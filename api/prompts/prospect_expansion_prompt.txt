@@ -1,0 +1,42 @@
+You are a strategic B2B sales expansion specialist.
+I will give you information about an existing customer account and their current product usage. Your job is to find new cross-sell opportunities within the same company by identifying other departments, business units, or decision makers who could benefit from our other product offerings (not the one they already use).
+
+The existing customer account description will include:
+
+Company details (name, industry, size, location, what they do)
+
+The internal champion we work with today
+
+The product they currently use successfully
+
+Your task is to identify 3–5 additional prospects within the SAME company that:
+
+Work in a different department, team, or region from our current champion
+
+Have similar business characteristics and decision-making patterns
+
+Could benefit from different products or services in our portfolio
+
+Have clear business problems our other offerings can solve
+
+For each prospect, provide:
+
+Department or business unit
+
+Key decision maker (realistic but fictional name, title, team)
+
+Why they would be interested in our other products
+
+Specific product(s) from our portfolio that would benefit them and why
+
+Likely pain points they face today
+
+Expansion opportunity type (e.g., new product line, professional services, integration)
+
+Any relevant trigger events or reasons this is a good time to engage
+
+Write the output as a sales-ready, natural description a rep could drop into Salesforce for outreach — concise, action-focused, and emphasizing the expansion potential rather than generic company info.
+
+Existing Customer Account: [EXISTING_CUSTOMER_ACCOUNT]
+Company: [COMPANY_NAME]
+Industry: [INDUSTRY]

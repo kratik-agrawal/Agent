@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
-from config import Config, validate_config
-from routes.company_routes import company_bp
-from routes.prompt_routes import prompt_bp
+from .config import Config, validate_config
+from .routes.company_routes import company_bp
+from .routes.prompt_routes import prompt_bp
 
 def create_app():
     """Application factory function"""

@@ -30,16 +30,22 @@ export default function Home() {
   // Scrape form state
   const [scrapeForm, setScrapeForm] = useState({
     url: "",
-    company_name: ""
+    company_name: "",
+    industry: ""
   })
 
   // Auto-check status of pending jobs every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      const pendingJobs = scrapeJobs.filter(job => job.status === 'pending')
-      pendingJobs.forEach(job => {
-        checkScrapeStatus(job.job_id)
-      })
+      const pendingJobs = scrapeJobs.filter(job => 
+        job.status === 'pending' && !job.isChecking
+      )
+      if (pendingJobs.length > 0) {
+        console.log(`Auto-checking ${pendingJobs.length} pending jobs:`, pendingJobs.map(j => j.job_id))
+        pendingJobs.forEach(job => {
+          checkScrapeStatus(job.job_id)
+        })
+      }
     }, 10000) // Check every 10 seconds
 
     return () => clearInterval(interval)
@@ -74,14 +80,16 @@ export default function Home() {
       if (response.ok) {
         const result = await response.json()
         console.log('Scraping started:', result)
-        setScrapeForm({ url: "", company_name: "" })
+        setScrapeForm({ url: "", company_name: "", industry: "" })
         
         // Add to scrape jobs list
         setScrapeJobs(prev => [...prev, {
           job_id: result.job_id,
           status: result.status,
           company_name: result.company_name || scrapeForm.company_name,
-          created_at: new Date().toISOString()
+          industry: scrapeForm.industry,
+          created_at: new Date().toISOString(),
+          isChecking: false
         }])
       } else {
         const errorData = await response.json()
@@ -96,25 +104,60 @@ export default function Home() {
 
   const checkScrapeStatus = async (jobId: string) => {
     try {
-      const response = await fetch(`${FLASK_BASE_URL}/api/pitch/ingest/scrape/${jobId}/status`)
+      console.log(`Starting status check for job ${jobId}`)
+      
+      // Prevent duplicate calls by checking if job is already being checked
+      setScrapeJobs(prev => prev.map(job => 
+        job.job_id === jobId && job.status === 'pending' 
+          ? { ...job, status: 'checking', isChecking: true, lastChecked: new Date().toISOString() } 
+          : job
+      ))
+
+      const url = `${FLASK_BASE_URL}/api/pitch/ingest/scrape/${jobId}/status`
+      console.log(`Fetching status from: ${url}`)
+      
+      const response = await fetch(url)
+      console.log(`Response status: ${response.status}`)
+      
       if (response.ok) {
         const result = await response.json()
+        console.log(`Status update for job ${jobId}:`, result)
+        
         setScrapeJobs(prev => prev.map(job => 
           job.job_id === jobId ? { 
             ...job, 
             status: result.status,
             error: result.error || null,
-            result: result.result || null
+            result: result.result || null,
+            isChecking: false
           } : job
         ))
         
         if (result.status === 'completed') {
+          console.log(`Job ${jobId} completed, refreshing page`)
           // Refresh companies list
           window.location.reload()
         }
+      } else {
+        const errorText = await response.text()
+        console.error(`Failed to check status for job ${jobId}:`, response.status, errorText)
+        
+        // Reset status back to pending if check failed
+        setScrapeJobs(prev => prev.map(job => 
+          job.job_id === jobId && job.status === 'checking' 
+            ? { ...job, status: 'pending', isChecking: false } 
+            : job
+        ))
       }
     } catch (error) {
-      console.error('Error checking status:', error)
+      console.error(`Error checking status for job ${jobId}:`, error)
+      
+      // Reset status back to pending if check failed
+      setScrapeJobs(prev => prev.map(job => 
+        job.job_id === jobId && job.status === 'checking' 
+          ? { ...job, status: 'pending', isChecking: false } 
+          : job
+      ))
     }
   }
 
@@ -146,6 +189,8 @@ export default function Home() {
         return <AlertCircle className="h-4 w-4 text-red-400" />
       case 'running':
         return <Loader2 className="h-4 w-4 text-teal-400 animate-spin" />
+      case 'checking':
+        return <Loader2 className="h-4 w-4 text-blue-400 animate-spin" />
       case 'pending':
         return <Loader2 className="h-4 w-4 text-amber-400" />
       default:
@@ -160,6 +205,8 @@ export default function Home() {
       case 'failed':
         return 'bg-red-100 text-red-800 border-red-200'
       case 'running':
+        return 'bg-teal-100 text-teal-800 border-teal-200'
+      case 'checking':
         return 'bg-blue-100 text-blue-800 border-blue-200'
       case 'pending':
         return 'bg-amber-100 text-amber-800 border-amber-200'
@@ -216,6 +263,86 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Input Forms */}
             <div className="lg:col-span-1 space-y-8">
+              
+
+              {/* Web Scraping */}
+              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
+                  <CardTitle className="flex items-center gap-3 text-gray-900 text-xl">
+                    <div className="p-2.5 bg-emerald-600 rounded-xl">
+                      <Globe className="h-5 w-5 text-white" />
+                    </div>
+                    Web Scraping
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 text-base">
+                    Scrape company website for pitch content
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 px-8 pb-8">
+                  {/* Firecrawl Test Button */}
+                  {/* <div className="mb-8 p-5 bg-gray-50 border border-gray-200 rounded-xl">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-medium text-gray-700">Test Firecrawl API</span>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={testFirecrawl}
+                        disabled={testingFirecrawl}
+                        className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-300 rounded-lg"
+                      >
+                        {testingFirecrawl ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
+                        Test Connection
+                      </Button>
+                    </div>
+                    {firecrawlTestResult && (
+                      <p className="text-sm text-gray-600">{firecrawlTestResult}</p>
+                    )}
+                  </div> */}
+                  
+                  <form onSubmit={handleScrapeSubmit} className="space-y-6">
+                    <div>
+                      <Label htmlFor="scrape_url" className="text-gray-700 font-medium mb-2 block">Website URL</Label>
+                      <Input
+                        id="scrape_url"
+                        type="url"
+                        value={scrapeForm.url}
+                        onChange={(e) => setScrapeForm(prev => ({ ...prev, url: e.target.value }))}
+                        placeholder="https://arkestro.com"
+                        className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500/20 rounded-xl h-12"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="scrape_company" className="text-gray-700 font-medium mb-2 block">Company Name</Label>
+                      <Input
+                        id="scrape_company"
+                        value={scrapeForm.company_name}
+                        onChange={(e) => setScrapeForm(prev => ({ ...prev, company_name: e.target.value }))}
+                        placeholder="e.g., Arkestro"
+                        className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500/20 rounded-xl h-12"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="scrape_industry" className="text-gray-700 font-medium mb-2 block">Industry</Label>
+                      <Input
+                        id="scrape_industry"
+                        value={scrapeForm.industry}
+                        onChange={(e) => setScrapeForm(prev => ({ ...prev, industry: e.target.value }))}
+                        placeholder="e.g., Predictive Procurement Software"
+                        className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500/20 rounded-xl h-12"
+                        required
+                      />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white border-0 shadow-lg rounded-xl h-12 font-semibold text-base transition-all duration-200"
+                    >
+                      Start Scraping
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
               {/* Manual Pitch Input */}
               <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
                 <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
@@ -276,74 +403,6 @@ export default function Home() {
                   </form>
                 </CardContent>
               </Card>
-
-              {/* Web Scraping */}
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
-                  <CardTitle className="flex items-center gap-3 text-gray-900 text-xl">
-                    <div className="p-2.5 bg-emerald-600 rounded-xl">
-                      <Globe className="h-5 w-5 text-white" />
-                    </div>
-                    Web Scraping
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    Scrape company website for pitch content
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-8 pb-8">
-                  {/* Firecrawl Test Button */}
-                  {/* <div className="mb-8 p-5 bg-gray-50 border border-gray-200 rounded-xl">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-medium text-gray-700">Test Firecrawl API</span>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={testFirecrawl}
-                        disabled={testingFirecrawl}
-                        className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-300 rounded-lg"
-                      >
-                        {testingFirecrawl ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
-                        Test Connection
-                      </Button>
-                    </div>
-                    {firecrawlTestResult && (
-                      <p className="text-sm text-gray-600">{firecrawlTestResult}</p>
-                    )}
-                  </div> */}
-                  
-                  <form onSubmit={handleScrapeSubmit} className="space-y-6">
-                    <div>
-                      <Label htmlFor="scrape_url" className="text-gray-700 font-medium mb-2 block">Website URL</Label>
-                      <Input
-                        id="scrape_url"
-                        type="url"
-                        value={scrapeForm.url}
-                        onChange={(e) => setScrapeForm(prev => ({ ...prev, url: e.target.value }))}
-                        placeholder="https://arkestro.com"
-                        className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500/20 rounded-xl h-12"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="scrape_company" className="text-gray-700 font-medium mb-2 block">Company Name</Label>
-                      <Input
-                        id="scrape_company"
-                        value={scrapeForm.company_name}
-                        onChange={(e) => setScrapeForm(prev => ({ ...prev, company_name: e.target.value }))}
-                        placeholder="e.g., Arkestro"
-                        className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500 focus:ring-emerald-500/20 rounded-xl h-12"
-                        required
-                      />
-                    </div>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white border-0 shadow-lg rounded-xl h-12 font-semibold text-base transition-all duration-200"
-                    >
-                      Start Scraping
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
             </div>
 
             {/* Right Column - Results & Status */}
@@ -352,12 +411,52 @@ export default function Home() {
               {scrapeJobs.length > 0 && (
                 <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
                   <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
-                    <CardTitle className="text-gray-900 text-xl">Scraping Jobs</CardTitle>
-                    <CardDescription className="text-gray-600 text-base">
-                      Monitor the status of your web scraping jobs
-                    </CardDescription>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <CardTitle className="text-gray-900 text-xl">Scraping Jobs</CardTitle>
+                        <CardDescription className="text-gray-600 text-base">
+                          Monitor the status of your web scraping jobs
+                        </CardDescription>
+                      </div>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => {
+                          const pendingJobs = scrapeJobs.filter(job => job.status === 'pending')
+                          pendingJobs.forEach(job => checkScrapeStatus(job.job_id))
+                        }}
+                        className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-300 rounded-lg"
+                      >
+                        Refresh All
+                      </Button>
+                    </div>
                   </CardHeader>
                   <CardContent className="pt-8 px-8 pb-8">
+                    {/* Debug Info */}
+                    <div className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                      <h4 className="text-sm font-medium text-gray-700 mb-2">Debug Info</h4>
+                      <div className="text-xs text-gray-600 space-y-1">
+                        <p>Total jobs: {scrapeJobs.length}</p>
+                        <p>Pending jobs: {scrapeJobs.filter(j => j.status === 'pending').length}</p>
+                        <p>Checking jobs: {scrapeJobs.filter(j => j.status === 'checking').length}</p>
+                        <p>Completed jobs: {scrapeJobs.filter(j => j.status === 'completed').length}</p>
+                        <p>Failed jobs: {scrapeJobs.filter(j => j.status === 'failed').length}</p>
+                      </div>
+                      <div className="mt-3">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => {
+                            console.log('Current scrape jobs state:', scrapeJobs)
+                            console.log('Flask base URL:', FLASK_BASE_URL)
+                          }}
+                          className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 rounded text-xs"
+                        >
+                          Log State
+                        </Button>
+                      </div>
+                    </div>
+                    
                     <div className="space-y-4">
                       {scrapeJobs.map((job) => (
                         <div key={job.job_id} className="border border-gray-200 rounded-xl p-5 bg-gray-50/50">
@@ -366,7 +465,11 @@ export default function Home() {
                               {getStatusIcon(job.status)}
                               <div>
                                 <p className="font-semibold text-gray-900">{job.company_name}</p>
+                                <p className="text-sm text-gray-500">Industry: {job.industry}</p>
                                 <p className="text-sm text-gray-500">Job ID: {job.job_id.slice(0, 8)}...</p>
+                                {job.lastChecked && (
+                                  <p className="text-xs text-gray-400">Last checked: {new Date(job.lastChecked).toLocaleTimeString()}</p>
+                                )}
                               </div>
                             </div>
                             <div className="flex items-center gap-3">

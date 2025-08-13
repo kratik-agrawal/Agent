@@ -1,15 +1,14 @@
 [
   {
     "name": "Arkestro",
-    "industry": "Predictive Procurement Software",
-    "created_at": "2024-08-12T17:00:00.000Z",
-    "updated_at": "2025-08-12T18:26:09.753817",
+    "industry": "Procurement Software",
     "scraped_data": {
-      "job_id": "db09a4a5-4b5c-45d2-87c9-0bf7c9351a53",
-      "firecrawl_job_id": "immediate-db09a4a5-4b5c-45d2-87c9-0bf7c9351a53",
+      "job_id": "90619888-5610-4bf3-98de-27a298f77009",
+      "firecrawl_job_id": "immediate-90619888-5610-4bf3-98de-27a298f77009",
       "url": "https://arkestro.com",
       "company_name": "Arkestro",
-      "scraped_at": "2025-08-12T18:26:09.750986",
+      "industry": "Procurement Software",
+      "scraped_at": "2025-08-12T19:34:47.683936",
       "processed_content": [
         {
           "type": "markdown",
@@ -25,562 +24,552 @@
       "content_count": 2,
       "perplexity_research": {
         "success": true,
-        "content": "Company Overview  \nArkestro, formerly Bid Ops, is a Predictive Procurement Platform that uses AI, machine learning, game theory, and behavioral sciences to transform enterprise procurement by unlocking trapped savings, reducing risk, and accelerating spend transformation. It enables procurement teams to influence more spend with improved negotiation outcomes and supply chain agility[1][3][4].\n\nProducts & Services  \n- Predictive Procurement Platform combining AI, game theory, and negotiation, supplier, and process sciences  \n- Intelligent Counter Offer tool for pricing optimization without historical data  \n- Seamless supplier engagement tools that simplify bidding without separate portals  \n- Integrations with ERP and P2P systems for streamlined data syncing  \n- Professional services including TEMPO methodology for rapid implementation  \n- Supplier Consulting Group to foster buyer-supplier collaboration[1][2][3][4].\n\nTarget Customers  \n- Large enterprises with complex procurement needs across direct, indirect, and services spend  \n- Industries such as energy, automotive, engineering, construction materials, and financial services  \n- Procurement teams aiming to increase savings, reduce cycle times, and manage more spend without adding headcount[1][3][4][5].\n\nPain Points  \n- Inefficient traditional procurement processes causing slow cycle times and missed savings  \n- Difficulty optimizing pricing and negotiations, especially for new products or categories without historical data  \n- Challenges in supplier engagement and collaboration due to complex portals or systems  \n- Managing fragmented data across multiple procurement and ERP tools[1][2][3][4].\n\nCompetitive Landscape  \n- Positioned as a leader in predictive procurement with patented technology integrating AI and game theory  \n- Recognized by Gartner in 2024 Hype Cycle for Autonomous Sourcing and Procurement  \n- Ranked as a Top Tech \u2013 Sourcing provider in Fall 2024 SolutionMap  \n- Competes with traditional procurement software vendors and emerging AI-driven sourcing platforms[1][4][5].\n\nRecent Developments  \n- Secured a global multi-year enterprise agreement with a leading multinational energy company, achieving over 20% cost reduction in procurement margins  \n- Expanded global deployments with clients hitting multi-million dollar savings targets ahead of schedule using Intelligent Counter Offer  \n- Continuous platform enhancements focusing on AI-powered recommendations and long-term value creation beyond cost savings[2][5].\n\nIndustry Trends  \n- Increasing adoption of AI and machine learning in procurement to drive predictive analytics and automation  \n- Growing emphasis on supplier collaboration and seamless engagement to improve sourcing outcomes  \n- Demand for faster procurement cycles and greater spend influence without proportional headcount increases  \n- Integration of behavioral science and game theory into procurement decision-making processes[1][2][4].\n\nSales Opportunities  \n- Enterprises seeking to accelerate procurement cycle times and increase savings by 15% or more  \n- Organizations expanding into new product categories needing AI-driven pricing guidance  \n- Companies with fragmented procurement data requiring seamless ERP and P2P integration  \n- Procurement teams aiming to triple spend influence and free bandwidth for strategic initiatives[1][2][4].\n\nConversation Starters  \n- \"How are you currently leveraging AI to optimize your procurement negotiations and pricing?\"  \n- \"What challenges do you face when sourcing new products or categories without historical data?\"  \n- \"How much time does your team spend on manual procurement processes that could be automated?\"  \n- \"Are you able to engage suppliers seamlessly without requiring them to use complex portals?\"  \n- \"What savings targets are you aiming for this year, and how confident are you in achieving them?\"  \n- \"How integrated are your procurement systems with your ERP and P2P platforms to ensure data consistency?\"",
+        "content": "Please provide the specific **company name** and **website** you want me to research in the procurement software industry, so I can deliver a detailed, structured, and actionable sales prospecting report tailored to that company.",
         "model": "sonar",
         "usage": {
-          "prompt_tokens": 66,
-          "completion_tokens": 713,
-          "total_tokens": 779,
+          "prompt_tokens": 227,
+          "completion_tokens": 43,
+          "total_tokens": 270,
           "search_context_size": "low",
           "cost": {
-            "input_tokens_cost": 6.6e-05,
-            "output_tokens_cost": 0.000713,
+            "input_tokens_cost": 0.000227,
+            "output_tokens_cost": 4.3e-05,
             "request_cost": 0.005,
-            "total_cost": 0.005779
+            "total_cost": 0.00527
           }
         }
       },
       "status": "completed"
     },
+    "created_at": "2025-08-12T19:34:47.684882",
+    "updated_at": "2025-08-12T19:34:47.684888"
+  },
+  {
+    "name": "Verkada",
+    "industry": "Physical Security",
+    "scraped_data": {
+      "job_id": "624c4395-221a-4cf2-adc4-26398ba3c9a3",
+      "firecrawl_job_id": "immediate-624c4395-221a-4cf2-adc4-26398ba3c9a3",
+      "url": "https://verkada.com",
+      "company_name": "Verkada",
+      "industry": "Physical Security",
+      "scraped_at": "2025-08-12T19:34:54.423633",
+      "processed_content": [
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "![](https://cdn.verkada.com/image/upload/f_jpg,w_0.5,q_auto:good/v1749681496/img/homepage/verkadaone25-homepage.png)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_0.5,q_auto:good/v1749681496/img/homepage/verkadaone25-homepage-mobile.png)\n\n![Video Thumbnail](https://embed-ssl.wistia.com/deliveries/95af4d54bfc16f6feadac673d1a11fc0.webp?image_crop_resized=1920x1080)\n\nClick for sound\n\n![VerkadaOne'25](https://cdn.verkada.com/image/upload/f_jpg,w_401,q_auto:good/v1749685212/img/homepage/logo-verkadaone25-light.png)\n\nThe Cloud Physical Security Event\n\nChicago\n\nSeptember 22-24\nExperience three days of innovation, from major product launches and expert keynotes to hands on demos and executive networking. Each moment is designed to inform, inspire and connect today\u2019s security leaders.\n\n[Learn More](https://www.verkada.com/verkada-one/)\n\n0\n\n0\n\n0\n\n0\n\n0\n\n0\n\n0\n\n![Scroll down indicator](https://cdn.verkada.com/img/homepage/icon-scroll.svg)\n\n# One Integrated Physical Security Platform\n\nImagine all your building and security products on a single cloud-managed platform, accessible from anywhere on any device.\n\nClick Products to Explore\n\n![Command icon](https://cdn.verkada.com/img/homepage/product-visual/Icon_Access_Control.svg)\n\n## Command\n\nIntegrate insights across the entire suite of Verkada products. Command is a cloud-managed platform built with an easy-to-use software interface available both via web and mobile apps.\n\n[Learn more](https://www.verkada.com/command/)\n\n![Helix](https://cdn.verkada.com/img/homepage/product-visual/icon-helix.svg)[Discover Helix](https://www.verkada.com/helix)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/command-mobile.jpg)\n\n![Command icon](https://cdn.verkada.com/img/homepage/product-visual/Icon_Access_Control.svg)\n\n## Command\n\nIntegrate insights across the entire suite of Verkada products. Command is a cloud-managed platform built with an easy-to-use software interface available both via web and mobile apps.\n\n[Learn more](https://www.verkada.com/command/)\n\n![Helix](https://cdn.verkada.com/img/homepage/product-visual/icon-helix.svg)[Discover Helix](https://www.verkada.com/helix)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/video-security-mobile.jpg)\n\n![Video Security icon](https://cdn.verkada.com/img/homepage/product-visual/Camera.svg)\n\n## Video Security\n\nSimplify and scale video security with all-in-one cameras that marry onboard storage and edge-based processing with the benefits of the cloud, eliminating the need for NVR and DVR infrastructure.\n\n[Learn more](https://www.verkada.com/security-cameras/)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/access-control-mobile.jpg)\n\n![Access Control icon](https://cdn.verkada.com/img/homepage/product-visual/AD32.svg)\n\n## Access Control\n\nBring door credentials and video security into one integrated platform. Secure every entry point, while streamlining building management with Global Access and Active Directory integrations.\n\n[Learn more](https://www.verkada.com/access-control/)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/workplace-mobile.jpg)\n\n![Workplace icon](https://cdn.verkada.com/img/homepage/product-visual/Verkada_Guest.svg)\n\n## Workplace\n\nImprove visitor experience and manage deliveries with guest and mailroom software. Keep track of people and assets coming into facilities to enhance security along with workplace operations.\n\n[Learn more](https://www.verkada.com/workplace/)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/air-quality-mobile.jpg)\n\n![Air Quality icon](https://cdn.verkada.com/img/homepage/product-visual/SV20.svg)\n\n## Air Quality\n\nImprove health, safety and air quality across indoor spaces. Verkada\u2019s all-in-one sensors monitor environmental conditions and detect harmful chemicals, including carbon dioxide levels and vape emissions.\n\n[Learn more](https://www.verkada.com/air-quality/)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/alarm-mobile.jpg)\n\n![Alarms icon](https://cdn.verkada.com/img/homepage/product-visual/Alarm.svg)\n\n## Alarms\n\nDetect and respond to threats immediately with intrusion sensors, deterrence devices and wireless panic buttons. With integrated 24/7 professional monitoring, reduce false alarms while ensuring priority police response.\n\n[Learn more](https://www.verkada.com/alarms/)\n\n![](https://cdn.verkada.com/image/upload/f_jpg,w_375,q_auto:good/img/homepage/intercom-mobile.jpg)\n\n![Intercom icon](https://cdn.verkada.com/img/homepage/product-visual/Intercom.svg)\n\n## Intercom\n\nAnswer intercom calls from anywhere with sharp video, clear audio and four dynamic receiver methods. Specify who, when and how receivers should be contacted when a call comes in with smart call routing.\n\n[Learn more](https://www.verkada.com/intercom/)\n\n## Simplify Security at Scale\n\n01\n\nSimple to Install, Use & Maintain\n\n02\n\nScales with Ease\n\n"
+        },
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "# Experience the power of Verkada's enterprise-grade security system.\n\n### Get a personalized demo\n\n[Privacy Center](https://www.verkada.com/privacy)\n\n![Verkada demo thumbnail](https://embed-ssl.wistia.com/deliveries/2cc3f512a4800a63a0371a85ee25ee39.webp?image_crop_resized=1920x1080)\n\nClick for sound\n\n> \u201cIt\u2019s a huge win having the ability to configure all our devices from a **cloud-based platform**. I can make backend changes across global sites, no matter where I\u2019m located.\u201d\n\n\\- Devon King, Senior Manager of Security Operations , Canada Goose\n\n### Protect People and Places from One Cloud-Based Platform\n\n###### Single Pane of Glass\n\nEach of our products is intuitive and powerful in its own right \u2013 but when connected on the Command platform, they provide best-in-class capabilities for protecting people and places.\n\n###### Ease of Use\n\nEmpower teams with the intuitive Command interface, accessible from a mobile app or web browser wherever you are in the world, while Command's intelligent automation reduces complexities and manual tasks.\n\n###### Always Improving\n\nOur products are ever-evolving, with automatic over-the-air updates delivering the latest feature enhancements when available. Verkada's solutions only get smarter over time.\n\n###### Single Pane of Glass\n\nEach of our products is intuitive and powerful in its own right \u2013 but when connected on the Command platform, they provide best-in-class capabilities for protecting people and places.\n\n###### Ease of Use\n\nEmpower teams with the intuitive Command interface, accessible from a mobile app or web browser wherever you are in the world, while Command's intelligent automation reduces complexities and manual tasks.\n\n###### Always Improving\n\nOur products are ever-evolving, with automatic over-the-air updates delivering the latest feature enhancements when available. Verkada's solutions only get smarter over time.\n\n###### Single Pane of Glass\n\nEach of our products is intuitive and powerful in its own right \u2013 but when connected on the Command platform, they provide best-in-class capabilities for protecting people and places.\n\n###### Ease of Use\n\nEmpower teams with the intuitive Command interface, accessible from a mobile app or web browser wherever you are in the world, while Command's intelligent automation reduces complexities and manual tasks.\n\n###### Always Improving\n\nOur products are ever-evolving, with automatic over-the-air updates delivering the latest feature enhancements when available. Verkada's solutions only get smarter over time.\n\n## Recommended Solutions\n\nAchieve your loss prevention and security goals with state-of-the-art security products that consolidate into a single cloud-managed platform, accessible from anywhere.\n\nRetail StoresWarehouses and Distribution CentersCorporate Offices\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_1920/f_auto/q_auto/v1/img/solutions/retail/solutions-retail-stores-4x?_a=BAVCcWDW0)\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/img/solutions/retail/product-video-security?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/img/solutions/retail/product-alarms?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/img/solutions/retail/product-panic-button?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/uploads/Industry%20pages/product-access-control-v2?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/uploads/Industry%20pages/product-newintercom?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/img/solutions/retail/product-air-quality-sensor?_a=BAVCcWDW0)![](https://cdn.verkada.com/image/upload/c_limit,w_256/f_auto/q_auto/v1/img/solutions/retail/product-cellular-gateway?_a=BAVCcWDW0)\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_3840/f_auto/q_auto/v1/img/solutions/retail/product-video-security-mobile?_a=BAVCcWDW0)\n\n## Video Security\n\nRecord 24/7 with AI-enabled cameras that are bandwidth-efficient and store up to 365 days of onboard footage with optional cloud backup. Plus, easily monitor in real time with Viewing Stations.\n\n[Learn more](https://www.verkada.com/security-cameras)\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_3840/f_auto/q_auto/v1/img/solutions/retail/product-alarms-mobile?_a=BAVCcWDW0)\n\n## Alarms\n\nProtect against theft or break-ins using an integrated cloud-based alarm system that reuses your existing sensors and wiring. Easily configure settings without calling a third party.\n\n[Learn more](https://www.verkada.com/alarms)\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_3840/f_auto/q_auto/v1/img/solutions/retail/product-panic-button-mobile?_a=BAVCcWDW0)\n\n## Panic Button\n\nProvide store associates with one-click emergency assistance.\n\n[Learn more](https://www.verkada.com/alarms/panic-button)\n\n![](https://cdn.verkada.com/image/upload/c_limit,w_3840/f_auto/q_auto/v1/uploads/Industry%20pages/pr"
+        }
+      ],
+      "content_count": 2,
+      "perplexity_research": {
+        "success": true,
+        "content": "Please provide the specific company name and website you want me to research in the physical security industry, so I can deliver a detailed, structured, and actionable sales prospecting report as requested.",
+        "model": "sonar",
+        "usage": {
+          "prompt_tokens": 226,
+          "completion_tokens": 37,
+          "total_tokens": 263,
+          "search_context_size": "low",
+          "cost": {
+            "input_tokens_cost": 0.000226,
+            "output_tokens_cost": 3.7e-05,
+            "request_cost": 0.005,
+            "total_cost": 0.005263
+          }
+        }
+      },
+      "status": "completed"
+    },
+    "created_at": "2025-08-12T19:34:54.424493",
+    "updated_at": "2025-08-12T19:34:54.424498",
     "personas": [
       {
-        "base_role": "Chief Information Officer / Chief Technology Officer",
-        "department": "IT / Executive Leadership",
-        "land_expand_strategy": "Primary expansion target - they control IT strategy and budget",
-        "champion_indicators": [
-          "IT budget owner",
-          "Digital transformation driver",
-          "Technology decision maker"
-        ],
-        "expansion_paths": [
-          "VP Operations",
-          "CFO",
-          "IT Director"
-        ],
-        "core_priorities": [
-          "Digital transformation and innovation",
-          "IT infrastructure scalability and security",
-          "Cost optimization and ROI",
-          "Data management and analytics",
-          "Technology enablement for business growth"
-        ],
-        "core_pain_points": [
-          "Legacy system maintenance and integration",
-          "Security vulnerabilities and compliance risks",
-          "IT budget constraints and justification",
-          "Talent shortages and skills gaps in IT teams",
-          "Balancing innovation with operational stability"
-        ],
-        "core_decision_criteria": [
-          "Solution scalability and integration ease",
-          "Security and compliance features",
-          "Vendor reputation and support quality",
-          "Total cost of ownership (TCO) and ROI",
-          "Alignment with long-term IT strategy"
-        ],
-        "sales_approach": "Focus on strategic value and long-term partnership. They want to see how your solution fits their 3-5 year IT roadmap.",
-        "expansion_opportunities": "Once they're a champion, they can introduce you to operations and finance leaders for broader adoption.",
-        "influence_level": "high",
-        "budget_authority": "high",
-        "technical_expertise": "high",
-        "priorities": [
-          "Digital transformation and innovation",
-          "IT infrastructure scalability and security",
-          "Cost optimization and ROI",
-          "Data management and analytics",
-          "Technology enablement for business growth",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Legacy system maintenance and integration",
-          "Security vulnerabilities and compliance risks",
-          "IT budget constraints and justification",
-          "Talent shortages and skills gaps in IT teams",
-          "Balancing innovation with operational stability",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Solution scalability and integration ease",
-          "Security and compliance features",
-          "Vendor reputation and support quality",
-          "Total cost of ownership (TCO) and ROI",
-          "Alignment with long-term IT strategy",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952050",
-        "id": "591f0d43-f210-47cb-81b0-edcfd5887853"
-      },
-      {
-        "base_role": "VP of Operations / Chief Operating Officer",
-        "department": "Operations / Executive Leadership",
-        "land_expand_strategy": "Key operational champion - they feel the pain of inefficiency daily",
-        "champion_indicators": [
-          "Process optimization focus",
-          "Operational efficiency metrics",
-          "Cross-functional influence"
-        ],
-        "expansion_paths": [
-          "CIO/CTO",
-          "CFO",
-          "Department Heads"
-        ],
-        "core_priorities": [
-          "Process efficiency and optimization",
-          "Cost reduction and operational excellence",
-          "Quality improvement and standardization",
-          "Scalability and growth enablement",
-          "Risk management and compliance"
-        ],
-        "core_pain_points": [
-          "Manual and inefficient processes",
-          "Lack of operational visibility",
-          "Compliance and regulatory issues",
-          "Resource constraints and bottlenecks",
-          "Difficulty scaling operations"
-        ],
-        "core_decision_criteria": [
-          "Ease of implementation and user adoption",
-          "Process improvement potential",
-          "Integration with existing systems",
-          "Cost-effectiveness and ROI",
-          "Vendor support and reliability"
-        ],
-        "sales_approach": "Lead with operational pain points and process inefficiencies. They want to see immediate impact on daily operations.",
-        "expansion_opportunities": "They can champion your solution to department heads and influence IT decisions for broader deployment.",
-        "influence_level": "high",
-        "budget_authority": "medium",
-        "technical_expertise": "medium",
-        "priorities": [
-          "Process efficiency and optimization",
-          "Cost reduction and operational excellence",
-          "Quality improvement and standardization",
-          "Scalability and growth enablement",
-          "Risk management and compliance",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Manual and inefficient processes",
-          "Lack of operational visibility",
-          "Compliance and regulatory issues",
-          "Resource constraints and bottlenecks",
-          "Difficulty scaling operations",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Ease of implementation and user adoption",
-          "Process improvement potential",
-          "Integration with existing systems",
-          "Cost-effectiveness and ROI",
-          "Vendor support and reliability",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952133",
-        "id": "426de0b7-85e5-4d51-8713-57bb9a98dd52"
-      },
-      {
-        "base_role": "Procurement Manager / Director",
-        "department": "Procurement / Supply Chain",
-        "land_expand_strategy": "Operational user who can become internal champion for broader adoption",
-        "champion_indicators": [
-          "Process improvement focus",
-          "Vendor relationship management",
-          "Cross-functional collaboration"
-        ],
-        "expansion_paths": [
-          "VP Operations",
-          "CIO/CTO",
-          "Department Heads"
-        ],
-        "core_priorities": [
-          "Cost savings and spend optimization",
-          "Supplier management and risk mitigation",
-          "Contract negotiation and compliance",
-          "Process efficiency and automation",
-          "Strategic sourcing and partnerships"
-        ],
-        "core_pain_points": [
-          "Manual procurement processes",
-          "Limited supplier visibility and data",
-          "Contract management complexity",
-          "Compliance and audit requirements",
-          "Stakeholder alignment challenges"
-        ],
-        "core_decision_criteria": [
-          "Cost effectiveness and savings potential",
-          "Ease of use and user adoption",
-          "Integration capabilities with existing systems",
-          "Vendor support and service quality",
-          "Compliance and audit features"
-        ],
-        "sales_approach": "Focus on daily workflow improvements and compliance. They want to see how your solution makes their job easier.",
-        "expansion_opportunities": "They can demonstrate value to operations and IT teams, becoming an internal advocate for broader deployment.",
-        "influence_level": "medium",
-        "budget_authority": "medium",
-        "technical_expertise": "medium",
-        "priorities": [
-          "Cost savings and spend optimization",
-          "Supplier management and risk mitigation",
-          "Contract negotiation and compliance",
-          "Process efficiency and automation",
-          "Strategic sourcing and partnerships",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Manual procurement processes",
-          "Limited supplier visibility and data",
-          "Contract management complexity",
-          "Compliance and audit requirements",
-          "Stakeholder alignment challenges",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Cost effectiveness and savings potential",
-          "Ease of use and user adoption",
-          "Integration capabilities with existing systems",
-          "Vendor support and service quality",
-          "Compliance and audit features",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952222",
-        "id": "4b6f3e64-8aeb-4e37-b920-677c06e39453"
-      },
-      {
-        "base_role": "Chief Financial Officer",
-        "department": "Finance / Executive Leadership",
-        "land_expand_strategy": "Budget gatekeeper - need CIO/CTO champion first, then CFO for expansion",
-        "champion_indicators": [
-          "ROI focus",
-          "Cost control mindset",
-          "Budget planning authority"
-        ],
-        "expansion_paths": [
-          "CIO/CTO",
-          "VP Operations",
-          "Procurement"
-        ],
-        "core_priorities": [
-          "Cost control and optimization",
-          "ROI and financial performance",
-          "Risk management and compliance",
-          "Budget planning and forecasting",
-          "Financial strategy alignment"
-        ],
-        "core_pain_points": [
-          "Justifying large technology expenditures",
-          "Lack of clear ROI or cost-benefit analysis",
-          "Budget constraints and competing priorities",
-          "Financial risks from vendor lock-in",
-          "Complex contract terms and payment models"
-        ],
-        "core_decision_criteria": [
-          "Clear ROI and cost savings potential",
-          "Transparent pricing and contract terms",
-          "Vendor financial stability and reputation",
-          "Flexibility in payment and licensing models",
-          "Risk mitigation and compliance assurances"
-        ],
-        "sales_approach": "Lead with financial metrics and ROI. They need to see the numbers and understand the payback period.",
-        "expansion_opportunities": "Once they approve budget, they can influence other departments to adopt your solution.",
-        "influence_level": "high",
-        "budget_authority": "high",
-        "technical_expertise": "medium",
-        "priorities": [
-          "Cost control and optimization",
-          "ROI and financial performance",
-          "Risk management and compliance",
-          "Budget planning and forecasting",
-          "Financial strategy alignment",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Justifying large technology expenditures",
-          "Lack of clear ROI or cost-benefit analysis",
-          "Budget constraints and competing priorities",
-          "Financial risks from vendor lock-in",
-          "Complex contract terms and payment models",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Clear ROI and cost savings potential",
-          "Transparent pricing and contract terms",
-          "Vendor financial stability and reputation",
-          "Flexibility in payment and licensing models",
-          "Risk mitigation and compliance assurances",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952297",
-        "id": "96ba06b5-38ef-4e11-a40d-d765bb19a473"
-      },
-      {
-        "base_role": "IT Director / VP of IT",
-        "department": "Information Technology",
-        "land_expand_strategy": "Technical champion who can influence both operations and executive decisions",
-        "champion_indicators": [
-          "Technical expertise",
-          "Project delivery focus",
-          "Vendor relationship management"
-        ],
-        "expansion_paths": [
-          "CIO/CTO",
-          "VP Operations",
-          "Department Heads"
-        ],
-        "core_priorities": [
-          "IT system reliability and uptime",
-          "Project delivery and implementation",
-          "Vendor relationship management",
-          "End-user support and training",
-          "Technology innovation and modernization"
-        ],
-        "core_pain_points": [
-          "Complex software deployments",
-          "Limited IT resources and bandwidth",
-          "Balancing innovation with stability",
-          "Vendor responsiveness issues",
-          "Multiple stakeholder expectations"
-        ],
-        "core_decision_criteria": [
-          "Ease of deployment and adoption",
-          "Vendor support and SLAs",
-          "Compatibility with existing environment",
-          "Cost-effectiveness and licensing",
-          "Security and compliance features"
-        ],
-        "sales_approach": "Lead with technical capabilities and implementation ease. They want to see how your solution fits their technical architecture.",
-        "expansion_opportunities": "They can champion your solution to both technical teams and business stakeholders, bridging the gap between IT and operations.",
-        "influence_level": "high",
-        "budget_authority": "medium",
-        "technical_expertise": "high",
-        "priorities": [
-          "IT system reliability and uptime",
-          "Project delivery and implementation",
-          "Vendor relationship management",
-          "End-user support and training",
-          "Technology innovation and modernization",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Complex software deployments",
-          "Limited IT resources and bandwidth",
-          "Balancing innovation with stability",
-          "Vendor responsiveness issues",
-          "Multiple stakeholder expectations",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Ease of deployment and adoption",
-          "Vendor support and SLAs",
-          "Compatibility with existing environment",
-          "Cost-effectiveness and licensing",
-          "Security and compliance features",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952352",
-        "id": "25c95e96-6ffe-459a-89d5-a6010a1fc12d"
-      },
-      {
-        "base_role": "Procurement Manager / Director",
-        "department": "Procurement / Supply Chain",
-        "land_expand_strategy": "Operational user who can become internal champion for broader adoption",
-        "champion_indicators": [
-          "Process improvement focus",
-          "Vendor relationship management",
-          "Cross-functional collaboration"
-        ],
-        "expansion_paths": [
-          "VP Operations",
-          "CIO/CTO",
-          "Department Heads"
-        ],
-        "core_priorities": [
-          "Cost savings and spend optimization",
-          "Supplier management and risk mitigation",
-          "Contract negotiation and compliance",
-          "Process efficiency and automation",
-          "Strategic sourcing and partnerships"
-        ],
-        "core_pain_points": [
-          "Manual procurement processes",
-          "Limited supplier visibility and data",
-          "Contract management complexity",
-          "Compliance and audit requirements",
-          "Stakeholder alignment challenges"
-        ],
-        "core_decision_criteria": [
-          "Cost effectiveness and savings potential",
-          "Ease of use and user adoption",
-          "Integration capabilities with existing systems",
-          "Vendor support and service quality",
-          "Compliance and audit features"
-        ],
-        "sales_approach": "Focus on daily workflow improvements and compliance. They want to see how your solution makes their job easier.",
-        "expansion_opportunities": "They can demonstrate value to operations and IT teams, becoming an internal advocate for broader deployment.",
-        "influence_level": "medium",
-        "budget_authority": "medium",
-        "technical_expertise": "medium",
-        "priorities": [
-          "Cost savings and spend optimization",
-          "Supplier management and risk mitigation",
-          "Contract negotiation and compliance",
-          "Process efficiency and automation",
-          "Strategic sourcing and partnerships",
-          "Cloud security",
-          "API integration",
-          "Scalability",
-          "Data privacy",
-          "Scalability",
-          "Process standardization",
-          "Market expansion",
-          "Operational efficiency"
-        ],
-        "pain_points": [
-          "Manual procurement processes",
-          "Limited supplier visibility and data",
-          "Contract management complexity",
-          "Compliance and audit requirements",
-          "Stakeholder alignment challenges",
-          "Data privacy concerns",
-          "Vendor lock-in risks",
-          "Integration complexity",
-          "Growing pains",
-          "Process inefficiencies",
-          "Scaling challenges"
-        ],
-        "decision_criteria": [
-          "Cost effectiveness and savings potential",
-          "Ease of use and user adoption",
-          "Integration capabilities with existing systems",
-          "Vendor support and service quality",
-          "Compliance and audit features",
-          "Cloud compliance",
-          "API ecosystem",
-          "Data sovereignty",
-          "Scalability",
-          "Ease of expansion",
-          "Process improvement"
-        ],
-        "company_name": "Arkestro",
-        "industry": "Predictive Procurement Software",
-        "company_stage": "growth",
-        "created_at": "2025-08-12T18:26:09.952402",
-        "id": "6a5d327d-0432-4b7f-8741-d94c77f7a4f4"
+        "id": "e0126fd4-0da1-4570-998e-5ef47ebbb81a",
+        "type": "ai_generated",
+        "content": "Verkada is a company in the physical security industry that provides a cloud-based platform for video security, access control, and environmental health. Their products are designed to provide real-time insights and proactive alerts to help businesses protect their assets, ensure compliance, and streamline operations. Verkada's solutions are particularly beneficial for organizations that need to manage multiple locations remotely, as they offer centralized control and visibility.\n\nThe first role a salesperson should contact is the Director of Security in a large corporation or organization. This individual is responsible for ensuring the safety and security of the company's assets, employees, and operations. They are likely to be concerned with the efficiency and effectiveness of their security systems, as well as the ability to manage and monitor these systems remotely. Verkada's cloud-based platform can address these pain points by providing a centralized, easy-to-use solution for managing security across multiple locations.\n\n\"Dear Director of Security, I understand that managing security across multiple locations can be a complex and time-consuming task. Verkada's cloud-based platform can simplify this process by providing real-time insights and proactive alerts, allowing you to ensure the safety and security of your organization from anywhere.\"\n\nThe second role to target is the Facilities Manager in a company with multiple physical locations. They are responsible for the maintenance and functionality of the company's physical assets and may be looking for ways to streamline their operations and improve efficiency. Verkada's solutions can help them monitor and manage their facilities remotely, reducing the need for on-site visits and enabling proactive maintenance.\n\n\"Dear Facilities Manager, managing multiple facilities can be a challenging task, especially when it comes to ensuring their security and functionality. Verkada's cloud-based platform can help you monitor your facilities remotely, providing real-time insights and proactive alerts that can help you streamline your operations and improve efficiency.\"\n\nLastly, the salesperson should reach out to the Compliance Officer in a company that operates in a highly regulated industry. This individual is responsible for ensuring that the company complies with all relevant laws and regulations, and they may be concerned with maintaining a record of security incidents for auditing purposes. Verkada's platform can help them achieve this by providing a secure, searchable record of all video footage and access events.\n\n\"Dear Compliance Officer, I understand that maintaining compliance in a highly regulated industry can be a complex task. Verkada's cloud-based platform can help you maintain a secure, searchable record of all security incidents, helping you ensure compliance and streamline your auditing process.\"",
+        "company_name": "Verkada",
+        "industry": "Physical Security",
+        "created_at": "2025-08-12T19:44:49.696721",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 270,
+          "completion_tokens": 499,
+          "total_tokens": 769,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
       }
     ],
     "market_analysis": [
       {
-        "content": "Market Size & Growth  \n- Procurement software market valued at approximately USD 7.3-7.9 billion in 2023-2025, projected to grow to USD 18.3-21.9 billion by 2032-2035.  \n- CAGR ranges from 9.7% to 11.3% depending on source and forecast period.  \n- Growth driven by digitization, AI integration, cloud adoption, and expansion in e-commerce and organized retail sectors[1][2][3][4][5].\n\nKey Market Segments  \n- Deployment: Cloud segment leads with over 70% market share.  \n- End-user industries: Retail & e-commerce dominate (~24.6% share), followed by healthcare, automotive, BFSI, IT & telecom.  \n- Geography: North America largest regional market (~38-43% share)[2][4].\n\nCompetitive Landscape  \n- Market led by SAP Ariba (29.1% share), Coupa Software, Oracle, GEP, and Unite (formerly Mercateo).  \n- Top 10 vendors hold about 59% of the market[5].\n\nSimilar Companies by Stage  \n\nEarly-Stage (Seed/Series A):  \n- No specific company names identified in search results for early-stage predictive procurement software.\n\nGrowth-Stage (Series B/C):  \n- No specific company names identified in search results for growth-stage predictive procurement software.\n\nEnterprise-Stage (Series D+ or Public):  \n- SAP Ariba: Leading procurement software provider with broad enterprise adoption.  \n- Coupa Software: Public company specializing in cloud-based spend management.  \n- Oracle: Major enterprise software vendor with procurement solutions.  \n- GEP: Enterprise procurement software and consulting firm.  \n- Unite (Formerly Mercateo): European procurement platform with enterprise clients[5].\n\nMarket Trends  \n- Increasing integration of AI for predictive analytics, automated approvals, contract intelligence, spend forecasting, and supplier risk management.  \n- Shift from manual/legacy tools to cloud-based procurement systems.  \n- Enhanced user experience with AI-powered chatbots and suggestive search.  \n- Growing importance of compliance, spend visibility, and risk mitigation.  \n- Expansion of procurement marketplaces (e.g., AWS Marketplace in India) facilitating easier software procurement[1][3][4].\n\nCustomer Pain Points  \n- Manual and error-prone procurement processes.  \n- Lack of spend visibility and difficulty in supplier risk management.  \n- Complex supplier qualification and contract lifecycle management.  \n- Need for compliance with regulatory standards.  \n- Challenges in integrating procurement with digital transformation initiatives[1][3][4].\n\nGrowth Opportunities  \n- Adoption by mid-sized enterprises upgrading from spreadsheets or legacy systems.  \n- Expansion in emerging markets facilitated by localized procurement platforms.  \n- Leveraging AI and machine learning to transform procurement into a strategic function.  \n- Increasing demand in retail, e-commerce, and organized sectors for scalable, automated procurement solutions.  \n- Cloud technology adoption driving faster deployment and scalability[1][2][3][4].",
-        "created_at": "2025-08-12T18:26:36.132903"
+        "content": "**Market Size & Growth**  \n- Global video surveillance market valued at $42.9 billion in 2019, projected to grow at a CAGR of 14.6% to $144.9 billion by 2027.  \n- Access control market valued at $10.3 billion in 2019, expected to grow at 8.7% CAGR to $20 billion by 2027.  \n- Growth driven by rising security concerns, technological advances, and adoption of cloud and IoT devices.  \n- Verkada serves the enterprise physical security market, including video surveillance and access control segments[1].\n\n**Key Market Segments**  \n- Enterprises and organizations with physical facilities needing security: small to large businesses, schools, hospitals, government agencies.  \n- Industries with environmental monitoring needs: manufacturing, data centers, pharmaceuticals.  \n- Customers with limited IT resources preferring cloud-based security solutions.  \n- Notable customers include Cloudflare, Goodwill, YMCA, Equinox, Virgin Hyperloop, and Pasadena City College[1][2][3].\n\n**Competitive Landscape**  \n- Verkada leads in cloud-based physical security with integrated hardware, VMS, AI analytics, access control, alarms, intercom, and environmental sensors.  \n- Competes by offering unified, easy-to-deploy, cloud-managed security systems versus legacy on-premises solutions.  \n- Channel partners critical for deployment, consulting, and maintenance; Verkada\u2019s ease of use and integration is a competitive advantage[2][3].\n\n**Similar Companies by Stage**  \n\n*Early-Stage (Seed/Series A)*  \n- **Rhombus Systems**: Cloud-managed video security with AI analytics targeting SMBs and enterprises.  \n- **Soter Technologies**: AI-powered workplace safety and security platform focusing on real-time hazard detection.\n\n*Growth-Stage (Series B/C)*  \n- **Eagle Eye Networks**: Cloud video surveillance platform offering scalable security solutions for enterprises.  \n- **Openpath Security**: Cloud-based access control systems with mobile credentials and remote management.\n\n*Enterprise-Stage (Series D+ or Public)*  \n- **Genetec**: Public company providing unified security platforms including video surveillance, access control, and ALPR.  \n- **Milestone Systems**: Global leader in open platform IP video management software, serving large enterprises and governments.\n\n**Market Trends**  \n- Shift from legacy on-premises to cloud-native, hybrid-cloud physical security solutions.  \n- Increasing integration of AI and analytics for proactive threat detection and operational insights.  \n- Growing importance of unified platforms combining video, access control, alarms, and environmental monitoring.  \n- Rising demand for remote access, mobile response, and real-time alerts.  \n- Channel partner influence remains strong in purchasing and deployment decisions[1][2][3][5].\n\n**Customer Pain Points**  \n- Complexity and fragmentation of traditional security systems requiring multiple vendors and high maintenance.  \n- Limited IT resources to manage on-premises security infrastructure.  \n- Need for scalable, easy-to-install, and integrated security solutions.  \n- Concerns about insider threats and physical harm in workplaces.  \n- Difficulty in accessing and analyzing security data quickly and remotely[2][3].\n\n**Growth Opportunities**  \n- Expansion into government and federal agencies leveraging cloud scalability and compliance benefits.  \n- Broadening environmental sensor offerings for industries with strict monitoring needs.  \n- Enhancing AI-driven analytics for predictive security and operational efficiency.  \n- Increasing adoption in education, healthcare, retail, and manufacturing sectors.  \n- Strengthening channel partner ecosystem to accelerate market penetration and service delivery[1][3][5].",
+        "created_at": "2025-08-12T19:45:36.295466"
+      },
+      {
+        "content": "Market Size & Growth\n- Global video surveillance market valued at $42.9 billion in 2019, projected to grow at a CAGR of 14.6% to $144.9 billion by 2027.\n- Access control market valued at $10.3 billion in 2019, expected to grow at an 8.7% CAGR to $20 billion by 2027.\n- Growth driven by increasing security concerns, technological advancements, and rising adoption of cloud and IoT devices.\n- Verkada serves the enterprise physical security market with over 30,000 customers as of early 2025[1][2][3].\n\nKey Market Segments\n- Enterprises and organizations with physical facilities needing security: small to large businesses, public institutions (schools, hospitals, government).\n- Industries with specific environmental needs: manufacturing, data centers, pharmaceuticals.\n- Verticals include retail, education, corporate offices, healthcare, government agencies[1][3][4][5].\n\nCompetitive Landscape\n- Verkada leads in cloud-based physical security with integrated hardware and software solutions.\n- Competitors include traditional on-premises security providers and newer cloud-native companies.\n- Key differentiators: hybrid-cloud architecture, AI-powered analytics, unified platform combining cameras, access control, alarms, intercom, and environmental sensors.\n- Channel partners critical for deployment and adoption, favoring solutions that are easy to install and maintain[2][3].\n\nSimilar Companies by Stage\n\nEarly-Stage (Seed/Series A)\n- Verkada-like startups focusing on cloud-native physical security or AI-driven surveillance analytics, e.g.:\n  - **Rhombus Systems**: Cloud-managed video security with AI analytics for enterprises.\n  - **Camio**: AI-powered video monitoring platform for real-time alerts and search.\n\nGrowth-Stage (Series B/C)\n- Companies expanding cloud-based security offerings and scaling customer base, e.g.:\n  - **Eagle Eye Networks**: Cloud video surveillance platform serving SMBs and enterprises.\n  - **Openpath Security**: Cloud-based access control with mobile credentials and integrations.\n\nEnterprise-Stage (Series D+ or Public)\n- Established leaders with broad physical security portfolios and global reach, e.g.:\n  - **Genetec**: Publicly traded provider of unified security platforms including video surveillance and access control.\n  - **Johnson Controls**: Large multinational offering integrated building and security solutions.\n  - **Honeywell Security**: Global enterprise security provider with extensive hardware and software products[1][2][3].\n\nMarket Trends\n- Shift from legacy on-premises systems to cloud-native and hybrid-cloud architectures.\n- Integration of AI and analytics for proactive threat detection and operational insights.\n- Increasing importance of unified platforms combining video, access control, alarms, and environmental monitoring.\n- Growing role of channel partners in consulting, installation, and maintenance.\n- Rising demand for remote access, mobile response, and real-time alerts[2][3][5].\n\nCustomer Pain Points\n- Complexity and fragmentation of traditional security systems requiring multiple vendors.\n- High maintenance costs and IT resource demands for on-premises solutions.\n- Limited scalability and accessibility of legacy systems.\n- Need for rapid incident response and comprehensive situational awareness.\n- Security concerns for frontline workers and vulnerable environments[2][3].\n\nGrowth Opportunities\n- Expanding into government and public sector agencies requiring scalable, compliant security solutions.\n- Leveraging AI and IoT sensor data to enhance environmental monitoring and workplace safety.\n- Broadening channel partner ecosystem to accelerate adoption and integration.\n- Developing visitor management and workplace safety tools integrated with security platforms.\n- Capitalizing on increasing security budgets driven by rising physical and cybersecurity threats[3][5].",
+        "created_at": "2025-08-12T19:48:35.406870"
+      }
+    ]
+  },
+  {
+    "name": "Salesforce",
+    "industry": "Sales CRM",
+    "scraped_data": {
+      "job_id": "24336c14-bc3e-4ced-9d12-b49651f4c1e7",
+      "firecrawl_job_id": "immediate-24336c14-bc3e-4ced-9d12-b49651f4c1e7",
+      "url": "https://www.salesforce.com/",
+      "company_name": "Salesforce",
+      "industry": "Sales CRM",
+      "scraped_at": "2025-08-12T19:50:48.760819",
+      "processed_content": [
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "[Skip to content](https://www.salesforce.com/#main-content)\n\nNeed Salesforce support? Get answers fast from our AI agent on Salesforce Help.\n\n[Go to Help](http://help.salesforce.com/)\n\n[Try for free](https://www.salesforce.com/form/signup/freetrial-salesforce-starter?d=ctrl1)[Watch demos](https://www.salesforce.com/form/demo/small-business/smb-overview?d=ctrl2)\n\n![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/php-hp-agentforce-lg-bg.jpg?w=1024)\n\n![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/php-marquee-hp-agentforce-sm-bg.jpg?w=731)\n\n[Explore Agentforce](https://www.salesforce.com/agentforce/)[Calculate your ROI](https://www.salesforce.com/agentforce/ai-agents-roi-calculator/)\n\nAgentforce is trusted by:![Pause logo scroll](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/03/pause_alt.svg)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/1800-accountants-logo.png?w=218)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/bigbrother-bigsister-logo.png?w=176)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/f1-logo.png?w=138)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/Finnair.png?w=212)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/goodyear-logo.png?w=212)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/grupo-globo.png?w=215)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/indeed-logo-v2.png?w=148)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/lennar-logo.png?w=220)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/LIV-golf.png?w=186)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/opentable-logo.png?w=195)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/Pepsico.png?w=200)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/university-chicago-med.png?w=171)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/1800-accountants-logo.png?w=218)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/bigbrother-bigsister-logo.png?w=176)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/f1-logo.png?w=138)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/Finnair.png?w=212)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/goodyear-logo.png?w=212)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/grupo-globo.png?w=215)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/indeed-logo-v2.png?w=148)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/lennar-logo.png?w=220)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/LIV-golf.png?w=186)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/opentable-logo.png?w=195)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/Pepsico.png?w=200)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/university-chicago-med.png?w=171)](https://www.salesforce.com/agentforce/customer-stories/)\n\n[Try for free](https://www.salesforce.com/form/signup/freetrial-salesforce-starter/?d=pb)\n\n### Lead, Contact, and Opportunity Management\n\nCapture and track customer data from any source. Keep your team on track with built-in deal stages. Get recommended next steps to move deals along the pipeline.\n\n### Email Marketing\n\nUse AI to create segments, draft a c"
+        },
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "[Skip to content](https://www.salesforce.com/agentforce/#main-content)\n\nSalesforce hit 1M+ support requests with Agentforce. Learn how you can, too.\n\n[Watch the video](https://www.salesforce.com/plus/experience/discover_agentforce/series/discover_agentforce/episode/episode-s1e10/?icid=SFORG:Banner:Q3_1M_Agentforce_SF+_Agentforce_Webpage&nc=701ed00000bU4FNAA0)\n\n![A screen displays restaurant reservations and customer service agent support.](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/AFDC-Overview-Marquee-Hero_617e34.webp?w=1024)\n\n[Watch demos](https://www.salesforce.com/form/agentforce/demo/?d=pb)\n\n![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/06/marquee-agentforce-mobile-swoop-6-20.webp?w=1024)\n\n![](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/06/marquee-agentforce-desktop-swoop-6-20.webp?w=731)\n\n[![OpenTable logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-OpenTable.png?w=640)](https://www.salesforce.com/customer-stories/opentable/)\n\n[![SharkNinja logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/Logo-320x180-SharkNinja.png?w=320)](https://www.salesforce.com/customer-stories/sharkninja/)\n\n[![Indeed logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/Logo-320x180-Indeed.png?w=320)](https://www.salesforce.com/customer-stories/indeed/)\n\n[![1800 Accountant logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-1800Accountant.png?w=640)](https://www.salesforce.com/customer-stories/1800-accountant/)\n\n[![Heathrow logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Heathrow.png?w=640)](https://www.salesforce.com/customer-stories/heathrow-airport/)\n\n[![Equinox logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Equinox-Fitness.png?w=640)](https://www.salesforce.com/customer-stories/equinox/)\n\n[![Bionic logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Bionic.png?w=640)](https://www.salesforce.com/customer-stories/bionic/)\n\n[![Fujitsu logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Fujistu.png?w=640)](https://www.salesforce.com/customer-stories/fujitsu/)\n\n[![Finnair logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/logo-wall-Finnair.jpg?w=1024)](https://www.salesforce.com/customer-stories/finnair/)\n\n[![Prudential logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/02-prudential-logo.png?w=640)](https://www.youtube.com/watch?v=EgqvCqofoe8)\n\n[![Engine logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Engine.png?w=640)](https://www.salesforce.com/customer-stories/engine/)\n\n[![Good360 logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Good360.png?w=640)](https://www.salesforce.com/customer-stories/good360/)\n\n[![OpenTable logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-OpenTable.png?w=640)](https://www.salesforce.com/customer-stories/opentable/)\n\n[![SharkNinja logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/Logo-320x180-SharkNinja.png?w=320)](https://www.salesforce.com/customer-stories/sharkninja/)\n\n[![Indeed logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/Logo-320x180-Indeed.png?w=320)](https://www.salesforce.com/customer-stories/indeed/)\n\n[![1800 Accountant logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-1800Accountant.png?w=640)](https://www.salesforce.com/customer-stories/1800-accountant/)\n\n[![Heathrow logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Heathrow.png?w=640)](https://www.salesforce.com/customer-stories/heathrow-airport/)\n\n[![Equinox logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Equinox-Fitness.png?w=640)](https://www.salesforce.com/customer-stories/equinox/)\n\n[![Bionic logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Bionic.png?w=640)](https://www.salesforce.com/customer-stories/bionic/)\n\n[![Fujitsu logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Fujistu.png?w=640)](https://www.salesforce.com/customer-stories/fujitsu/)\n\n[![Finnair logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/logo-wall-Finnair.jpg?w=1024)](https://www.salesforce.com/customer-stories/finnair/)\n\n[![Prudential logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/11/02-prudential-logo.png?w=640)](https://www.youtube.com/watch?v=EgqvCqofoe8)\n\n[![Engine logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/05/logo-wall-Engine.png?w=640)](https://www.salesforce.com/customer-stories/engine/)\n\n[![Good360 logo](https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/02/logo-wall-Good360.png?w=640)]"
+        }
+      ],
+      "content_count": 2,
+      "perplexity_research": {
+        "success": true,
+        "content": "**Company Overview**  \nSalesforce is a global leader in **Sales CRM (Customer Relationship Management)** software, providing cloud-based solutions that help businesses manage customer relationships, sales processes, marketing, and analytics. Founded in 1999 and headquartered in San Francisco, California, Salesforce is a large enterprise with approximately **70,000+ employees** and reported revenues exceeding **$35 billion** as of recent fiscal years (estimates based on latest public data trends). It serves a broad range of industries worldwide, from small businesses to large enterprises.\n\n**Products & Services**  \n- **Key Offerings:** Salesforce\u2019s core product is its Sales Cloud CRM platform, which includes tools for lead and opportunity management, sales forecasting, and workflow automation. Other major products include Service Cloud (customer service), Marketing Cloud (digital marketing automation), Commerce Cloud (e-commerce), and Tableau (analytics).  \n- **Pricing Models:** Salesforce typically uses a subscription-based SaaS pricing model with tiered plans based on features and user counts, ranging from small business editions to enterprise-level packages. Pricing is often customized for large clients.  \n- **Unique Features & Differentiators:**  \n  - Highly customizable and scalable cloud platform  \n  - Extensive ecosystem with AppExchange marketplace for third-party integrations  \n  - AI-powered analytics and automation via Salesforce Einstein  \n  - Strong mobile and social collaboration capabilities  \n  - Industry-specific solutions (e.g., financial services, healthcare)  \n\n**Pain Points**  \n- **Industry Challenges:**  \n  - Increasing competition in CRM and sales automation from both established players and niche startups  \n  - Customer demand for seamless integration across multiple business functions and platforms  \n  - Pressure to continuously innovate AI and automation features to improve sales productivity  \n- **Market Shifts:**  \n  - Growing adoption of AI-driven sales insights and predictive analytics  \n  - Shift toward remote and hybrid sales teams requiring robust digital collaboration tools  \n- **Operational Inefficiencies:**  \n  - Complexity in onboarding and customizing Salesforce solutions for diverse client needs  \n  - Managing data quality and integration across disparate systems  \n\n**Competitive Landscape**  \n- **Main Competitors:** Microsoft Dynamics 365, HubSpot CRM, Oracle CX Cloud, SAP Customer Experience, Zoho CRM  \n- **Positioning:** Salesforce is widely regarded as the market leader in CRM due to its comprehensive platform, innovation pace, and ecosystem strength. Competitors often compete on pricing, ease of use, or niche specialization, but Salesforce\u2019s brand and scale provide a strong moat.\n\n**Recent Developments**  \n- Salesforce continues to expand through acquisitions (e.g., Tableau for analytics, Slack for collaboration) to enhance its platform capabilities.  \n- Recent product launches focus on AI enhancements, automation, and industry-specific cloud solutions.  \n- Leadership remains stable with CEO Marc Benioff driving a vision of integrated customer 360-degree views and AI-powered sales.  \n- Strategic partnerships with major cloud providers and technology firms bolster its ecosystem.  \n- Major customers span Fortune 500 companies across sectors such as finance, retail, healthcare, and manufacturing.\n\n**Relevant Industry Trends**  \n- **AI and Automation:** Increasing use of AI to provide predictive sales insights, automate routine tasks, and personalize customer engagement.  \n- **Social Selling:** Leveraging social media platforms like LinkedIn for relationship-building and prospecting, aligning with Salesforce\u2019s integration of social data.  \n- **Remote Sales Enablement:** Tools that support virtual selling and collaboration are becoming essential.  \n- **Data Privacy and Compliance:** Growing regulatory requirements impact CRM data handling and customer trust.  \n\n**Sales Opportunities**  \n- **Leverage AI and Automation:** Position Salesforce solutions as essential for sales teams needing to boost productivity and forecast accuracy with AI-driven insights.  \n- **Highlight Integration and Ecosystem:** Emphasize Salesforce\u2019s ability to unify sales, marketing, service, and analytics in one platform, reducing operational silos.  \n- **Address Pain Points in Customization:** Offer tailored onboarding and consulting services to ease implementation complexity.  \n- **Capitalize on Social Selling Trends:** Showcase Salesforce\u2019s tools that integrate social data and enable personalized outreach, helping prospects adapt to modern sales methods.  \n- **Target Industry-Specific Needs:** Use Salesforce\u2019s vertical cloud solutions to appeal to industries facing unique regulatory or operational challenges.  \n- **Use Recent Developments as Hooks:** Reference Salesforce\u2019s acquisitions and product innovations to demonstrate ongoing value and future-proofing.  \n\nThis structured insight can help sales reps craft personalized, relevant outreach that resonates with Salesforce\u2019s strategic priorities and customer challenges, creating urgency and interest in their offerings.  \n\n*Note: Some company size and revenue figures are estimates based on publicly available data and industry reports as of mid-2025.*",
+        "model": "sonar",
+        "usage": {
+          "prompt_tokens": 222,
+          "completion_tokens": 955,
+          "total_tokens": 1177,
+          "search_context_size": "low",
+          "cost": {
+            "input_tokens_cost": 0.000222,
+            "output_tokens_cost": 0.000955,
+            "request_cost": 0.005,
+            "total_cost": 0.006177
+          }
+        }
+      },
+      "status": "completed"
+    },
+    "created_at": "2025-08-12T19:50:48.761787",
+    "updated_at": "2025-08-12T19:50:48.761792",
+    "market_analysis": [
+      {
+        "content": "**Market Size & Growth**  \n- Global CRM market valued at approximately $101.4 billion in 2024, projected to reach $262.74 billion by 2032, with a CAGR of 12.6%-12.7%[1].  \n- Salesforce annual revenue reached $37.895 billion in 2025, growing 8.72% year-over-year, with consistent double-digit growth over recent years[3][4].  \n- Mobile CRM market expected to grow from $28.43 billion in 2024 to $58.07 billion by 2034, with U.S. CAGR of 11.9% and China CAGR of 14%[1].  \n\n**Key Market Segments**  \n- Sales CRM (Sales Cloud) with 38.3% market share in 2024[2].  \n- Marketing Cloud with 14.7% market share in H1 2022, leading over Adobe[2].  \n- Service Cloud with 44.9% market share in its niche[2].  \n- Industry verticals: healthcare, edTech, manufacturing, real estate, automotive[2].  \n\n**Competitive Landscape**  \n- Salesforce holds ~20.7% global CRM market share, leading over Microsoft, Oracle, Adobe, SAP combined[4].  \n- Competitors: Microsoft Dynamics 365 Sales (3.3 times smaller than Sales Cloud), Adobe Marketing Cloud, Oracle Service Cloud[2].  \n- Salesforce leads CRM for sales (13 years), customer service (12 years), and marketing (6 years)[4].  \n\n**Similar Companies by Stage**  \n\n*Early-Stage (Seed/Series A)*  \n- **Apollo.io**: Sales engagement platform focusing on prospecting and outreach automation.  \n- **Outreach.io**: Early-stage sales engagement tool helping teams automate communication workflows.  \n\n*Growth-Stage (Series B/C)*  \n- **HubSpot**: Inbound marketing and sales CRM platform growing rapidly with integrated marketing automation.  \n- **Pipedrive**: Sales CRM focused on pipeline management, expanding internationally with strong SMB adoption.  \n\n*Enterprise-Stage (Series D+ or Public)*  \n- **Microsoft Dynamics 365**: Comprehensive CRM and ERP cloud platform competing directly with Salesforce in enterprise sales.  \n- **Oracle CX Cloud**: Enterprise CRM suite with strong presence in customer service and marketing automation.  \n- **Adobe Experience Cloud**: Marketing and customer experience platform competing in marketing CRM segment.  \n\n**Market Trends**  \n- Increasing adoption of AI and generative AI to enhance CRM capabilities and customer insights[1][2].  \n- Integration of CRM with data analytics and unified customer 360 platforms[2][5].  \n- Growth in mobile CRM usage and cloud-based CRM solutions[1].  \n- Expansion into industry-specific CRM solutions (healthcare, automotive, etc.)[2].  \n\n**Customer Pain Points**  \n- Complexity in integrating multiple CRM tools and data sources.  \n- Need for real-time, AI-driven insights to improve sales and marketing effectiveness.  \n- High cost and complexity of enterprise CRM deployments.  \n- Difficulty in achieving seamless customer experience across channels.  \n\n**Growth Opportunities**  \n- Leveraging AI and automation to increase productivity and reduce operational costs[5].  \n- Expanding industry-specific CRM solutions tailored to verticals like healthcare and manufacturing[2].  \n- Enhancing mobile CRM capabilities to capture growing mobile workforce demand[1].  \n- Increasing cross-platform integrations and unified data clouds to provide comprehensive customer views[5].",
+        "created_at": "2025-08-12T19:51:11.819854"
+      }
+    ],
+    "personas": [
+      {
+        "id": "31e04ad8-4646-4787-9013-3c9a7b9c56e6",
+        "type": "ai_generated",
+        "content": "Salesforce is a leading global provider of customer relationship management (CRM) software. Their suite of products and services are designed to help businesses manage their relationships and interactions with customers and potential customers. Salesforce's solutions help businesses streamline processes, improve performance, increase profitability, and enhance customer satisfaction.\n\nThe first role a salesperson should contact is the Director of Sales. This individual works in the sales department of a potential customer organization and is responsible for overseeing all sales activities. Their main pain points include managing a large sales team, tracking sales activities, and ensuring sales targets are met. They are a high-value target because they have the authority to make purchasing decisions and are directly impacted by the efficiency of their sales processes. The sales pitch to a Director of Sales could be: \"Salesforce can help you manage your sales team more effectively, track sales activities in real-time, and ensure your team is meeting its targets. Our CRM solution will streamline your processes, saving you time and increasing your team's productivity.\"\n\nThe second role to target is the Chief Marketing Officer (CMO). They work in the marketing department and are responsible for all marketing activities. Their main pain points include tracking marketing campaigns, managing customer data, and aligning marketing and sales efforts. They are a high-value target because they have the authority to make purchasing decisions and the success of their marketing campaigns directly impacts the company's bottom line. The sales pitch to a CMO could be: \"Salesforce can help you track your marketing campaigns, manage customer data, and align your marketing and sales efforts. Our CRM solution will provide you with the insights you need to make data-driven decisions and improve your marketing ROI.\"\n\nThe third role to target is the IT Director. They work in the IT department and are responsible for managing the company's technology infrastructure. Their main pain points include integrating new software with existing systems, ensuring data security, and managing software updates. They are a high-value target because they have the authority to approve new software purchases and their role is critical in ensuring the successful implementation of new technology. The sales pitch to an IT Director could be: \"Salesforce can easily integrate with your existing systems, ensuring a smooth transition. Our CRM solution is secure, reliable, and always up-to-date, freeing up your time to focus on other critical IT tasks.\"\n\nLastly, the Procurement Manager should be targeted. They work in the procurement department and are responsible for purchasing goods and services for the company. Their main pain points include managing supplier relationships, ensuring cost-effectiveness, and streamlining procurement processes. They are a high-value target because they have the authority to make purchasing decisions and their role is critical in ensuring the company gets the best value for its money. The sales pitch to a Procurement Manager could be: \"Salesforce can help you manage your supplier relationships, ensure cost-effectiveness, and streamline your procurement processes. Our CRM solution will provide you with the tools you need to make informed purchasing decisions and improve your procurement efficiency.\"",
+        "company_name": "Salesforce",
+        "industry": "Sales CRM",
+        "created_at": "2025-08-12T19:51:22.264913",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 326,
+          "completion_tokens": 598,
+          "total_tokens": 924,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    ],
+    "fake_customer_accounts": [
+      {
+        "id": "3e94ce84-7551-4d73-86dd-1e26b59a8583",
+        "type": "ai_generated",
+        "content": "Customer Account: Our customer, Advanced Health Solutions, is a rapidly growing healthcare technology company located in Austin, Texas. With a team of over 1,000 employees, they specialize in developing software for electronic health records and telemedicine services. They're a perfect fit for Salesforce as they require a comprehensive system to manage their expanding client base and sales operations.\n\nInternal Champion: Our champion at Advanced Health Solutions is Melissa Hughes, the Director of Sales Operations. Melissa has over 15 years of experience in sales and operations management in the tech industry. Her main goal is to streamline sales processes and improve the productivity of her sales team. Her pain point is the lack of a centralized system to manage and analyze customer interactions, which leads to inefficiencies and missed opportunities. She is motivated to adopt Salesforce because she believes it can provide the necessary tools to optimize their sales process.\n\nCurrent Use and Expansion Opportunity: Advanced Health Solutions have already purchased Salesforce's basic Sales Cloud package. They are currently using it for contact management, opportunity management, and sales forecasting. However, as the company grows, they are finding it increasingly difficult to manage the volume of customer data and interactions. What's missing from their setup is Salesforce's AI-powered tool, Einstein Analytics. This tool could provide Melissa's team with predictive insights and recommendations, helping them to identify key trends and make data-driven decisions. In addition, they could benefit from Pardot, Salesforce's B2B marketing automation tool, to better align their sales and marketing efforts. This represents a significant expansion opportunity for Salesforce.",
+        "company_name": "Salesforce",
+        "industry": "Sales CRM",
+        "created_at": "2025-08-12T20:05:54.358209",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 225,
+          "completion_tokens": 309,
+          "total_tokens": 534,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Unify",
+    "industry": "Go to Market",
+    "scraped_data": {
+      "job_id": "af07d6a5-8d91-4233-84db-00a6f482611d",
+      "firecrawl_job_id": "immediate-af07d6a5-8d91-4233-84db-00a6f482611d",
+      "url": "https://www.unifygtm.com/",
+      "company_name": "Unify",
+      "industry": "Go to Market",
+      "scraped_at": "2025-08-12T20:06:50.116232",
+      "processed_content": [
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "[![Unify wordmark logo](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1af/65a7e0cdd5ac0838035bd1e8_Unify%20Wordmark%20SVG.svg)![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1af/65a7e0cdd5ac0838035bd1d1_Unify%20Wordmark%20SVG.svg)](https://www.unifygtm.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/684a06139c08b8d2b2866f4c_Decagon_idx7KR8yDP_1%201.svg)](http://decagon.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/680921fec37fe4d8fc70bacc_Off-White%402x.png)](http://perplexity.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67ec118c12e20d25e6a63eca_Cursor.svg)](http://cursor.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/688d3b904a2888209196696a_Merge_idbxS5PFXk_1%202.svg)](http://merge.dev/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67de0437a659780f71548c8c_Flock%20Safety_idN8K45Jqb_1%201.svg)](https://www.flocksafety.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67b777ff22786d55cbc1a073_together_ai_branding_darkOnLight_Logo%202.avif)](http://together.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67213af41704aa310a526532_Hightouch-logo_black%201.avif)](https://hightouch.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/672015bd4444438ee33f6fc3_0x0%201.avif)](https://www.sofi.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66aaa4f397fc6cd18d453070_Guru%20Wordmark.svg)](https://www.getguru.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66e82d1a70e2ec6c6c076436_65a7e0cdd5ac0838035bd3c0_Justworks.svg)](https://www.justworks.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd367_Abacum.svg)](https://www.abacum.io/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b4167f4422c1aab9492e_65a7e0cdd5ac0838035bd3e3_9Footprint.svg)](https://onefootprint.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3dd_Hypercomply.svg)](https://www.hypercomply.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3db4ba82f11dc194691_65a7e0cdd5ac0838035bd3e0_6Vantage.svg)](https://www.vantage.sh/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3d1e15c247536bbbb59_65a7e0cdd5ac0838035bd3df_5Speechify.svg)](https://speechify.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3c42e4e90ac43ff53c2_65a7e0cdd5ac0838035bd3de_4SpotAI.svg)](https://www.spot.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3c5_Openphone.svg)](https://www.openphone.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/684a06139c08b8d2b2866f4c_Decagon_idx7KR8yDP_1%201.svg)](http://decagon.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/680921fec37fe4d8fc70bacc_Off-White%402x.png)](http://perplexity.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67ec118c12e20d25e6a63eca_Cursor.svg)](http://cursor.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/688d3b904a2888209196696a_Merge_idbxS5PFXk_1%202.svg)](http://merge.dev/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67de0437a659780f71548c8c_Flock%20Safety_idN8K45Jqb_1%201.svg)](https://www.flocksafety.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67b777ff22786d55cbc1a073_together_ai_branding_darkOnLight_Logo%202.avif)](http://together.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67213af41704aa310a526532_Hightouch-logo_black%201.avif)](https://hightouch.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/672015bd4444438ee33f6fc3_0x0%201.avif)](https://www.sofi.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66aaa4f397fc6cd18d453070_Guru%20Wordmark.svg)](https://www.getguru.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66e82d1a70e2ec6c6c076436_65a7e0cdd5ac0838035bd3c0_Justworks.svg)](https://www.justworks.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd367_Abacum.svg)](https://www.abacum.io/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b4167f4422c1aab9492e_65a7e0cdd5ac0838035bd3e3_9Footprint.svg)](https://onefootprint.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3dd_Hypercomply.svg)](https://www.hypercomply.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3db4ba82f11dc194691_65a7e0cdd5ac0838035bd3e0_6Vantage.svg)](https://www.vantage.sh/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3d1e15c247536bbbb59_65a7e0cdd5ac0838035bd3df_5Speechify.svg)](https://speechify.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3c42e4e90ac"
+        },
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "[![Unify wordmark logo](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1af/65a7e0cdd5ac0838035bd1e8_Unify%20Wordmark%20SVG.svg)![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1af/65a7e0cdd5ac0838035bd1d1_Unify%20Wordmark%20SVG.svg)](https://www.unifygtm.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/684a06139c08b8d2b2866f4c_Decagon_idx7KR8yDP_1%201.svg)](http://decagon.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/680921fec37fe4d8fc70bacc_Off-White%402x.png)](http://perplexity.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67ec118c12e20d25e6a63eca_Cursor.svg)](http://cursor.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/688d3b904a2888209196696a_Merge_idbxS5PFXk_1%202.svg)](http://merge.dev/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67de0437a659780f71548c8c_Flock%20Safety_idN8K45Jqb_1%201.svg)](https://www.flocksafety.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67b777ff22786d55cbc1a073_together_ai_branding_darkOnLight_Logo%202.avif)](http://together.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67213af41704aa310a526532_Hightouch-logo_black%201.avif)](https://hightouch.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/672015bd4444438ee33f6fc3_0x0%201.avif)](https://www.sofi.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66aaa4f397fc6cd18d453070_Guru%20Wordmark.svg)](https://www.getguru.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66e82d1a70e2ec6c6c076436_65a7e0cdd5ac0838035bd3c0_Justworks.svg)](https://www.justworks.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd367_Abacum.svg)](https://www.abacum.io/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b4167f4422c1aab9492e_65a7e0cdd5ac0838035bd3e3_9Footprint.svg)](https://onefootprint.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3dd_Hypercomply.svg)](https://www.hypercomply.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3db4ba82f11dc194691_65a7e0cdd5ac0838035bd3e0_6Vantage.svg)](https://www.vantage.sh/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3d1e15c247536bbbb59_65a7e0cdd5ac0838035bd3df_5Speechify.svg)](https://speechify.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3c42e4e90ac43ff53c2_65a7e0cdd5ac0838035bd3de_4SpotAI.svg)](https://www.spot.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3c5_Openphone.svg)](https://www.openphone.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/684a06139c08b8d2b2866f4c_Decagon_idx7KR8yDP_1%201.svg)](http://decagon.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/680921fec37fe4d8fc70bacc_Off-White%402x.png)](http://perplexity.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67ec118c12e20d25e6a63eca_Cursor.svg)](http://cursor.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/688d3b904a2888209196696a_Merge_idbxS5PFXk_1%202.svg)](http://merge.dev/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67de0437a659780f71548c8c_Flock%20Safety_idN8K45Jqb_1%201.svg)](https://www.flocksafety.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67b777ff22786d55cbc1a073_together_ai_branding_darkOnLight_Logo%202.avif)](http://together.ai/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/67213af41704aa310a526532_Hightouch-logo_black%201.avif)](https://hightouch.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/672015bd4444438ee33f6fc3_0x0%201.avif)](https://www.sofi.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66aaa4f397fc6cd18d453070_Guru%20Wordmark.svg)](https://www.getguru.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/66e82d1a70e2ec6c6c076436_65a7e0cdd5ac0838035bd3c0_Justworks.svg)](https://www.justworks.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd367_Abacum.svg)](https://www.abacum.io/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b4167f4422c1aab9492e_65a7e0cdd5ac0838035bd3e3_9Footprint.svg)](https://onefootprint.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a7e0cdd5ac0838035bd3dd_Hypercomply.svg)](https://www.hypercomply.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3db4ba82f11dc194691_65a7e0cdd5ac0838035bd3e0_6Vantage.svg)](https://www.vantage.sh/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3d1e15c247536bbbb59_65a7e0cdd5ac0838035bd3df_5Speechify.svg)](https://speechify.com/)\n\n[![](https://cdn.prod.website-files.com/65a7e0cdd5ac0838035bd1d6/65a9b3c42e4e90ac"
+        }
+      ],
+      "content_count": 2,
+      "perplexity_research": {
+        "success": true,
+        "content": "Since the website for Unify was not provided, this report is based on publicly available information and logical inferences about a company named Unify in the Go to Market (GTM) industry.\n\n---\n\n**Company Overview**\n\n- **What they do:** Unify is a company operating in the Go to Market industry, likely providing solutions that help businesses optimize their sales, marketing, and customer engagement processes to accelerate revenue growth.\n- **Headquarters:** Not explicitly available; typically, GTM companies are headquartered in major tech hubs such as the US (Silicon Valley, New York), Europe, or APAC regions.\n- **Size:** Employee count and revenue are not publicly disclosed. Based on industry norms, GTM companies range from startups with under 50 employees to established firms with several hundred employees. Revenue is likely in the range of several million to tens of millions USD, depending on maturity.\n\n---\n\n**Products & Services**\n\n- **Key offerings:** Unify likely offers software or platform solutions that integrate sales prospecting, lead generation, and customer engagement tools. This may include CRM integrations, automated outreach (email, calls, social selling), and analytics to optimize GTM strategies.\n- **Pricing models:** Typically subscription-based SaaS pricing, possibly tiered by number of users, features, or volume of outreach.\n- **Unique features/differentiators:** Potential differentiators could include advanced automation workflows, AI-driven lead qualification, personalized outreach capabilities (e.g., video messaging), and seamless integration with popular sales tools like LinkedIn Sales Navigator or Aircall.\n\n---\n\n**Pain Points**\n\n- **Industry challenges:** \n  - Difficulty in identifying and engaging qualified leads efficiently.\n  - Overcoming buyer information overload and resistance to traditional cold outreach.\n  - Managing multi-channel prospecting efforts (phone, email, social media) cohesively.\n- **Market shifts:** Increasing reliance on social selling and personalized outreach; buyers expect value-driven engagement rather than pushy sales tactics.\n- **Operational inefficiencies:** Manual prospecting processes, low response rates, and lack of actionable insights from outreach campaigns.\n\n---\n\n**Competitive Landscape**\n\n- **Main competitors:** Companies like Outreach, SalesLoft, HubSpot Sales Hub, and Apollo.io dominate the GTM sales engagement and prospecting space.\n- **Positioning:** Unify would need to position itself as a more integrated, user-friendly, or cost-effective alternative, emphasizing automation, personalization, and data-driven insights to stand out.\n\n---\n\n**Recent Developments**\n\n- No specific data on Unify\u2019s recent funding, partnerships, or leadership changes is available.\n- Industry trends suggest companies in this space are focusing on AI enhancements, video prospecting tools, and expanding integrations with social platforms.\n- Major customers are often mid-market to enterprise B2B firms looking to scale sales efficiency.\n\n---\n\n**Relevant Industry Trends**\n\n- **Social selling:** Increasing use of LinkedIn and other social platforms for relationship-building rather than cold calling[4].\n- **Automation:** Adoption of sales prospecting software that automates outreach sequences and follow-ups to improve response rates[1][2].\n- **Personalization:** Use of personalized video messages and tailored content to engage prospects effectively[1][4].\n- **Data-driven prospecting:** Building detailed Ideal Customer Profiles (ICPs) and leveraging analytics to refine targeting and messaging[3].\n\n---\n\n**Sales Opportunities**\n\n- **Strategic angles for outreach:**\n  - Emphasize how Unify\u2019s platform can reduce time spent on manual prospecting by automating multi-channel outreach.\n  - Highlight capabilities for personalized engagement, such as video messaging, to increase response rates.\n  - Position Unify as a solution to overcome common GTM pain points like low lead qualification accuracy and fragmented sales workflows.\n  - Leverage industry trends around social selling and AI-driven prospecting to create urgency.\n  - Offer case studies or proof points demonstrating ROI improvements and sales cycle acceleration.\n  - Monitor for trigger events such as funding rounds or leadership changes at target accounts to time outreach effectively[2].\n\n---\n\nIf you provide Unify\u2019s exact website or more details, I can deliver a more precise and tailored report.",
+        "model": "sonar",
+        "usage": {
+          "prompt_tokens": 224,
+          "completion_tokens": 837,
+          "total_tokens": 1061,
+          "search_context_size": "low",
+          "cost": {
+            "input_tokens_cost": 0.000224,
+            "output_tokens_cost": 0.000837,
+            "request_cost": 0.005,
+            "total_cost": 0.006061
+          }
+        }
+      },
+      "fake_customer_account": {
+        "success": false,
+        "content": "Error: replace() argument 2 must be str, not dict",
+        "model": "unknown",
+        "usage": {}
+      },
+      "status": "completed"
+    },
+    "created_at": "2025-08-12T20:06:50.117736",
+    "updated_at": "2025-08-12T20:06:50.117746",
+    "fake_customer_accounts": [
+      {
+        "id": "8312e32d-bd3c-4065-9761-4f0c4050121b",
+        "type": "ai_generated",
+        "content": "Customer Account: The fake customer account is for a company called \"WindTech Energy Solutions\", a prominent player in the renewable energy sector. WindTech is a mid-sized company with around 500 employees, specializing in wind turbine manufacturing and wind farm operations. They stand out in the market for their commitment to innovative technologies and sustainable practices. \n\nInternal Champion: The internal champion in WindTech is Katherine Collins, the Director of Strategic Partnerships and Innovation. Katherine has a decade of experience in the energy sector, with a strong background in business development and strategic planning. Her main goal is to enhance WindTech's competitive edge through strategic partnerships and innovative solutions. She is currently facing challenges in managing communication and collaboration with multiple partners, which is critical for her role. Katherine sees Unify's Go-to-Market solutions as a potential remedy for these pain points.\n\nWindTech has already purchased Unify\u2019s basic Go-to-Market package, which they are using to streamline their communication with their strategic partners. Katherine has found this to be very effective in improving their collaboration efficiency. \n\nHowever, given the expanding size and complexity of WindTech's operations, they are starting to outgrow the capabilities of the basic package. Katherine has expressed interest in the advanced features of Unify's premium package, such as advanced analytics and forecasting, which could provide crucial insights into their market strategies. This reveals an expansion opportunity for Unify, where they could upsell their premium Go-to-Market package to WindTech, helping Katherine and her team to further optimize their strategic partnerships and innovation efforts.",
+        "company_name": "Unify",
+        "industry": "Go to Market",
+        "created_at": "2025-08-12T20:07:17.091918",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 227,
+          "completion_tokens": 311,
+          "total_tokens": 538,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Spot Ai",
+    "industry": "Camera Security",
+    "scraped_data": {
+      "job_id": "f38fd9e2-ba7a-4fcd-890e-bef1da592d53",
+      "firecrawl_job_id": "immediate-f38fd9e2-ba7a-4fcd-890e-bef1da592d53",
+      "url": "https://www.spot.ai/",
+      "company_name": "Spot AI",
+      "industry": "Camera Security",
+      "scraped_at": "2025-08-12T20:10:54.135344",
+      "processed_content": [
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "[New\\\\\n\\\\\nIntroducing Remote Security Agents, your 24/7 AI\u00a0security guard](https://spot.ai/aiagents/remote-security)\n\n# Video AI for the physical world\n\nTransform your cameras to secure, protect, and optimize your operations\n\n[Request a Demo](https://try.spot.ai/contact)\n\n# Trusted by more than 1,000 organizations\n\n![choice-img](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/670e0d1a250c57ed99fc6922_choice-new.avif)![logo-scheels@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e7c86bbe2591c826a1_logo-scheels%402x%402x.png)![logo-moab-hospital@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e0c3d553165c86a4e6_logo-moab-hospital%402x%402x.png)![logo-cadc@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989ab5c73854b6a7035cf_logo-cadc%402x%402x.avif)\n\n![choice-img](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/670e0d1a250c57ed99fc6922_choice-new.avif)![logo-scheels@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e7c86bbe2591c826a1_logo-scheels%402x%402x.png)![logo-moab-hospital@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e0c3d553165c86a4e6_logo-moab-hospital%402x%402x.png)![logo-cadc@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989ab5c73854b6a7035cf_logo-cadc%402x%402x.avif)\n\n![choice-img](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/670e0d1a250c57ed99fc6922_choice-new.avif)![logo-scheels@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e7c86bbe2591c826a1_logo-scheels%402x%402x.png)![logo-moab-hospital@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989e0c3d553165c86a4e6_logo-moab-hospital%402x%402x.png)![logo-cadc@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635989ab5c73854b6a7035cf_logo-cadc%402x%402x.avif)\n\n![](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/67f61a40654f4792f4e82a5d_Frame%205083.webp)\n\n![](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/67f619a41892abb69e186c7c_website%20ui2%201.avif)\n\n## Introducing Iris\n\nBuild custom Video AI Agents and act on insights \u2013 all through natural conversation.\n\n[Learn more](https://www.spot.ai/iris)\n\n![](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/67f4bc06c82dda32c0d0d435_Frame%205089.avif)\n\n## Why customers choose Spot AI\n\n### 40% reduction in workplace injuries\n\nPinpoint causes, boost training, and stay ahead with predictive alerts.\n\n![homepage-outcomes-missing_ppe@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/671ba1c65b29d27396b536a5_homepage-outcomes-missing_ppe%402x.avif)\n\n![homepage-outcomes-fence_jump@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/671ba170a7861d647dbabda4_homepage-outcomes-fence_jump%402x.avif)\n\n### 80% faster incident resolution\n\nSwiftly resolve and prevent with streamlined AI-powered workflows.\n\n### 15% more throughput\n\nIdentify bottlenecks, accelerate performance, and drive accountability across sites.\n\n![ai_agents-outcomes-unattended_kiosk](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/671e5ee6d32860e4fb9578ae_ai_agents-outcomes-unattended_kiosk%402x.avif)\n\n## Future-proof your organization\n\n### Plug-and-play cameras\n\nPlug in any IP cameras you already have \u2014 or get cameras from us. Most customers are up and running within minutes.\n\n![homepage-features-cameras@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/6712b32814a18906d2440152_homepage-features-cameras%402x.webp)\n\n![homepage-features-open_ecosystem@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/6712b3288ce642eb37a5bdf7_homepage-features-open_ecosystem%402x.webp)\n\n### Open ecosystem\n\nIntegrate any third-party software or sensor technology with Spot AI to connect your existing workflows with video data and insights.\n\n### State-of-the-art Video AI\n\nWe build specialized video foundational models trained with precision and optimized for real-world use cases.\n\n![homepage-features-video_ai@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/67103bbf221276cdb75981fd_homepage-features-video_ai%402x.webp)\n\n![ai-agents-dark](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/67065773de6b80061d0ee1d5_ai-bg-dark.avif)\n\n## Your Video AI\u00a0platform\n\n![Spot AI Camera System](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/66334d8b6b8fd80cf5d65b25_homepage-camera_system%402x-min.avif)![product-mobile](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/670e43edabb4626493f60f64_product-mobile.avif)![ivr-mobile](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635c19a6c36c8d0438731f98_ivr-mobile.svg)![ivr-mobile](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635c19a6c36c8d0438731f98_ivr-mobile.svg)![ivr-mobile](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/635c19a6c36c8d0438731f98_ivr-mobile.svg)\n\nIP Cameras\n\nPremium, high resolution, NDAA compli"
+        },
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "![illustration-spot-overview-features-business-applications@2x 1@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/63493f08da60b32ad8664cec_illustration-spot-overview-features-business-applications%402x%201%402x.avif)\n\n## Create a safer and smarter physical world with the power of sight.\n\nThe physical world of business is complex. Problems surface and things break, often by surprise. And suddenly, a smooth day turns into a frantic fire fight, and your business comes to a halt.\n\nFinding and solving problems requires visual context. Seeing is 90% of sensory perception. Seeing is knowing.\n\nWe help shed light on your physical world, on every floor and every corner. So you can see, understand and manage your business. So you can keep your business moving.\n\nXX\n\nLocations Installed\n\nXX\n\nLocations Installed\n\nXX\n\nLocations Installed\n\n## Deployed at thousands of locations across the U.S. and trusted by leaders across industries \u2014 from local businesses to Fortune 500s.\n\n![spot-ai-about-us-map@2x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/6148003bd12a71003a9a592a_spot-ai-about-us-map%402x%402x.avif)![about-us-map-full@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/614d7a9270b0d3199195f8c5_about-us-map-full%402x.avif)\n\n## Founders\n\nIn 2018, three friends from Stanford \u2014 Tanuj, Rish and Sud \u2014 asked a simple question: Why isn\u2019t video footage more widely used in the enterprise? They started Spot AI with a vision that businesses could leverage their video footage to improve not only security, but also efficiency, safety and customer experiences.\n\n[![](https://cdn.prod.website-files.com/5fe2250e2f83ccd437fefc04/614b5b60ee274e7ac7ecec4a_tanuj-thapliyal-spot-ai-ceo-128px%402x.png)\\\\\n\\\\\n**Tanuj Thapliyal** \\\\\n\\\\\nExecutive Chairman & Co-Founder](https://www.spot.ai/about-us#)\n\n[![](https://cdn.prod.website-files.com/5fe2250e2f83ccd437fefc04/614b5b729e65736df761c041_rish-gupta-spot-ai-vp-product-128px%402x.png)\\\\\n\\\\\n**Rish Gupta** \\\\\n\\\\\nCEO & Co-Founder](https://www.spot.ai/about-us#)\n\n[![](https://cdn.prod.website-files.com/5fe2250e2f83ccd437fefc04/614b5b892334e165e8547261_sud-bhatija-spot-ai-vp-growth-128px%402x.png)\\\\\n\\\\\n**Sud Bhatija** \\\\\n\\\\\nCGO & Co-Founder](https://www.spot.ai/about-us#)\n\n## Investors\n\nWe\u2019re backed by venture capitalists and angel investors who\u2019ve backed IT companies like Snowflake, Looker, Arista and Pure Storage.\n\n![spot-ai-and-redpoint-ventures-2-x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/614719a43e33438e40c1cf8a_spot-ai-and-redpoint-ventures-2-x%402x.avif)![spot-ai-and-bessemer-venture-partners-2-x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/61471983b7f7db1c4901b314_spot-ai-and-bessemer-venture-partners-2-x%402x.avif)![spot-ai-and-village-global-2-x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/614719bf03b6b876ea9eda79_spot-ai-and-village-global-2-x%402x.avif)![spot-ai-and-stanford-startx-fund-2-x@2x](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/614719ce2581ed9a2186f979_spot-ai-and-stanford-startx-fund-2-x%402x.avif)\n\n## Team\n\nOur team at Spot AI comes from all corners of the world and with diverse backgrounds. We\u2019re obsessed with creating great customer experiences. We love what we do and the people we get to spend time with every day.\n\n### HQ - Bay Area\n\nSan Francisco, California\n\n![HQ - Bay Area](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/5fe29886dd790a0c94706f99_bay%20area_spot%20locations.svg)\n\n### Sales\n\nLehi, Utah\n\n![sales](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/5fe2988de219d013afcfb09a_lehi%20utah_spot%20locations.svg)\n\n### All Teams\n\nRemote - work from anywhere!\n\n![all-team](https://cdn.prod.website-files.com/5fe2250e2f83cc02cbfefbcf/5fe298938d8b2bb37dd2282b_remote%20work_spot%20locations.svg)\n\n### Let\u2019s do great things together. Join our team.\n\n[See open positions](https://boards.greenhouse.io/spotai)"
+        }
+      ],
+      "content_count": 2,
+      "perplexity_research": {
+        "success": true,
+        "content": "Here is a structured, actionable sales prospecting report for **Spot AI** in the **Camera Security** industry based on available information and logical inferences:\n\n---\n\n### Company Overview\n- **What they do:** Spot AI develops AI-powered camera security solutions that leverage artificial intelligence to enhance video surveillance, automate monitoring, and provide actionable insights.\n- **Headquarters:** Likely based in the United States (common for AI security startups; exact location not publicly confirmed).\n- **Size:** Estimated small to mid-size company with likely under 200 employees, typical for AI-driven security tech startups. Revenue data is not publicly available but likely in early growth phase given industry and product maturity.\n\n### Products & Services\n- **Key offerings:** AI-enabled security cameras and video analytics platforms designed to improve security monitoring efficiency.\n- **Pricing models:** Likely subscription-based SaaS model combined with hardware sales or leasing, common in camera security industry.\n- **Unique features & differentiators:**\n  - Advanced AI algorithms for real-time threat detection and event recognition.\n  - Cloud-based video storage and analytics.\n  - Integration capabilities with existing security infrastructure.\n  - Focus on reducing false alarms and manual monitoring workload.\n\n### Pain Points\n- **Industry challenges:**\n  - Increasing demand for smarter, automated surveillance due to rising security threats.\n  - High operational costs and inefficiencies in traditional video monitoring.\n  - Need for scalable solutions that integrate with legacy systems.\n- **Market shifts:**\n  - Growing adoption of AI and cloud technologies in security.\n  - Regulatory pressures on data privacy and video surveillance.\n- **Operational inefficiencies:**\n  - Manual video review is time-consuming and error-prone.\n  - Difficulty in extracting actionable insights from large volumes of video data.\n\n### Competitive Landscape\n- **Main competitors:**\n  - Established players like Verkada, Eagle Eye Networks, and Avigilon.\n  - Emerging AI-focused startups in video security.\n- **Positioning:**\n  - Spot AI likely competes by emphasizing superior AI accuracy and ease of integration.\n  - May target mid-market enterprises looking to upgrade legacy systems with AI-driven solutions.\n  - Differentiates through advanced analytics and possibly better pricing flexibility.\n\n### Recent Developments\n- No publicly available data on recent funding rounds or leadership changes.\n- Likely ongoing product enhancements focusing on AI capabilities and cloud scalability.\n- Potential partnerships with security integrators or cloud providers to expand market reach.\n- May have secured pilot projects or early adopters in commercial or industrial sectors.\n\n### Relevant Industry Trends\n- **Macro trends:**\n  - Increasing use of AI and machine learning in physical security.\n  - Shift towards cloud-managed video surveillance systems.\n  - Rising importance of cybersecurity in IoT and connected devices.\n- **Niche trends:**\n  - Demand for video analytics that support operational efficiency beyond security (e.g., retail analytics).\n  - Growing interest in privacy-preserving AI technologies.\n  - Integration of video security with broader smart building and IoT ecosystems.\n\n### Sales Opportunities\n- **Strategic angles for urgency or interest:**\n  - Highlight cost savings and risk reduction from AI-powered automated monitoring.\n  - Emphasize ease of integration with existing camera infrastructure to reduce upgrade friction.\n  - Leverage industry trends around cloud migration and AI adoption to position Spot AI as a future-proof solution.\n  - Target companies facing regulatory compliance pressures needing advanced video analytics.\n  - Use recent market shifts (e.g., increased security budgets post-pandemic) to create urgency.\n  - Offer pilot programs or proof-of-concept trials to demonstrate ROI and build trust.\n  - Personalize outreach by referencing prospect\u2019s current security challenges or recent company news (e.g., expansions, funding).\n\n---\n\nThis report synthesizes typical market intelligence and sales prospecting best practices for AI camera security companies, as direct public data on Spot AI is limited. For prospecting, focus on personalized, multi-channel outreach emphasizing Spot AI\u2019s AI-driven differentiation and alignment with evolving security needs[1][2][3][4][5].",
+        "model": "sonar",
+        "usage": {
+          "prompt_tokens": 223,
+          "completion_tokens": 812,
+          "total_tokens": 1035,
+          "search_context_size": "low",
+          "cost": {
+            "input_tokens_cost": 0.000223,
+            "output_tokens_cost": 0.000812,
+            "request_cost": 0.005,
+            "total_cost": 0.006035
+          }
+        }
+      },
+      "fake_customer_account": {
+        "success": true,
+        "content": "Customer Account: The customer is Quantum Logistics, a large-scale logistics and supply chain company with over 5,000 employees and numerous warehouses and distribution centers across the US. They manage the transportation and storage of a wide variety of goods, making security a paramount concern for them.\n\nInternal Champion: The champion within Quantum Logistics is David Thompson, the Head of Security. He has over 15 years of experience in corporate security and is a strong advocate for leveraging technology to enhance security operations. His main goals are to reduce security breaches, increase efficiency, and maintain compliance with regulatory standards. His current pain points involve high costs and inefficiencies in manually monitoring numerous video surveillance feeds, along with the challenge of quickly extracting actionable insights from large volumes of video data.\n\nQuantum Logistics has already purchased a small number of Spot AI's AI-powered security cameras and is using them in a few of their warehouses. They are impressed with the efficiency and accuracy of the AI threat detection and the reduction in false alarms. \n\nHowever, they have not yet fully integrated the system with their existing security infrastructure. They could benefit from expanding the use of Spot AI's cameras to all their locations and leveraging the cloud-based video storage and analytics to manage and analyze video data more efficiently. \n\nExpansion Opportunity: The opportunity for Spot AI lies in demonstrating the scalability and integration capabilities of their solution to Quantum Logistics. By showing how their product can seamlessly blend with the existing security setup and scale across all locations, Spot AI can position themselves as a comprehensive, technology-driven solution for Quantum Logistics' security challenges. Further, by showcasing their advanced analytics capabilities, they can help Quantum Logistics extract more value from their video data, turning it into actionable insights for improved security operations.",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 1034,
+          "completion_tokens": 342,
+          "total_tokens": 1376,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "confidence_score": 0.9
+      },
+      "status": "completed"
+    },
+    "created_at": "2025-08-12T20:09:48.705442",
+    "updated_at": "2025-08-12T20:10:54.138526",
+    "fake_customer_accounts": [
+      {
+        "id": "e4776a09-1fa0-4e4a-bfb2-5ba51ea615f5",
+        "type": "ai_generated",
+        "content": "Customer Account: Our customer is SecureTech Solutions, a company in the security industry with around 200 employees. They focus on providing comprehensive security systems, including video surveillance, to commercial buildings and complexes. \n\nInternal Champion: The champion from SecureTech Solutions is their Director of Security Operations, John Matthews. John has been with SecureTech for five years and has a background in Information Technology and Security Management. John has the goal of providing the most advanced, secure, and comprehensive security solutions to his clients. His main pain point is ensuring the accuracy and efficiency of their video surveillance systems, and he's motivated to bring in innovative technology like AI to stay ahead of the competition.\n\nSecureTech Solutions has already purchased Spot Ai's camera security system and it has been implemented across several of their client sites. They are using the system to monitor secure areas and detect any unusual activity.\n\nHowever, SecureTech Solutions is not utilizing the full potential of Spot Ai's system. They are not yet using the AI capabilities to analyze video footage and detect anomalies. This is a significant opportunity for expansion as adoption of these features could drastically improve the effectiveness of SecureTech's security solutions. Additionally, Spot Ai could offer training services to SecureTech to help them understand and better utilize the AI capabilities of their system.",
+        "company_name": "Spot Ai",
+        "industry": "Camera Security",
+        "created_at": "2025-08-12T20:12:13.803604",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 226,
+          "completion_tokens": 255,
+          "total_tokens": 481,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    ],
+    "personas": [
+      {
+        "id": "3d47aa16-4693-4864-bddc-a1e80f15eedf",
+        "type": "ai_generated",
+        "content": "Spot Ai is a company in the camera security industry that leverages artificial intelligence to provide advanced surveillance solutions. Their products are designed to enhance security measures, reduce false alarms, and provide real-time threat detection, thereby solving the business problems of inadequate security, high maintenance costs, and delayed response times.\n\nThe first role a salesperson should contact is the Security Manager. They work in the security department of any organization that requires surveillance, such as retail stores, corporate offices, or warehouses. Their main pain points include managing a large number of cameras, dealing with false alarms, and ensuring timely response to security threats. They are a high-value target because they directly oversee the security operations and have the authority to make purchasing decisions. The sales pitch for them would be: \"Spot Ai's advanced surveillance system uses AI to manage multiple cameras efficiently, significantly reduce false alarms, and provide real-time threat detection, enabling you to streamline your security operations and respond to threats promptly.\"\n\nThe second role to target is the IT Manager. They work in the IT department of any organization that uses surveillance systems. Their main goals are to ensure the smooth operation of all IT systems, including security cameras, and to minimize maintenance costs. They are a high-value target because they influence purchasing decisions related to IT equipment. The pitch for them would be: \"Spot Ai's AI-powered surveillance system is easy to integrate with your existing IT infrastructure, reduces maintenance costs by minimizing false alarms, and provides real-time alerts, making your job easier and more cost-effective.\"\n\nThe third role to target is the Procurement Manager. They work in the procurement department of large organizations and are responsible for purchasing equipment, including security systems. Their main goals are to procure high-quality equipment at the best price and to ensure the equipment meets the organization's needs. They are a high-value target because they make the final purchasing decisions. The pitch for them would be: \"Spot Ai's advanced surveillance system offers superior security features at a competitive price, ensuring you get the best value for your money. Plus, our system's AI capabilities mean it can adapt to your organization's changing needs, providing long-term value.\"\n\nLastly, the CFO or Financial Director of a company could be a potential contact. They are concerned with the financial health of the company and any investments that could impact it. Their main goal is to ensure cost-effectiveness and return on investment. The pitch for them would be: \"Investing in Spot Ai's AI-powered surveillance system can significantly reduce your security-related costs by minimizing false alarms and maintenance needs, while enhancing your security measures. This makes it a cost-effective solution with a high return on investment.\"",
+        "company_name": "Spot Ai",
+        "industry": "Camera Security",
+        "created_at": "2025-08-12T20:14:01.512013",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 327,
+          "completion_tokens": 529,
+          "total_tokens": 856,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    ],
+    "prospect_expansions": [
+      {
+        "id": "43fa8bd6-c1cf-4fc5-9a7e-107f62eac67f",
+        "type": "ai_generated",
+        "content": "Systems\nSize: Medium (300 employees)\nLocation: San Francisco, California\nBusiness Model: Provides security solutions for commercial complexes\nInternal Champion: John Doe, Director of Security \n\n1. Prospect: Clearview Security Solutions\n   - Industry: Security Solutions, similar to our existing customer. They specialize in providing security solutions for residential complexes.\n   - Size & Location: Medium-sized company located in Los Angeles, California\n   - Key Decision Maker: Jane Smith, Director of Security\n   - Interest: They could be interested in our other products for expanding their services to commercial complexes.\n   - Product Offerings: Our advanced access control systems and perimeter monitoring solutions could be of interest to them.\n   - Pain Points: Expanding their offerings to commercial complexes, improving the overall security of their clients, and staying competitive in the market.\n   - Expansion Opportunity: New product line\n\n2. Prospect: Elite Protection Agency\n   - Industry: Private Security, operates in the same industry as our existing customer, but with a different focus on private security.\n   - Size & Location: Medium-sized company based in Sacramento, California\n   - Key Decision Maker: Robert Johnson, Head of Security Operations\n   - Interest: They could be interested in enhancing their security systems to provide better protection to their clients.\n   - Product Offerings: Our AI-powered surveillance cameras and intrusion detection systems could benefit them.\n   - Pain Points: Ensuring the safety of their clients, improving their security systems, and increasing the efficiency of their operations.\n   - Expansion Opportunity: Additional services\n\n3. Prospect: SecureOne Technologies\n   - Industry: Home Security Systems, operates in a similar industry but focuses on home security.\n   - Size & Location: Medium-sized company located in San Diego, California\n   - Key Decision Maker: Lisa Davis, Chief Technology Officer\n   - Interest: They could be interested in enhancing their product offerings with advanced security solutions.\n   - Product Offerings: Our smart doorbell cameras and home automation systems could be a great addition to their product line.\n   - Pain Points: Offering advanced security solutions, staying competitive in the market, and ensuring customer satisfaction.\n   - Expansion Opportunity: New product line\n\nThese prospects represent realistic expansion opportunities within similar industries as our existing customer. Each of them could benefit from our other product offerings, not the ones currently being used by [COMPANY_NAME]. They likely have similar pain points and decision-making processes, making them ideal targets for our sales efforts.",
+        "company_name": "Spot Ai",
+        "industry": "Camera Security",
+        "existing_customer_account": {
+          "confidence_score": 0.9,
+          "content": "Customer Account: The customer is Quantum Logistics, a large-scale logistics and supply chain company with over 5,000 employees and numerous warehouses and distribution centers across the US. They manage the transportation and storage of a wide variety of goods, making security a paramount concern for them.\n\nInternal Champion: The champion within Quantum Logistics is David Thompson, the Head of Security. He has over 15 years of experience in corporate security and is a strong advocate for leveraging technology to enhance security operations. His main goals are to reduce security breaches, increase efficiency, and maintain compliance with regulatory standards. His current pain points involve high costs and inefficiencies in manually monitoring numerous video surveillance feeds, along with the challenge of quickly extracting actionable insights from large volumes of video data.\n\nQuantum Logistics has already purchased a small number of Spot AI's AI-powered security cameras and is using them in a few of their warehouses. They are impressed with the efficiency and accuracy of the AI threat detection and the reduction in false alarms. \n\nHowever, they have not yet fully integrated the system with their existing security infrastructure. They could benefit from expanding the use of Spot AI's cameras to all their locations and leveraging the cloud-based video storage and analytics to manage and analyze video data more efficiently. \n\nExpansion Opportunity: The opportunity for Spot AI lies in demonstrating the scalability and integration capabilities of their solution to Quantum Logistics. By showing how their product can seamlessly blend with the existing security setup and scale across all locations, Spot AI can position themselves as a comprehensive, technology-driven solution for Quantum Logistics' security challenges. Further, by showcasing their advanced analytics capabilities, they can help Quantum Logistics extract more value from their video data, turning it into actionable insights for improved security operations.",
+          "model": "gpt-4-0613",
+          "success": true,
+          "usage": {
+            "completion_tokens": 342,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1034,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1376
+          }
+        },
+        "created_at": "2025-08-12T20:17:33.623314",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 302,
+          "completion_tokens": 499,
+          "total_tokens": 801,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      {
+        "id": "12d1cbb6-a965-442b-993c-7bc9fe179dab",
+        "type": "ai_generated",
+        "content": "Services\nSize: Mid-sized (250 employees)\nLocation: Boston, MA\nInternal Champion: John Smith, Director of Security Operations\nCurrent Product Usage: Video surveillance software\n\nProspect 1:\n- Company Name: SecureView Inc.\n- Industry and Business Description: A mid-sized company in the security services industry that specializes in providing advanced security solutions for corporate buildings and residential properties.\n- Size and Location: 300 employees, based in Philadelphia, PA\n- Key Decision Maker: Jane Miller, Head of Security Solutions\n- Why They Would Be Interested: They are always looking to enhance their security protocols and are currently using outdated software.\n- Specific Product Offering: Our cutting-edge access control system which complements their current offerings and keeps them ahead of the competition.\n- Pain Points: Difficulty in managing multiple security systems and lack of advanced security features.\n- Expansion Opportunity Type: New product line addition.\n\nProspect 2:\n- Company Name: SafetyNet Corp.\n- Industry and Business Description: A mid-sized firm offering a range of security services focused on commercial and industrial applications.\n- Size and Location: 275 employees, located in New York City, NY\n- Key Decision Maker: Robert Johnson, Director of Security Operations\n- Why They Would Be Interested: They are expanding their outreach and are looking for sophisticated security solutions to meet their clients' demands.\n- Specific Product Offering: Our comprehensive security management software that integrates all security aspects into one easy-to-use platform.\n- Pain Points: Difficulty in managing complex security needs and the inability to provide a comprehensive solution to their clients.\n- Expansion Opportunity Type: Additional services.\n\nProspect 3:\n- Company Name: WatchGuard Solutions\n- Industry and Business Description: A mid-sized security services company that serves a wide variety of industries, including healthcare, logistics, and manufacturing.\n- Size and Location: 230 employees, based in Chicago, IL\n- Key Decision Maker: Lisa Thompson, Chief Security Officer\n- Why They Would Be Interested: They are seeking advanced technology to improve their service offerings and stay competitive in the market.\n- Specific Product Offering: Our latest AI-enabled video analytics software that would enable them to offer superior surveillance capabilities to their clients.\n- Pain Points: The challenge of staying updated with the latest technology and meeting the diverse security needs of their clients.\n- Expansion Opportunity Type: New product line addition.",
+        "company_name": "Spot Ai",
+        "industry": "Camera Security",
+        "existing_customer_account": {
+          "confidence_score": 0.9,
+          "content": "Customer Account: The customer is Quantum Logistics, a large-scale logistics and supply chain company with over 5,000 employees and numerous warehouses and distribution centers across the US. They manage the transportation and storage of a wide variety of goods, making security a paramount concern for them.\n\nInternal Champion: The champion within Quantum Logistics is David Thompson, the Head of Security. He has over 15 years of experience in corporate security and is a strong advocate for leveraging technology to enhance security operations. His main goals are to reduce security breaches, increase efficiency, and maintain compliance with regulatory standards. His current pain points involve high costs and inefficiencies in manually monitoring numerous video surveillance feeds, along with the challenge of quickly extracting actionable insights from large volumes of video data.\n\nQuantum Logistics has already purchased a small number of Spot AI's AI-powered security cameras and is using them in a few of their warehouses. They are impressed with the efficiency and accuracy of the AI threat detection and the reduction in false alarms. \n\nHowever, they have not yet fully integrated the system with their existing security infrastructure. They could benefit from expanding the use of Spot AI's cameras to all their locations and leveraging the cloud-based video storage and analytics to manage and analyze video data more efficiently. \n\nExpansion Opportunity: The opportunity for Spot AI lies in demonstrating the scalability and integration capabilities of their solution to Quantum Logistics. By showing how their product can seamlessly blend with the existing security setup and scale across all locations, Spot AI can position themselves as a comprehensive, technology-driven solution for Quantum Logistics' security challenges. Further, by showcasing their advanced analytics capabilities, they can help Quantum Logistics extract more value from their video data, turning it into actionable insights for improved security operations.",
+          "model": "gpt-4-0613",
+          "success": true,
+          "usage": {
+            "completion_tokens": 342,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1034,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1376
+          }
+        },
+        "created_at": "2025-08-12T20:17:54.671660",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 302,
+          "completion_tokens": 474,
+          "total_tokens": 776,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      {
+        "id": "1dfa1714-b2a7-4421-adf4-9c580d5fcf5c",
+        "type": "ai_generated",
+        "content": "System Manufacturing\nSize: 500-1000 employees\nLocation: New York, NY\nInternal Champion: John Smith, Chief Security Officer\nCurrent Product: Video Surveillance Systems\n\nProspect 1:\n- Company Name: SecureTech Innovations\n- Industry and Business Description: SecureTech Innovations is a leading company in the field of digital security solutions, specializing in biometric access control systems.\n- Size and Location: 800 employees, based in Chicago, IL.\n- Key Decision Maker: Laura Davis, Chief Technology Officer.\n- Interest in Other Products: As a company that prides itself on utilizing the latest technology, SecureTech would likely be interested in expanding their product range to include advanced camera security systems.\n- Specific Product Offerings: Our advanced facial recognition cameras and AI-driven surveillance systems.\n- Pain Points: The need to constantly update and upgrade security measures to stay at the forefront of the industry.\n- Expansion Opportunity Type: New product line\n\nProspect 2:\n- Company Name: Guarded Enterprises\n- Industry and Business Description: Guarded Enterprises is a large-scale property management company specializing in commercial properties.\n- Size and Location: 600 employees, based in Boston, MA.\n- Key Decision Maker: Robert Martinez, Director of Operations.\n- Interest in Other Products: Given their extensive portfolio of properties, Guarded Enterprises would benefit from our smart surveillance solutions to ensure the security of their assets.\n- Specific Product Offerings: Our remote monitoring systems and AI-driven alert systems.\n- Pain Points: The need for efficient, scalable, and high-quality security systems for a large number of properties.\n- Expansion Opportunity Type: Additional services\n\nProspect 3:\n- Company Name: Visionary Logistics\n- Industry and Business Description: Visionary Logistics is a premier logistics and supply chain management company.\n- Size and Location: 700 employees, based in San Francisco, CA.\n- Key Decision Maker: Benjamin Lee, Head of Security.\n- Interest in Other Products: As a logistics company, Visionary would benefit from our products to ensure their warehouses and transportation hubs are secure.\n- Specific Product Offerings: Our comprehensive surveillance systems and intelligent video analytics.\n- Pain Points: The need for robust security measures in multiple locations and the ability to monitor these locations remotely.\n- Expansion Opportunity Type: New product line",
+        "company_name": "Spot Ai",
+        "industry": "Camera Security",
+        "existing_customer_account": {
+          "confidence_score": 0.9,
+          "content": "Customer Account: The customer is Quantum Logistics, a large-scale logistics and supply chain company with over 5,000 employees and numerous warehouses and distribution centers across the US. They manage the transportation and storage of a wide variety of goods, making security a paramount concern for them.\n\nInternal Champion: The champion within Quantum Logistics is David Thompson, the Head of Security. He has over 15 years of experience in corporate security and is a strong advocate for leveraging technology to enhance security operations. His main goals are to reduce security breaches, increase efficiency, and maintain compliance with regulatory standards. His current pain points involve high costs and inefficiencies in manually monitoring numerous video surveillance feeds, along with the challenge of quickly extracting actionable insights from large volumes of video data.\n\nQuantum Logistics has already purchased a small number of Spot AI's AI-powered security cameras and is using them in a few of their warehouses. They are impressed with the efficiency and accuracy of the AI threat detection and the reduction in false alarms. \n\nHowever, they have not yet fully integrated the system with their existing security infrastructure. They could benefit from expanding the use of Spot AI's cameras to all their locations and leveraging the cloud-based video storage and analytics to manage and analyze video data more efficiently. \n\nExpansion Opportunity: The opportunity for Spot AI lies in demonstrating the scalability and integration capabilities of their solution to Quantum Logistics. By showing how their product can seamlessly blend with the existing security setup and scale across all locations, Spot AI can position themselves as a comprehensive, technology-driven solution for Quantum Logistics' security challenges. Further, by showcasing their advanced analytics capabilities, they can help Quantum Logistics extract more value from their video data, turning it into actionable insights for improved security operations.",
+          "model": "gpt-4-0613",
+          "success": true,
+          "usage": {
+            "completion_tokens": 342,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1034,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1376
+          }
+        },
+        "created_at": "2025-08-12T20:19:27.467554",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 302,
+          "completion_tokens": 464,
+          "total_tokens": 766,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
       }
     ]
   },
   {
     "name": "Fable",
+    "industry": "Training Software",
     "scraped_data": {
-      "job_id": "525694ad-dce9-4950-99e9-97e167d79802",
-      "firecrawl_job_id": "immediate-525694ad-dce9-4950-99e9-97e167d79802",
+      "job_id": "b635fee3-ed6f-4698-b20b-45886c8f4123",
+      "firecrawl_job_id": "immediate-b635fee3-ed6f-4698-b20b-45886c8f4123",
       "url": "https://fablesecurity.com/",
       "company_name": "Fable",
-      "scraped_at": "2025-08-12T17:58:19.367928",
+      "industry": "Training Software",
+      "scraped_at": "2025-08-12T20:25:12.497940",
       "processed_content": [
         {
           "type": "markdown",
@@ -591,117 +580,169 @@
           "type": "markdown",
           "url": null,
           "content": "Are you going to Black Hat?\n\n[Let's connect](https://fablesecurity.com/black-hat-usa-2025/)\n\n[\u2190 resources](https://fablesecurity.com/resources)\n\n# Starter RFP for modern human risk management\n\n07/21/2025\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/Icon-1.svg)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/starter-rpf-blog-1350-x-715v5-1024x529.png)\n\nThe modern threat landscape is defined by human behavior. Whether it\u2019s a weak password, a click on a phishing link, or a publicly-shared document, human errors are the biggest contributors to today\u2019s most devastating breaches. That\u2019s why traditional awareness training\u2014generic, episodic, and disconnected from actual risk\u2014has failed to reduce human-driven threats.\n\nWe created Fable Security to change that. This **Starter Human Risk RFP** is designed to help you evaluate human risk management platforms with an eye toward actually shaping behavior rather than checking boxes. These requirements are organized around five essential capabilities for any enterprise looking to reduce human risk. These are the **uber-requirements**\u2014foundational pillars that differentiate legacy programs from modern, outcomes-driven solutions.\n\n[Download RFP](https://fablesecurity.com/wp-content/uploads/2025/07/Starter-RFP-for-modern-human-risk-management.zip)\n\nBlog\n\n##### Get fresh insights every week.\n\nEmail\n\nSubscribe\n\nRESOURCES\n\n## Related resources\n\nExplore guides, insights, and tools to strengthen your human defenses.\n\n[See more](https://fablesecurity.com/resources/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/strongest-link-blog-1350-x-699v14-1024x529.png)\n\nBlog\n\n##### Transform employees from targets to your first line of defense\n\nCheck out our launch from stealth with $31 million in funding and how we\u2019re building the modern human risk platform\u2014that shapes behavior directly.\n\n[Read more](https://fablesecurity.com/transform-employees-to-first-line-of-defense/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/hr-meet-match-blog-1350-x-707-1024x529.png)\n\nSolution brief\n\n##### Human risk,   meet your match\n\nWe reimagined human risk management with the best of Al, and it's simply delightful. Fable is the platform that directly shapes employee behavior.\n\n[Read more](https://fablesecurity.com/human-risk-meet-your-match/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/5-must-haves-blog-1350-x-706-1024x529.png)\n\nebook\n\n##### The five must-haves of modern human risk management\n\nThe strategic playbook for data-driven, AI-powered human risk management at enterprise scale. Learn everything you need from a modern platform.\n\n[Read more](https://fablesecurity.com/ebook-five-must-haves/)"
+        },
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "Are you going to Black Hat?\n\n[Let's connect](https://fablesecurity.com/black-hat-usa-2025/)\n\n[\u2190 resources](https://fablesecurity.com/resources)\n\n# Black Hat USA: Amid the noise, find the signal\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/cropped-profile-image-96x96.jpeg)\n\nCurtis Casella\n\nDirector of Growth Marketing\n\n07/24/2025\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/Icon-1.svg)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/redhat-blog-1350-x-714v5-1024x529.png)\n\n**The TL;DR:**\n\n- Black Hat is noisy, intense, and chock full of technical jargon.\n- Fable will be your refreshing oasis amid the chaos.\n- We\u2019re a radically simple enterprise platform to shape behavior and reduce human risk.\n- Fable just may be the highest-ROI, lowest-drama product you see all week.\n- Book time with us at Black Hat.\n\nBlack Hat is many things. A firehose of threat research. A proving ground for technical prowess. A dazzling buffet of lateral malware movement, threat modeling, incident response, cloud architecture, and enough jargon to short-circuit a SIEM. It\u2019s brilliant, intense, and unapologetically deep-in-the-weeds. But also: it\u2019s a lot. Especially in the fluorescent hum of Vegas.\n\nThat\u2019s why we\u2019re bringing something different: Fable is the modern human risk platform that shapes human behavior. It\u2019s simple and scalable and does three critically important things: synthesizes complex employee data to help you understand risk; pinpoints the most problematic behaviors; and deploys highly-relevant interventions to people automatically, in real time, right where they work. But our big promise? It\u2019s likely to be the thing you\u2019ll see at Black Hat that gives you the biggest bang for your buck, delivering real ROI, quickly, and in a way that\u2019ll delight your people.\n\nSo if you need a breather between packet captures and purple teaming, come find us. We\u2019ll show you how to reduce human risk at scale\u2014without the complexity tax. Book time with us at Black Hat and see how the simplest idea on the floor might just be the most effective.\n\nBlog\n\n##### Get fresh insights every week.\n\nEmail\n\nSubscribe\n\nRESOURCES\n\n## Related resources\n\nExplore guides, insights, and tools to strengthen your human defenses.\n\n[See more](https://fablesecurity.com/resources/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/strongest-link-blog-1350-x-699v14-1024x529.png)\n\nBlog\n\n##### Transform employees from targets to your first line of defense\n\nCheck out our launch from stealth with $31 million in funding and how we\u2019re building the modern human risk platform\u2014that shapes behavior directly.\n\n[Read more](https://fablesecurity.com/transform-employees-to-first-line-of-defense/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/hr-meet-match-blog-1350-x-707-1024x529.png)\n\nSolution brief\n\n##### Human risk,   meet your match\n\nWe reimagined human risk management with the best of Al, and it's simply delightful. Fable is the platform that directly shapes employee behavior.\n\n[Read more](https://fablesecurity.com/human-risk-meet-your-match/)\n\n![](https://fablesecurity.com/wp-content/uploads/2025/07/5-must-haves-blog-1350-x-706-1024x529.png)\n\nebook\n\n##### The five must-haves of modern human risk management\n\nThe strategic playbook for data-driven, AI-powered human risk management at enterprise scale. Learn everything you need from a modern platform.\n\n[Read more](https://fablesecurity.com/ebook-five-must-haves/)"
         }
       ],
-      "content_count": 2,
+      "content_count": 3,
       "perplexity_research": {
         "success": true,
-        "content": "Here is a structured, actionable sales prospecting report for the company **Fable** based on available data and reasoned inferences:\n\n---\n\n### Company Overview\n- **What they do:** Fable is a company specializing in digital storytelling and content creation platforms, often focusing on interactive narratives, user engagement, or immersive experiences. (Note: This is an inferred profile based on the common use of the name \"Fable\" in tech and media sectors, as no direct search results specify the exact company details.)\n- **Location:** Likely based in a major tech hub such as the US or UK, given typical industry patterns for digital content startups.\n- **Size:** Estimated to be a small to mid-sized company with 50-200 employees, typical for a specialized digital content platform startup or scale-up. Revenue data is not publicly available.\n\n---\n\n### Products & Services\n- **Key offerings:** Interactive storytelling platforms, digital content creation tools, or immersive media solutions that enable brands or creators to engage audiences through narrative-driven experiences.\n- **Pricing models:** Likely subscription-based SaaS (Software as a Service) or tiered licensing models for enterprise clients, with possible freemium or trial options for individual users.\n- **Unique features & differentiators:** \n  - Emphasis on user engagement through interactive or branching storylines.\n  - Integration with multimedia elements (video, audio, text).\n  - Tools for easy content creation without deep technical skills.\n  - Analytics to track audience interaction and optimize content.\n  \n(Note: These product details are inferred from typical offerings in the digital storytelling and content engagement space, as no direct product info was found.)\n\n---\n\n### Target Customers & Buying Personas\n- **Industries:** Media and entertainment, education and e-learning, marketing and advertising agencies, corporate training, and possibly gaming.\n- **Geographies:** Primarily North America and Europe, with potential expansion in APAC markets.\n- **Company sizes:** Mid-market to large enterprises that require scalable content engagement solutions; also individual creators or small teams for entry-level products.\n- **Job titles:** Chief Marketing Officers (CMOs), Content Directors, Learning & Development Managers, Digital Product Managers, Creative Directors, and Innovation Leads.\n\n---\n\n### Pain Points They Likely Face\n- Difficulty in creating engaging, scalable digital content that captures and retains audience attention.\n- Need for measurable ROI on content marketing and training investments.\n- Challenges in integrating storytelling tools with existing digital ecosystems.\n- Pressure to innovate rapidly in a competitive digital media landscape.\n- Operational inefficiencies in content production workflows.\n\n---\n\n### Competitive Landscape\n- **Main competitors:** Companies like Articulate, Adobe Captivate, Twine (for interactive storytelling), and emerging SaaS platforms focused on digital engagement and content creation.\n- **Positioning:** Fable likely positions itself as a user-friendly, innovative platform with strong storytelling capabilities and analytics, differentiating from more generic or technical content tools.\n\n---\n\n### Recent Developments\n- No specific recent funding rounds, partnerships, or leadership changes were found in the search results.\n- Likely ongoing product enhancements focusing on AI-driven content personalization or expanded multimedia integration, based on industry trends.\n\n---\n\n### Relevant Industry Trends\n- Growing demand for interactive and immersive digital content in marketing and education.\n- Increasing adoption of AI and machine learning to personalize user experiences.\n- Shift towards remote and hybrid work driving need for engaging virtual training tools.\n- Rising importance of data analytics to measure content effectiveness.\n\n---\n\n### Sales Opportunities\n- Position Fable as a solution to increase audience engagement and measurable impact in digital campaigns or training programs.\n- Highlight ease of use and rapid deployment compared to traditional content creation methods.\n- Emphasize integration capabilities with existing marketing or LMS platforms.\n- Leverage industry trends around AI personalization and immersive content to create urgency.\n\n---\n\n### 3\u20135 Conversation Starters\n1. \"How is your team currently measuring the impact of your digital storytelling efforts, and what challenges are you facing in engaging your audience?\"\n2. \"With the rise of immersive content, how are you adapting your marketing or training strategies to keep pace with evolving user expectations?\"\n3. \"Are you exploring AI-driven personalization to enhance your content\u2019s relevance and effectiveness?\"\n4. \"What tools are you using today for interactive content creation, and how well do they integrate with your existing platforms?\"\n5. \"How important is scalability and ease of use when selecting a digital storytelling platform for your team?\"\n\n---\n\n**Note:** This report is based on inferred and typical industry data due to limited direct public information on the company named \"Fable.\" For precise targeting, further direct company research or engagement is recommended.",
+        "content": "Since the website for Fable was not provided, I will base the report on publicly available information about Fable in the training software industry as of 2025, supplemented by logical inferences where data is limited.\n\n---\n\n**Company Overview**  \n- **What they do:** Fable is a company specializing in training software, focusing on creating tools that enable organizations to design, deliver, and manage immersive learning experiences, often leveraging storytelling and scenario-based training techniques.  \n- **Headquarters:** Estimated to be in North America, likely Canada or the US, based on industry presence and company origins.  \n- **Size:** Estimated employee count ranges from 50 to 200, typical for a specialized training software provider. Revenue is not publicly disclosed but likely in the low to mid tens of millions USD annually, based on market positioning and client base.\n\n**Products & Services**  \n- **Key offerings:**  \n  - Interactive training platforms that support scenario-based learning and role-playing simulations.  \n  - Tools for creating custom training content with a focus on engagement and retention.  \n  - Analytics dashboards to track learner progress and training effectiveness.  \n- **Pricing models:** Likely subscription-based SaaS pricing, tiered by number of users or features, common in training software. May include enterprise licensing for large organizations.  \n- **Unique features/differentiators:**  \n  - Emphasis on storytelling and immersive learning to increase engagement.  \n  - User-friendly content creation tools that do not require extensive technical skills.  \n  - Integration capabilities with existing Learning Management Systems (LMS) and HR platforms.\n\n**Pain Points**  \n- **Industry challenges:**  \n  - Increasing demand for remote and hybrid training solutions post-pandemic.  \n  - Need for measurable ROI on training investments.  \n  - Difficulty in maintaining learner engagement and knowledge retention.  \n- **Market shifts:**  \n  - Growing adoption of AI and adaptive learning technologies.  \n  - Shift towards personalized and microlearning formats.  \n- **Operational inefficiencies:**  \n  - Complex content creation processes in traditional training platforms.  \n  - Lack of real-time feedback and analytics in many existing solutions.\n\n**Competitive Landscape**  \n- **Main competitors:**  \n  - Articulate, Adobe Captivate, Docebo, and Lessonly in the training software space.  \n  - Emerging AI-driven platforms offering adaptive learning experiences.  \n- **Positioning:**  \n  - Fable differentiates itself by focusing on immersive storytelling and ease of content creation, targeting organizations seeking engaging, scalable training solutions beyond standard e-learning modules.\n\n**Recent Developments**  \n- **Funding rounds:** No recent public funding announcements; possibly self-funded or backed by early-stage investors.  \n- **Partnerships:** Likely partnerships with LMS providers and corporate clients in sectors like healthcare, finance, and retail.  \n- **Leadership changes:** No publicly noted recent changes; stable leadership inferred.  \n- **Product launches:** Recent updates probably include enhanced analytics features and integrations with popular HR and LMS platforms.  \n- **Major customers:** Likely mid-to-large enterprises focused on compliance, customer service, and employee development.\n\n**Relevant Industry Trends**  \n- **Macro trends:**  \n  - Increased investment in digital transformation and employee upskilling.  \n  - Rising importance of soft skills training delivered through experiential learning.  \n- **Niche trends:**  \n  - Use of virtual reality (VR) and augmented reality (AR) in training.  \n  - Data-driven personalization of learning paths.  \n  - Integration of social learning and peer collaboration features.\n\n**Sales Opportunities**  \n- **Strategic angles:**  \n  - Emphasize Fable\u2019s ability to increase learner engagement and retention through immersive storytelling, addressing a key pain point for training managers.  \n  - Highlight ease of content creation to reduce time and cost compared to traditional training development.  \n  - Leverage industry trends around remote/hybrid work and digital upskilling to create urgency.  \n  - Position Fable as a partner for measurable training ROI with its analytics capabilities.  \n  - Target industries with high compliance or customer service training needs, such as healthcare, finance, and retail.  \n  - Use recent product enhancements or integrations as hooks for outreach.  \n  - Reference competitor limitations in engagement or complexity to differentiate Fable\u2019s offering.\n\n---\n\nThis report synthesizes typical market intelligence for a training software company like Fable, applying best practices in sales prospecting and market research. For precise data, direct company disclosures or website details would be required.  \n\nIf you provide Fable\u2019s website or more specific details, I can refine this report further.",
         "model": "sonar",
         "usage": {
-          "prompt_tokens": 266,
-          "completion_tokens": 934,
-          "total_tokens": 1200,
+          "prompt_tokens": 223,
+          "completion_tokens": 943,
+          "total_tokens": 1166,
           "search_context_size": "low",
           "cost": {
-            "input_tokens_cost": 0.000266,
-            "output_tokens_cost": 0.000934,
+            "input_tokens_cost": 0.000223,
+            "output_tokens_cost": 0.000943,
             "request_cost": 0.005,
-            "total_cost": 0.0062
+            "total_cost": 0.006166
           }
         }
       },
+      "fake_customer_account": {
+        "success": true,
+        "content": "**Fake Customer Account:**\n\nCompany Name: Solarity Industries\nIndustry: Renewable Energy\nSize: Approximately 2,000 employees\nWhat They Do: Solarity Industries is a global leader in the renewable energy sector, specifically focusing on solar power solutions. They design, manufacture, and install solar panels for both residential and commercial use. \n\n**Internal Champion:**\n\nName: Emily Watson\nJob Title: Head of Training and Development\nDepartment: Human Resources\nProfessional Background: Emily has over 15 years of experience in HR, with a focus on training and development. She started her career as a Training Coordinator at a tech company, where she quickly climbed the ranks due to her innovative approach to learning and development. Emily joined Solarity Industries 5 years ago. \n\nEmily's goal is to ensure that Solarity's employees are equipped with the necessary skills and knowledge to excel in their roles. Her main pain points include the inability to track training progress in real time and the lack of engagement in current training modules. She is motivated to adopt and expand the use of Fable's software across the organization to improve knowledge retention, increase learner engagement, and allow for real-time progress tracking.\n\nSolarity Industries has already purchased Fable's interactive training platform for their HR department. They use the platform to train new hires on company policies and procedures. However, they are not utilizing the software's full potential, especially the custom training content creation tools and the analytics dashboard.\n\nThe next step for Solarity Industries would be to implement Fable's software across all departments, not just HR. They could also benefit from Fable's content creation tools to create engaging and immersive training modules tailored to each department's needs. Additionally, they should start using the analytics dashboard to track learner progress and training effectiveness in real time. This would address Emily's pain points and help her achieve her goal of improving training outcomes at Solarity Industries.",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 1165,
+          "completion_tokens": 382,
+          "total_tokens": 1547,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "confidence_score": 0.9
+      },
       "status": "completed"
     },
-    "created_at": "2025-08-12T17:58:19.369484",
-    "updated_at": "2025-08-12T17:58:19.369489",
-    "personas": [
+    "created_at": "2025-08-12T20:25:12.500232",
+    "updated_at": "2025-08-12T20:25:12.500245",
+    "prospect_expansions": [
       {
-        "id": "f7301899-a074-46f5-926e-71755d0f95c5",
-        "title": "Chief Information Officer (CIO)",
-        "role": "Technology Leadership",
-        "department": "IT",
-        "priorities": [
-          "Digital transformation",
-          "Cost optimization",
-          "Security compliance"
-        ],
-        "pain_points": [
-          "Legacy system maintenance",
-          "Integration challenges",
-          "Budget constraints"
-        ],
-        "decision_criteria": [
-          "ROI",
-          "Scalability",
-          "Vendor reputation"
-        ],
-        "influence_level": "high",
-        "budget_authority": "high",
-        "technical_expertise": "high",
+        "id": "2bb3c12b-3058-48d4-a056-5fb0027e18c9",
+        "type": "ai_generated",
+        "content": "Company Size: 700 employees\nLocation: San Francisco, CA\nWhat they do: They develop and sell e-learning solutions to educational institutions and businesses.\nInternal Champion: Mark Johnson, VP of Product Development\nCurrent Product: Our Cloud-based Learning Management System (LMS)\n\nProspect #1:\nDepartment: Marketing\nKey Decision Maker: Sarah Thompson, Director of Marketing\nWhy they would be interested: Sarah's team is responsible for creating and promoting content that positions the company as a thought leader in the e-learning space. Our content management system (CMS) could streamline this process for them.\nSpecific Product: Our Content Management System\nLikely Pain Points: Difficulty organizing, tracking, and updating marketing content; time-consuming manual processes.\nExpansion Opportunity Type: New product line\nTrigger Event: The company has recently announced plans to expand its marketing efforts. \n\nProspect #2:\nDepartment: Customer Support\nKey Decision Maker: Jake Miller, Head of Customer Support\nWhy they would be interested: Jake's team deals with customer queries and complaints regarding the software. Our customer support software could help them manage and resolve issues more efficiently.\nSpecific Product: Our Customer Support Software\nLikely Pain Points: High volume of customer complaints; difficulty tracking and resolving issues in a timely manner.\nExpansion Opportunity Type: New product line\nTrigger Event: The company is experiencing rapid customer growth, putting a strain on the current support infrastructure.\n\nProspect #3:\nDepartment: Sales\nKey Decision Maker: Lisa Brown, VP of Sales\nWhy they would be interested: Lisa's team is responsible for selling the software to educational institutions and businesses. Our customer relationship management (CRM) system could help them manage relationships and streamline the sales process.\nSpecific Product: Our Customer Relationship Management System\nLikely Pain Points: Difficulty managing customer relationships; inefficient sales process.\nExpansion Opportunity Type: New product line\nTrigger Event: The company has recently lost a major client, highlighting the need for better client management.\n\nProspect #4:\nDepartment: Human Resources\nKey Decision Maker: Tony Smith, HR Director\nWhy they would be interested: Tony's team is responsible for onboarding and training new employees. Our HR software could help them streamline these processes.\nSpecific Product: Our Human Resources Software\nLikely Pain Points: Onboarding and training new employees is time-consuming; difficulty tracking employee performance.\nExpansion Opportunity Type: New product line\nTrigger Event: The company is planning to hire multiple new employees in the next few months. \n\nThese prospects offer potential expansion opportunities for our different products. It would be beneficial to reach out to them and demonstrate how our software solutions can help streamline their processes and resolve their current pain points.",
         "company_name": "Fable",
-        "created_at": "2025-08-12T18:02:21.903682"
-      },
-      {
-        "id": "d3c1d88a-030f-4048-97eb-4ffbf0a2ee4a",
-        "title": "VP of Operations",
-        "role": "Operational Excellence",
-        "department": "Operations",
-        "priorities": [
-          "Process efficiency",
-          "Cost reduction",
-          "Quality improvement"
-        ],
-        "pain_points": [
-          "Manual processes",
-          "Lack of visibility",
-          "Compliance issues"
-        ],
-        "decision_criteria": [
-          "Ease of implementation",
-          "User adoption",
-          "Process improvement"
-        ],
-        "influence_level": "high",
-        "budget_authority": "medium",
-        "technical_expertise": "medium",
-        "company_name": "Fable",
-        "created_at": "2025-08-12T18:02:21.903711"
-      },
-      {
-        "id": "8fd5a4d5-9ad1-46c1-be11-3f059826ba75",
-        "title": "Procurement Manager",
-        "role": "Strategic Sourcing",
-        "department": "Procurement",
-        "priorities": [
-          "Cost savings",
-          "Supplier management",
-          "Risk mitigation"
-        ],
-        "pain_points": [
-          "Manual procurement processes",
-          "Limited supplier visibility",
-          "Contract management"
-        ],
-        "decision_criteria": [
-          "Cost effectiveness",
-          "Ease of use",
-          "Integration capabilities"
-        ],
-        "influence_level": "medium",
-        "budget_authority": "medium",
-        "technical_expertise": "medium",
-        "company_name": "Fable",
-        "created_at": "2025-08-12T18:02:21.903721"
-      },
-      {
-        "content": "To identify the key buyer personas involved in purchasing enterprise software solutions for a company, it is essential to focus on roles that typically influence or make decisions about such purchases. These personas usually come from IT, operations, finance, and executive leadership, depending on the company\u2019s industry, size, and business model.\n\nHere are **4 relevant buyer personas** commonly involved in enterprise software buying decisions, structured for quick sales team reference:\n\n---\n\n### 1. Chief Information Officer (CIO)  \n**Title & Role:** Chief Information Officer \u2014 Oversees overall IT strategy and alignment with business goals  \n**Department:** Information Technology (IT) / Executive Leadership  \n**Priorities:**  \n- Driving digital transformation and innovation  \n- Ensuring IT infrastructure scalability and security  \n- Reducing operational costs through technology  \n- Enhancing data management and analytics capabilities  \n- Supporting business growth with technology enablement  \n**Pain Points:**  \n- Legacy systems hindering agility  \n- Security vulnerabilities and compliance risks  \n- Difficulty integrating new software with existing systems  \n- Managing IT budgets and justifying ROI  \n- Talent shortages and skills gaps in IT teams  \n**Decision Criteria:**  \n- Solution scalability and integration ease  \n- Security and compliance features  \n- Vendor reputation and support quality  \n- Total cost of ownership (TCO) and ROI  \n- Alignment with long-term IT strategy  \n**Influence Level:** High  \n**Budget Authority:** High  \n**Technical Expertise:** High  \n\n---\n\n### 2. IT Director / VP of IT  \n**Title & Role:** IT Director or Vice President of IT \u2014 Manages IT operations and project delivery  \n**Department:** Information Technology  \n**Priorities:**  \n- Ensuring uptime and reliability of IT systems  \n- Streamlining IT operations and support  \n- Implementing new software solutions efficiently  \n- Managing vendor relationships and contracts  \n- Supporting end-user needs and training  \n**Pain Points:**  \n- Complex software deployments and integrations  \n- Limited IT resources and bandwidth  \n- Balancing innovation with operational stability  \n- Vendor responsiveness and support issues  \n- Managing multiple stakeholder expectations  \n**Decision Criteria:**  \n- Ease of deployment and user adoption  \n- Vendor support and service level agreements (SLAs)  \n- Compatibility with existing IT environment  \n- Cost-effectiveness and licensing flexibility  \n- Security and compliance adherence  \n**Influence Level:** High  \n**Budget Authority:** Medium to High (depending on company size)  \n**Technical Expertise:** High  \n\n---\n\n### 3. Chief Financial Officer (CFO)  \n**Title & Role:** Chief Financial Officer \u2014 Oversees financial planning, budgeting, and cost control  \n**Department:** Finance  \n**Priorities:**  \n- Controlling and optimizing IT and operational costs  \n- Ensuring investments deliver measurable ROI  \n- Managing financial risks and compliance  \n- Aligning technology spend with business objectives  \n- Forecasting and budgeting accurately  \n**Pain Points:**  \n- Justifying large IT expenditures  \n- Lack of clear ROI or cost-benefit analysis  \n- Budget constraints and competing priorities  \n- Financial risks from vendor lock-in or hidden costs  \n- Complexity in contract terms and payment models  \n**Decision Criteria:**  \n- Clear ROI and cost savings potential  \n- Transparent pricing and contract terms  \n- Vendor financial stability and reputation  \n- Flexibility in payment and licensing models  \n- Risk mitigation and compliance assurances  \n**Influence Level:** High  \n**Budget Authority:** High  \n**Technical Expertise:** Medium  \n\n---\n\n### 4. IT Manager / Technical Lead (End User Champion)  \n**Title & Role:** IT Manager or Technical Lead \u2014 Directly manages software implementation and daily use  \n**Department:** IT / Operations  \n**Priorities:**  \n- Ensuring software meets technical and user requirements  \n- Minimizing downtime and technical issues  \n- Facilitating smooth user adoption and training  \n- Providing feedback on software performance and features  \n- Supporting continuous improvement and upgrades  \n**Pain Points:**  \n- Software complexity and usability issues  \n- Integration challenges with existing tools  \n- Limited time and resources for training and support  \n- Resistance from end users or other departments  \n- Keeping up with software updates and patches  \n**Decision Criteria:**  \n- User-friendliness and intuitive interface  \n- Integration capabilities and APIs  \n- Vendor support responsiveness  \n- Performance and reliability  \n- Security features relevant to daily operations  \n**Influence Level:** Medium to High (as influencer and champion)  \n**Budget Authority:** Low to Medium (usually no direct budget control)  \n**Technical Expertise:** High  \n\n---\n\nThese personas reflect typical enterprise software buying roles across industries and company sizes. Tailoring sales and marketing approaches to address their specific priorities, pain points, and decision criteria will improve engagement and increase the likelihood of successful deals."
+        "industry": "Training Software",
+        "existing_customer_account": "**Fake Customer Account:**\n\nCompany Name: Solarity Industries\nIndustry: Renewable Energy\nSize: Approximately 2,000 employees\nWhat They Do: Solarity Industries is a global leader in the renewable energy sector, specifically focusing on solar power solutions. They design, manufacture, and install solar panels for both residential and commercial use. \n\n**Internal Champion:**\n\nName: Emily Watson\nJob Title: Head of Training and Development\nDepartment: Human Resources\nProfessional Background: Emily has over 15 years of experience in HR, with a focus on training and development. She started her career as a Training Coordinator at a tech company, where she quickly climbed the ranks due to her innovative approach to learning and development. Emily joined Solarity Industries 5 years ago. \n\nEmily's goal is to ensure that Solarity's employees are equipped with the necessary skills and knowledge to excel in their roles. Her main pain points include the inability to track training progress in real time and the lack of engagement in current training modules. She is motivated to adopt and expand the use of Fable's software across the organization to improve knowledge retention, increase learner engagement, and allow for real-time progress tracking.\n\nSolarity Industries has already purchased Fable's interactive training platform for their HR department. They use the platform to train new hires on company policies and procedures. However, they are not utilizing the software's full potential, especially the custom training content creation tools and the analytics dashboard.\n\nThe next step for Solarity Industries would be to implement Fable's software across all departments, not just HR. They could also benefit from Fable's content creation tools to create engaging and immersive training modules tailored to each department's needs. Additionally, they should start using the analytics dashboard to track learner progress and training effectiveness in real time. This would address Emily's pain points and help her achieve her goal of improving training outcomes at Solarity Industries.",
+        "created_at": "2025-08-12T20:25:51.328974",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 318,
+          "completion_tokens": 536,
+          "total_tokens": 854,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
       }
-    ],
-    "market_analysis": [
+    ]
+  },
+  {
+    "name": "Open AI",
+    "industry": "AI Models",
+    "scraped_data": {
+      "job_id": "86782b81-edd4-45af-8b2b-0933821f0aff",
+      "firecrawl_job_id": "immediate-86782b81-edd4-45af-8b2b-0933821f0aff",
+      "url": "https://openai.com/about/",
+      "company_name": "Open AI",
+      "industry": "AI Models",
+      "scraped_at": "2025-08-12T20:32:24.517855",
+      "processed_content": [
+        {
+          "type": "markdown",
+          "url": null,
+          "content": "Switch to\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/?openaicom-did=8bb7a3f6-4a4d-4e25-a731-e82f3d45f358&openaicom_referred=true)\n- [Sora(opens in a new window)](https://sora.com/)\n- [API Platform(opens in a new window)](https://platform.openai.com/)\n\nAbout \\| OpenAI\n\nCompany\n\n# About\n\n![stangel-2022-0527](https://images.ctfassets.net/kftzwdyauwt9/32cmTSUIF5POX5FMuoHJwO/be8b42b8016957ca28e07274f05f1d3d/stangel-2022-0527.webp?w=3840&q=90&fm=webp)\n\n### Our vision for the future of AGI\n\nOur mission is to ensure that artificial general intelligence\u2014AI systems that are generally smarter than humans\u2014benefits all of humanity.\n\n[Our plan for AGI](https://openai.com/index/planning-for-agi-and-beyond/) [Our Charter](https://openai.com/charter/)\n\n![An impressionist painting depicting a colorful cityscape with expressive brushstrokes in a palette of blues, greens, yellows, and hints of pink under a light sky.](https://images.ctfassets.net/kftzwdyauwt9/e632747f-9587-47a4-60779b6e0c90/cf75112eedea676e9deed512d191d1ac/planning-for-agi-and-beyond.jpg?w=3840&q=90&fm=webp)\n\nIllustration:\u00a0Justin Jay Wang \u00d7 DALL\u00b7E\n\n### We are building safe and beneficial AGI, but will also consider our mission fulfilled if our work aids others to achieve this outcome.\n\n![OpenAI Offices](https://images.ctfassets.net/kftzwdyauwt9/7fnM7WwfGlji0mE0t8DefO/cc161016b8d84fd6d789b06c92416544/stangel-openAI-offices-2022-1714.webp?w=3840&q=90&fm=webp)\n\n## Latest news\n\n![oai_Fidji_hero_1-1](https://images.ctfassets.net/kftzwdyauwt9/5L8jHS5cUgYCBFo2BEppVU/30b87d2b0a1c4a5db3b886b2bc839044/oai_Fidji_mobile.png?w=3840&q=90&fm=webp)\n\n[AI as the greatest source of empowerment for all\\\\\n\\\\\nCompanyJul 21, 2025](https://openai.com/index/ai-as-the-greatest-source-of-empowerment-for-all/)\n\n![sam and jony > card image](https://images.ctfassets.net/kftzwdyauwt9/3VSOyc5t2Dc6egy6PixRjh/fa3d203ba795b7a833f9b525a687c6e6/portrait.jpg?w=3840&q=90&fm=webp)\n\n[A letter from Sam & Jony\\\\\n\\\\\nCompanyJul 9, 2025](https://openai.com/sam-and-jony/)\n\n![mattels iconic brands > cover image](https://images.ctfassets.net/kftzwdyauwt9/7mxA6Nz8sMAyWaHE7PZcpA/e9e1cd86700761d1d899f49b9aa3547d/mattell-1.1.png?w=3840&q=90&fm=webp)\n\n[Bringing the magic of AI to Mattel\u2019s iconic brands\\\\\n\\\\\nCompanyJun 12, 2025](https://openai.com/index/mattels-iconic-brands/)\n\n![OpenAI in Deutschland > Cover image](https://images.ctfassets.net/kftzwdyauwt9/26hk65fa4fOWYv4GMRWgGL/98c0a24b18058093cf415abe2937b317/oai_GA_Stories_1.1__2_.png?w=3840&q=90&fm=webp)\n\n[OpenAI Deutschland\\\\\n\\\\\nCompanyMay 22, 2025](https://openai.com/index/openai-deutschland/)\n\n## Our research\n\n![HealthBench > Cover Image](https://images.ctfassets.net/kftzwdyauwt9/6AU7liPu8o1QBc4DkDSedu/0afcf2cf491e0bb84f7311a0dd496c6b/oai_ambrosia_health_eval_1.1.png?w=3840&q=90&fm=webp)\n\n[Introducing HealthBench\\\\\n\\\\\nPublicationMay 12, 2025](https://openai.com/index/healthbench/)\n\nYour browser does not support the video tag.\n\n[Thinking with images\\\\\n\\\\\nReleaseApr 16, 2025](https://openai.com/index/thinking-with-images/)\n\n![Truffle Hunter > Hero Image](https://images.ctfassets.net/kftzwdyauwt9/20V5wS8s0iMKYKoYo9LCLW/0685e12fb9424d3d7b6b819edb1ab5a0/BrowseComp_artcard_1.1.png?w=3840&q=90&fm=webp)\n\n[BrowseComp: a benchmark for browsing agents\\\\\n\\\\\nPublicationApr 10, 2025](https://openai.com/index/browsecomp/)\n\n![PaperBench > cover image](https://images.ctfassets.net/kftzwdyauwt9/7EBp95IdVicmrcVe99i3i2/c6a64c50024c4a093b5a4e9aa8424e02/Paperbench_1x1.png?w=3840&q=90&fm=webp)\n\n[PaperBench: Evaluating AI\u2019s Ability to Replicate AI Research\\\\\n\\\\\nPublicationApr 2, 2025](https://openai.com/index/paperbench/)\n\n## Our products\n\nYour browser does not support the video tag.\n\n[Introducing Codex\\\\\n\\\\\nReleaseMay 16, 2025](https://openai.com/index/introducing-codex/)\n\nYour browser does not support the video tag.\n\n[Introducing OpenAI o3 and o4-mini\\\\\n\\\\\nReleaseApr 16, 2025](https://openai.com/index/introducing-o3-and-o4-mini/)\n\n![GPT-4.5](https://images.ctfassets.net/kftzwdyauwt9/2Au3X2ZJrqfiuP0lJ0qg0T/03afeccdf5f6a424e36ca75b29df541c/GPT-4.5_16.9__1_.png?w=3840&q=90&fm=webp)\n\n[Introducing GPT-4.5\\\\\n\\\\\nReleaseFeb 27, 2025](https://openai.com/index/introducing-gpt-4-5/)\n\nYour browser does not support the video tag.\n\n[Introducing 4o Image Generation\\\\\n\\\\\nProductMar 25, 2025](https://openai.com/index/introducing-4o-image-generation/)\n\n### Careers at OpenAI\n\nDeveloping safe and beneficial AI requires people from a wide range of disciplines and backgrounds.\n\n[View all careers](https://openai.com/careers/search/)\n\n![stangel-2022-1534](https://images.ctfassets.net/kftzwdyauwt9/2ROfAZ7SlUiikj2Hp98LS0/7e71fd438017ce9cebe46fdce580bb04/stangel-2022-1534.webp?w=3840&q=90&fm=webp)\n\n### Our structure\n\nWe are governed by a nonprofit and our unique capped-profit model drives our commitment to safety. This means that as AI becomes more powerful, we can redistribute profits from our work to maximize the social and economic benefits of AI technology.\n\n[Learn more](https://openai.c"
+        }
+      ],
+      "content_count": 1,
+      "perplexity_research": {
+        "success": true,
+        "content": "**Company Overview**  \nOpenAI is a leading artificial intelligence research and deployment company specializing in developing advanced AI models, including large language models and generative AI technologies. Headquartered in San Francisco, California, OpenAI has grown rapidly since its founding, employing several hundred people (estimated 500-1,000 employees as of 2025). While exact revenue figures are not publicly disclosed, OpenAI generates income primarily through API access to its AI models and enterprise partnerships.\n\n**Products & Services**  \n- **Key Offerings:**  \n  - GPT series (e.g., GPT-4, GPT-5) for natural language processing tasks such as text generation, summarization, translation, and conversation.  \n  - Codex for AI-assisted code generation and software development.  \n  - DALL\u00b7E for AI-generated images from text prompts.  \n  - API platform enabling businesses to integrate OpenAI\u2019s models into their applications.  \n- **Pricing Models:**  \n  - Consumption-based pricing for API usage, aligning with broader enterprise software trends favoring pay-per-use models[1].  \n  - Tiered plans for developers and enterprises, with custom pricing for large-scale deployments.  \n- **Unique Features & Differentiators:**  \n  - State-of-the-art large language models with high accuracy and contextual understanding.  \n  - Strong focus on AI safety, ethics, and trustworthiness, addressing key enterprise concerns[1][3].  \n  - Continuous model improvements and fine-tuning capabilities for industry-specific applications.\n\n**Pain Points**  \n- **Industry Challenges:**  \n  - Growing demand for trustworthy and explainable AI amid rising concerns about AI bias and misinformation[1][3].  \n  - High costs and complexity of integrating AI into existing enterprise systems.  \n  - Competition from hyperscalers offering AI capabilities embedded in cloud platforms[1].  \n- **Market Shifts:**  \n  - Increasing adoption of consumption-based pricing models requiring flexible, scalable AI solutions[1].  \n  - Rising importance of AI-augmented software development and automation tools[2][5].  \n- **Operational Inefficiencies:**  \n  - Enterprises struggle with fragmented AI tools and lack of unified platforms for AI deployment and governance[2][4].\n\n**Competitive Landscape**  \n- **Main Competitors:**  \n  - Google DeepMind and Google Cloud AI services (e.g., Bard, Vertex AI)  \n  - Microsoft Azure AI (partnered with OpenAI but also a competitor in AI cloud services)  \n  - Anthropic, Cohere, and other emerging AI startups focusing on large language models  \n  - Cloud hyperscalers (AWS, Google, Microsoft) embedding AI into broader enterprise platforms[1][3]  \n- **Positioning:**  \n  - OpenAI is positioned as a pioneer and leader in cutting-edge AI research and commercial AI model deployment.  \n  - Its partnership with Microsoft strengthens its cloud integration and enterprise reach.  \n  - Differentiates through advanced model capabilities and emphasis on AI ethics and trust.\n\n**Recent Developments**  \n- Continued rollout of GPT-4 and GPT-5 models with enhanced capabilities and efficiency.  \n- Expansion of API offerings and enterprise partnerships, including integration into Microsoft products like Azure and Office.  \n- Increased focus on consumption-based pricing aligning with enterprise software trends[1].  \n- Leadership updates and strategic hires to scale AI safety and product development teams (specific names not publicly detailed).  \n- Growing adoption by major customers across sectors such as finance, healthcare, and software development.\n\n**Relevant Industry Trends**  \n- **AI-Augmented Development:** AI tools increasingly automate coding, testing, and optimization, accelerating software delivery[2][5].  \n- **Consumption-Based Pricing:** Enterprises prefer flexible, usage-based pricing models for software and AI services[1].  \n- **Platform Engineering:** Demand for unified internal developer platforms to scale AI and software innovation[2].  \n- **Trust and Ethics:** Heightened focus on trustworthy AI to address regulatory and reputational risks[1][3].  \n- **Low-Code/No-Code Adoption:** Enterprises embrace low-code platforms to speed development and reduce costs, often integrating AI assistants[5].\n\n**Sales Opportunities**  \n- **Emphasize Cost Efficiency:** Highlight OpenAI\u2019s consumption-based pricing as a way to control AI costs amid rising enterprise software expenses[1].  \n- **Focus on Trust & Safety:** Position OpenAI\u2019s commitment to AI ethics and trustworthy outputs as a competitive advantage addressing enterprise risk concerns[1][3].  \n- **Leverage AI-Augmented Development:** Promote OpenAI\u2019s Codex and GPT models as tools to accelerate software development and reduce technical debt[2][5].  \n- **Integration & Scalability:** Stress seamless integration with existing enterprise platforms and support for platform engineering initiatives[2].  \n- **Industry-Specific Solutions:** Tailor messaging to verticals like finance, healthcare, and software, where AI adoption is accelerating and operational efficiencies are critical.  \n- **Partnership Leverage:** Use OpenAI\u2019s collaboration with Microsoft and other tech leaders to build credibility and demonstrate ecosystem strength.\n\nThis structured insight can guide sales teams in crafting targeted pitches that align with OpenAI\u2019s strengths, market dynamics, and customer priorities in 2025.",
+        "model": "sonar",
+        "usage": {
+          "prompt_tokens": 223,
+          "completion_tokens": 1073,
+          "total_tokens": 1296,
+          "search_context_size": "low",
+          "cost": {
+            "input_tokens_cost": 0.000223,
+            "output_tokens_cost": 0.001073,
+            "request_cost": 0.005,
+            "total_cost": 0.006296
+          }
+        }
+      },
+      "fake_customer_account": {
+        "success": true,
+        "content": "Customer Account: The customer is DataStream Technologies, a mid-sized data analysis and technology company based in Austin, Texas. DataStream specializes in transforming raw data into actionable insights for businesses across various sectors, including healthcare, finance, and retail. They employ around 500 people and are known for their robust data analysis and predictive modeling.\n\nInternal Champion: The internal champion is Emily Turner, the Director of Data Science at DataStream. Emily has a Ph.D. in Computer Science, a background in machine learning, and has been with DataStream for over five years. Her main goal is to enhance their data analytics capabilities, and she has been struggling with the high costs and complexity of integrating advanced AI models into their existing systems. Emily is motivated to bring OpenAI's models into their operations, believing this can significantly improve their data analysis and predictive modeling capabilities.\n\nDataStream has already purchased access to OpenAI's GPT-4 for natural language processing tasks. They use it to help analyze text data and generate predictive models. However, Emily feels they are not maximizing the use of OpenAI's technology in their operations. She sees potential in integrating OpenAI's Codex for AI-assisted code generation and DALL\u00b7E for AI-generated images. These additions could potentially enhance their data analysis capabilities, improve the efficiency of their coding processes, and provide additional value to their clients.",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 1295,
+          "completion_tokens": 273,
+          "total_tokens": 1568,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "confidence_score": 0.9
+      },
+      "status": "completed"
+    },
+    "created_at": "2025-08-12T20:32:24.519884",
+    "updated_at": "2025-08-12T20:32:24.519898",
+    "prospect_expansions": [
       {
-        "content": "Market Size & Growth  \n- Global business information market projected to grow from $173.42 billion in 2024 to $272.96 billion by 2032, CAGR 5.8%[1].  \n- Big data market estimated at $327.26 billion in 2023, projected to reach $862.31 billion by 2030, CAGR 14.9%[3].  \n- Data analytics market expected to reach $777.98 billion by 2030, CAGR 35.09%[2].  \n- U.S. data analytics market CAGR 20.7% from 2025 to 2030[4].  \n\nKey Market Segments  \n- By end-user: Financial institutions lead[1].  \n- By application: Competitive intelligence, market research, due diligence, investment analysis, risk management[5].  \n- By deployment: Cloud-based, on-premises, hybrid[5].  \n- By type: Financial data, industry reports, company profiles, market analysis, country reports[5].  \n- Data analytics types: Predictive, prescriptive, customer, descriptive analytics[4].  \n\nCompetitive Landscape  \n- Leading companies: PwC, Bloomberg Finance L.P., S&P Global, Boston Consulting Group, Gartner, Inc.[1].  \n- Market characterized by integration of AI, machine learning, cloud-native technologies, and industry-specific analytical tools[3].  \n\nSimilar Companies by Stage  \n\nEarly-Stage (Seed/Series A):  \n- No specific company names found in search results for early-stage.  \n\nGrowth-Stage (Series B/C):  \n- No specific company names found in search results for growth-stage.  \n\nEnterprise-Stage (Series D+ or Public):  \n- PwC: Global professional services network specializing in audit, assurance, consulting, and business information services[1].  \n- Bloomberg Finance L.P.: Provider of financial software tools and data services[1].  \n- S&P Global: Provider of financial information and analytics[1].  \n- Boston Consulting Group: Management consulting firm with business intelligence services[1].  \n- Gartner, Inc.: Research and advisory company providing insights and analytics[1].  \n\nMarket Trends  \n- Increasing demand for data-driven insights and competitive intelligence services[1].  \n- Growth in big data volume and complexity driving need for advanced analytics and AI integration[3].  \n- Shift towards cloud-based and hybrid deployment models[5].  \n- Rising adoption of predictive analytics as largest revenue segment[4].  \n\nCustomer Pain Points  \n- Difficulty managing and analyzing large, complex, and diverse datasets[3].  \n- Need for real-time data processing and actionable insights[3].  \n- Challenges in integrating advanced technologies like AI and machine learning into existing systems[3].  \n- Demand for user-friendly platforms and industry-specific analytical tools[3].  \n\nGrowth Opportunities  \n- Expansion in Asia Pacific region with highest CAGR expected[1].  \n- Development of cloud-native and AI-powered analytics solutions[3].  \n- Increasing adoption of predictive and prescriptive analytics across industries[4].  \n- Rising demand for subscription-based and pay-per-use pricing models[5].",
-        "created_at": "2025-08-12T18:24:30.771727"
+        "id": "5d533bd3-8394-4e65-ab7d-dd9fe9aa265b",
+        "type": "ai_generated",
+        "content": "and Data Analytics\nSize: 500-1000 employees\nLocation: San Francisco, USA\nWhat they do: They develop advanced AI models for businesses in various industries, such as healthcare, finance, retail, and more.\n\nInternal champion: John Doe, Director of Data Science\n\nCurrent product usage: They use our cloud-based machine learning platform for building and deploying their AI models.\n\nExpansion Opportunities:\n\n1. \nDepartment: Software Development\nKey Decision Maker: Rachel Smith, Head of Software Development\nRachel would be interested in our API management solutions to help her team manage and monitor the APIs they use in their applications. This would streamline their workflows and improve the efficiency of their development process. \nOur API management software would be the ideal solution to her needs. \nHer team likely faces challenges in managing multiple APIs and ensuring their efficient use.\nExpansion Opportunity: New product line \nTrigger Event: They recently had a major software release, which could lead to an increased need for API management.\n\n2. \nDepartment: IT Operations\nKey Decision Maker: Tom Green, IT Director\nTom would be interested in our cloud infrastructure solutions to manage and maintain their cloud environments effectively. \nOur cloud infrastructure management software would be the perfect fit for him. \nHis team likely struggles with managing multiple cloud environments and ensuring optimal performance and security.\nExpansion Opportunity: Professional Services \nTrigger Event: They are planning to expand their cloud infrastructure, making this the perfect time to introduce our solutions.\n\n3. \nDepartment: Marketing\nKey Decision Maker: Lisa Brown, Chief Marketing Officer\nLisa would be interested in our data visualization tools to help her team analyze and present data in a more understandable and visually appealing way. \nOur data visualization software would be a suitable solution for her needs. \nHer team likely has difficulties in interpreting raw data and presenting it in a way that's easy to understand.\nExpansion Opportunity: New product line \nTrigger Event: They are preparing for a major marketing campaign, which will require extensive data analysis and presentation.\n\n4. \nDepartment: HR\nKey Decision Maker: James White, Head of HR\nJames would be interested in our HR analytics software to help his team analyze employee data and make informed decisions. \nOur HR analytics software would be of great help to him. \nHis team probably faces challenges in analyzing large amounts of employee data and deriving meaningful insights.\nExpansion Opportunity: New product line \nTrigger Event: The company has been growing rapidly, leading to an increased need for effective HR management.",
+        "company_name": "Open AI",
+        "industry": "AI Models",
+        "existing_customer_account": "Customer Account: The customer is DataStream Technologies, a mid-sized data analysis and technology company based in Austin, Texas. DataStream specializes in transforming raw data into actionable insights for businesses across various sectors, including healthcare, finance, and retail. They employ around 500 people and are known for their robust data analysis and predictive modeling.\n\nInternal Champion: The internal champion is Emily Turner, the Director of Data Science at DataStream. Emily has a Ph.D. in Computer Science, a background in machine learning, and has been with DataStream for over five years. Her main goal is to enhance their data analytics capabilities, and she has been struggling with the high costs and complexity of integrating advanced AI models into their existing systems. Emily is motivated to bring OpenAI's models into their operations, believing this can significantly improve their data analysis and predictive modeling capabilities.\n\nDataStream has already purchased access to OpenAI's GPT-4 for natural language processing tasks. They use it to help analyze text data and generate predictive models. However, Emily feels they are not maximizing the use of OpenAI's technology in their operations. She sees potential in integrating OpenAI's Codex for AI-assisted code generation and DALL\u00b7E for AI-generated images. These additions could potentially enhance their data analysis capabilities, improve the efficiency of their coding processes, and provide additional value to their clients.",
+        "created_at": "2025-08-12T20:33:22.031538",
+        "model": "gpt-4-0613",
+        "usage": {
+          "prompt_tokens": 318,
+          "completion_tokens": 497,
+          "total_tokens": 815,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
       }
     ]
   }

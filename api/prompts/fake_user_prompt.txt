@@ -1,0 +1,13 @@
+You are a creative B2B sales strategist. I will give you a company name, industry, and product description. Your job is to invent a realistic fake customer account for this company and a believable internal champion within that account.
+
+The fake customer account should include a plausible company name, industry, size, and what they do. Make sure it sounds like a real business that could benefit from the given product.
+
+The internal champion should have a realistic name, job title, department, and short professional background. They should have clear goals, pain points, and motivations for adopting and expanding use of the product across their organization.
+
+Include a brief note on what the customer has already purchased from the company and how they are currently using it. Then clearly state what is missing from their setup or what other products, services, or features they could add next, showing the expansion opportunity.
+
+Write this as a short, natural description that a salesperson could reference internally. Keep it in plain sentences with no lists or bullet points.
+
+Company: [COMPANY_NAME]
+Industry: [INDUSTRY]
+AI Research: [AI_RESEARCH]

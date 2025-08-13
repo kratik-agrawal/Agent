@@ -22,9 +22,12 @@ export interface ScrapeJob {
   job_id: string
   status: string
   company_name: string
+  industry: string
   created_at: string
   error?: string | null
   result?: ScrapedData | null
+  isChecking?: boolean
+  lastChecked?: string
 }
 
 export interface ScrapedData {
@@ -32,6 +35,7 @@ export interface ScrapedData {
   firecrawl_job_id: string
   url: string
   company_name: string
+  industry: string
   scraped_at: string
   processed_content: ProcessedContent[]
   content_count: number
@@ -167,15 +171,15 @@ class ApiClient {
   }
 
   // Scraping endpoints
-  async startScrape(url: string, companyName: string): Promise<ApiResponse<{ job_id: string; status: string; company_name: string }>> {
-    return this.request<{ job_id: string; status: string; company_name: string }>('/api/pitch/ingest/scrape', {
+  async startScrape(url: string, companyName: string, industry: string): Promise<ApiResponse<{ job_id: string; status: string; company_name: string; industry: string }>> {
+    return this.request<{ job_id: string; status: string; company_name: string; industry: string }>('/api/pitch/ingest/scrape', {
       method: 'POST',
-      body: JSON.stringify({ url, company_name: companyName }),
+      body: JSON.stringify({ url, company_name: companyName, industry }),
     })
   }
 
-  async getScrapeStatus(jobId: string): Promise<ApiResponse<{ status: string; error?: string; result?: ScrapedData }>> {
-    return this.request<{ status: string; error?: string; result?: ScrapedData }>(`/api/pitch/ingest/scrape/${jobId}/status`)
+  async getScrapeStatus(jobId: string): Promise<ApiResponse<{ status: string; industry: string; error?: string; result?: ScrapedData }>> {
+    return this.request<{ status: string; industry: string; error?: string; result?: ScrapedData }>(`/api/pitch/ingest/scrape/${jobId}/status`)
   }
 
   async getScrapeResult(jobId: string): Promise<ApiResponse<ScrapedData>> {
@@ -219,6 +223,26 @@ class ApiClient {
 
   async getPersonas(companyName: string): Promise<ApiResponse<BuyerPersona[]>> {
     return this.request<BuyerPersona[]>(`/api/personas/${encodeURIComponent(companyName)}`)
+  }
+
+  // Fake customer account generation endpoints
+  async generateFakeCustomerAccount(request: { company_name: string; industry: string; ai_research?: any }): Promise<ApiResponse<{ success: boolean; content: string; model: string; usage: any; confidence_score: number }>> {
+    return this.request<{ success: boolean; content: string; model: string; usage: any; confidence_score: number }>('/api/fake-customer/generate', {
+      method: 'POST',
+      body: JSON.stringify(request),
+    })
+  }
+
+  // Prospect expansion generation endpoints
+  async generateProspectExpansion(request: { 
+    company_name: string; 
+    industry: string; 
+    existing_customer_account: any; 
+  }): Promise<ApiResponse<{ success: boolean; content: string; model: string; usage: any; confidence_score: number }>> {
+    return this.request<{ success: boolean; content: string; model: string; usage: any; confidence_score: number }>('/api/prospect-expansion/generate', {
+      method: 'POST',
+      body: JSON.stringify(request),
+    })
   }
 }
 

@@ -1,19 +1,13 @@
-You are a market analyst. Analyze this company's market and provide ONLY:
+Analyze the following company and return ONLY the requested information. Search broadly across the web for the most recent and relevant data. Be concise but complete. No explanations, no filler, no formatting other than headings and bullet points.
 
+Required output:
 Market Size & Growth
 Key Market Segments
 Competitive Landscape
 Similar Companies by Stage:
-
-Early-Stage (Seed/Series A):
-• Company names and brief descriptions
-
-Growth-Stage (Series B/C):
-• Company names and brief descriptions
-
-Enterprise-Stage (Series D+ or Public):
-• Company names and brief descriptions
-
+Early-Stage (Seed/Series A): Company names and 1–2 sentence descriptions
+Growth-Stage (Series B/C): Company names and 1–2 sentence descriptions
+Enterprise-Stage (Series D+ or Public): Company names and 1–2 sentence descriptions
 Market Trends
 Customer Pain Points
 Growth Opportunities
@@ -21,4 +15,4 @@ Growth Opportunities
 Company: [COMPANY_NAME]
 Industry: [INDUSTRY]
 
-Give ONLY the information. No explanations, no formatting, no fluff. 
+Return only the information, clearly structured under each heading. Do not include any extra commentary or analysis outside of the requested fields.

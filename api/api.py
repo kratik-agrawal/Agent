@@ -32,17 +32,17 @@ os.makedirs(PROMPTS_DIR, exist_ok=True)
 # API Keys from environment variables
 PERPLEXITY_API_KEY = os.getenv('PERPLEXITY_API_KEY')
 FIRECRAWL_API_KEY = os.getenv('FIRECRAWL_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Validate required API keys
 if not PERPLEXITY_API_KEY:
-    print("⚠️  WARNING: PERPLEXITY_API_KEY not found in environment variables")
-    print("   Persona generation and AI research will not work")
-    print("   Please set PERPLEXITY_API_KEY in your .env file")
+    pass
 
 if not FIRECRAWL_API_KEY:
-    print("⚠️  WARNING: FIRECRAWL_API_KEY not found in environment variables")
-    print("   Web scraping will not work")
-    print("   Please set FIRECRAWL_API_KEY in your .env file")
+    pass
+
+if not OPENAI_API_KEY:
+    pass
 
 # In-memory job tracking (simple for prototype)
 crawl_jobs = {}
@@ -73,8 +73,10 @@ def load_prompt(prompt_name):
     prompt_path = os.path.join(PROMPTS_DIR, f"{prompt_name}.txt")
     if os.path.exists(prompt_path):
         with open(prompt_path, 'r') as f:
-            return f.read()
-    return None
+            content = f.read()
+            return content
+    else:
+        return None
 
 def save_prompt(prompt_name, content):
     """Save a prompt to the prompts directory"""
@@ -82,7 +84,7 @@ def save_prompt(prompt_name, content):
     with open(prompt_path, 'w') as f:
         f.write(content)
 
-def get_perplexity_research(company_name):
+def get_perplexity_research(company_name, industry=None):
     """Get company research from Perplexity API"""
     if not PERPLEXITY_API_KEY:
         return {
@@ -98,8 +100,12 @@ def get_perplexity_research(company_name):
         if not prompt_template:
             raise Exception("Sales research prompt not found")
         
-        # Replace placeholder with company name
+        # Replace placeholders with company name and industry
         prompt = prompt_template.replace("[INSERT COMPANY NAME HERE]", company_name)
+        if industry:
+            prompt = prompt.replace("[INSERT INDUSTRY HERE]", industry)
+        else:
+            prompt = prompt.replace("[INSERT INDUSTRY HERE]", "Unknown Industry")
         
         # Perplexity API endpoint
         url = "https://api.perplexity.ai/chat/completions"
@@ -151,39 +157,46 @@ def get_perplexity_research(company_name):
         }
 
 def generate_buyer_personas(company_name, industry, scraped_content=None, ai_research=None):
-    """Generate buyer personas using Perplexity API - simplified to return formatted text"""
-    if not PERPLEXITY_API_KEY:
+    """Generate buyer personas using OpenAI GPT API - simplified to return formatted text"""
+    if not OPENAI_API_KEY:
         return {
             "success": False,
-            "content": "Perplexity API key not configured. Please set PERPLEXITY_API_KEY in your .env file.",
+            "content": "OpenAI API key not configured. Please set OPENAI_API_KEY in your .env file.",
             "model": "unknown",
             "usage": {}
         }
     
     try:
-        print(f"Generating personas for {company_name} in {industry}")
-        
         # Load the persona generation prompt
-        prompt_template = load_prompt("persona_generation_prompt")
+        prompt_template = load_prompt("persona_prompt")
         if not prompt_template:
             raise Exception("Persona generation prompt not found")
         
-        # Replace placeholders with actual values, using defaults if not available
-        prompt = prompt_template.replace("[COMPANY_NAME]", company_name or "Unknown Company")
-        prompt = prompt_template.replace("[INDUSTRY]", industry or "Unknown Industry")
-        prompt = prompt_template.replace("[SCRAPED_CONTENT]", scraped_content or "No scraped content available")
-        prompt = prompt_template.replace("[AI_RESEARCH]", ai_research or "No AI research available")
+        # Handle ai_research - extract content if it's a dict
+        ai_research_content = ""
+        if ai_research:
+            if isinstance(ai_research, dict):
+                ai_research_content = ai_research.get('content', '')
+            else:
+                ai_research_content = str(ai_research)
         
-        # Perplexity API endpoint
-        url = "https://api.perplexity.ai/chat/completions"
+        # Replace placeholders with actual values, using defaults if not available
+        prompt = prompt_template.replace("[COMPANY_NAME]", company_name)
+        prompt = prompt_template.replace("[INDUSTRY]", industry or "Unknown Industry")
+        prompt = prompt_template.replace("[WEBSITE]", "Company website")  # Default since we don't have website in this context
+        prompt = prompt_template.replace("[SCRAPED_CONTENT]", scraped_content or "No scraped content available")
+        prompt = prompt_template.replace("[AI_RESEARCH]", ai_research_content or "No AI research available")
+        
+        # OpenAI API endpoint
+        url = "https://api.openai.com/v1/chat/completions"
         
         headers = {
-            "Authorization": f"Bearer {PERPLEXITY_API_KEY}",
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
             "Content-Type": "application/json"
         }
         
         data = {
-            "model": "sonar",
+            "model": "gpt-4",
             "messages": [
                 {
                     "role": "user",
@@ -191,19 +204,16 @@ def generate_buyer_personas(company_name, industry, scraped_content=None, ai_res
                 }
             ],
             "max_tokens": 4000,
-            "temperature": 0.1,
-            "top_p": 0.9
+            "temperature": 0.1
         }
         
-        print("Making request to Perplexity API...")
         response = requests.post(url, headers=headers, json=data, timeout=30)
         
         if response.status_code == 200:
             result = response.json()
             content = result['choices'][0]['message']['content']
-            print(f"Perplexity API response received, content length: {len(content)}")
             
-            # Just return the formatted text from Perplexity
+            # Just return the formatted text from GPT
             return {
                 "success": True,
                 "content": content,
@@ -212,7 +222,6 @@ def generate_buyer_personas(company_name, industry, scraped_content=None, ai_res
                 "confidence_score": 0.9
             }
         else:
-            print(f"Perplexity API failed with status {response.status_code}")
             return {
                 "success": False,
                 "content": f"API request failed with status {response.status_code}",
@@ -221,7 +230,175 @@ def generate_buyer_personas(company_name, industry, scraped_content=None, ai_res
             }
             
     except Exception as e:
-        print(f"Error in generate_buyer_personas: {str(e)}")
+        return {
+            "success": False,
+            "content": f"Error: {str(e)}",
+            "model": "unknown",
+            "usage": {}
+        }
+
+def generate_fake_customer_account(company_name, industry, ai_research=None):
+    """Generate a fake customer account using OpenAI GPT API and the fake user prompt"""
+    if not OPENAI_API_KEY:
+        return {
+            "success": False,
+            "content": "OpenAI API key not configured. Please set OPENAI_API_KEY in your .env file.",
+            "model": "unknown",
+            "usage": {}
+        }
+    
+    try:
+        # Load the fake user prompt
+        prompt_template = load_prompt("fake_user_prompt")
+        if not prompt_template:
+            raise Exception("Fake user prompt not found")
+        
+        # Handle ai_research - extract content if it's a dict
+        ai_research_content = ""
+        if ai_research:
+            if isinstance(ai_research, dict):
+                ai_research_content = ai_research.get('content', '')
+            else:
+                ai_research_content = str(ai_research)
+        
+        # Replace placeholders with actual values
+        prompt = prompt_template.replace("[COMPANY_NAME]", company_name)
+        prompt = prompt_template.replace("[INDUSTRY]", industry or "Unknown Industry")
+        prompt = prompt_template.replace("[AI_RESEARCH]", ai_research_content or "No AI research available")
+        
+        # OpenAI API endpoint
+        url = "https://api.openai.com/v1/chat/completions"
+        
+        headers = {
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "model": "gpt-4",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            "max_tokens": 2000,
+            "temperature": 0.7  # Slightly higher creativity for realistic fake accounts
+        }
+        
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+        
+        if response.status_code == 200:
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            
+            return {
+                "success": True,
+                "content": content,
+                "model": result['model'],
+                "usage": result.get('usage', {}),
+                "confidence_score": 0.9
+            }
+        else:
+            return {
+                "success": False,
+                "content": f"API request failed with status {response.status_code}",
+                "model": "unknown",
+                "usage": {}
+            }
+            
+    except Exception as e:
+        return {
+            "success": False,
+            "content": f"Error: {str(e)}",
+            "model": "unknown",
+            "usage": {}
+        }
+
+def generate_prospect_expansion(company_name, industry, existing_customer_account):
+    """Generate prospect expansion opportunities within the same company based on existing customer account"""
+    if not OPENAI_API_KEY:
+        return {
+            "success": False,
+            "content": "OpenAI API key not configured. Please set OPENAI_API_KEY in your .env file.",
+            "model": "unknown",
+            "usage": {}
+        }
+    
+    try:
+        # Load the prospect expansion prompt
+        prompt_template = load_prompt("prospect_expansion_prompt")
+        if not prompt_template:
+            raise Exception("Prospect expansion prompt not found")
+        
+        # Handle existing_customer_account - extract content if it's a dict
+        customer_account_content = ""
+        if existing_customer_account:
+            if isinstance(existing_customer_account, dict):
+                customer_account_content = existing_customer_account.get('content', '')
+                if not customer_account_content:
+                    customer_account_content = str(existing_customer_account)
+            else:
+                customer_account_content = str(existing_customer_account)
+        
+        # Ensure we have content to work with
+        if not customer_account_content or customer_account_content.strip() == "":
+            return {
+                "success": False,
+                "content": "No existing customer account content available. Please generate a fake customer account first.",
+                "model": "unknown",
+                "usage": {}
+            }
+        
+        # Replace placeholders with actual values
+        prompt = prompt_template.replace("[EXISTING_CUSTOMER_ACCOUNT]", customer_account_content or "No customer account available")
+        prompt = prompt_template.replace("[COMPANY_NAME]", company_name)
+        prompt = prompt_template.replace("[INDUSTRY]", industry or "Unknown Industry")
+        
+        # OpenAI API endpoint
+        url = "https://api.openai.com/v1/chat/completions"
+        
+        headers = {
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "model": "gpt-4",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            "max_tokens": 3000,
+            "temperature": 0.7  # Slightly higher creativity for realistic prospects
+        }
+        
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+        
+        if response.status_code == 200:
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            
+            return {
+                "success": True,
+                "content": content,
+                "model": result['model'],
+                "usage": result.get('usage', {}),
+                "confidence_score": 0.9
+            }
+        else:
+            return {
+                "success": False,
+                "content": f"API request failed with status {response.status_code}",
+                "model": "unknown",
+                "usage": {}
+            }
+            
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
         return {
             "success": False,
             "content": f"Error: {str(e)}",
@@ -240,8 +417,6 @@ def generate_market_analysis(company_name, industry):
         }
     
     try:
-        print(f"Generating market analysis for {company_name} in {industry}")
-        
         # Load the market analysis prompt
         prompt_template = load_prompt("market_analysis_prompt")
         if not prompt_template:
@@ -249,7 +424,7 @@ def generate_market_analysis(company_name, industry):
         
         # Replace placeholders
         prompt = prompt_template.replace("[COMPANY_NAME]", company_name or "Unknown Company")
-        prompt = prompt_template.replace("[INDUSTRY]", industry or "Unknown Industry")
+        prompt = prompt.replace("[INDUSTRY]", industry or "Unknown Industry")
         
         # Perplexity API endpoint
         url = "https://api.perplexity.ai/chat/completions"
@@ -272,13 +447,11 @@ def generate_market_analysis(company_name, industry):
             "top_p": 0.9
         }
         
-        print("Making request to Perplexity API for market analysis...")
         response = requests.post(url, headers=headers, json=data, timeout=30)
         
         if response.status_code == 200:
             result = response.json()
             content = result['choices'][0]['message']['content']
-            print(f"Market analysis response received, content length: {len(content)}")
             
             return {
                 "success": True,
@@ -288,7 +461,6 @@ def generate_market_analysis(company_name, industry):
                 "confidence_score": 0.9
             }
         else:
-            print(f"Perplexity API failed with status {response.status_code}")
             return {
                 "success": False,
                 "content": f"API request failed with status {response.status_code}",
@@ -297,7 +469,6 @@ def generate_market_analysis(company_name, industry):
             }
             
     except Exception as e:
-        print(f"Error in generate_market_analysis: {str(e)}")
         return {
             "success": False,
             "content": f"Error: {str(e)}",
@@ -305,7 +476,7 @@ def generate_market_analysis(company_name, industry):
             "usage": {}
         }
 
-def run_scrape_sync(job_id, url, company_name):
+def run_scrape_sync(job_id, url, company_name, industry):
     """Run the actual scraping job in a separate thread"""
     try:
         crawl_jobs[job_id]["status"] = "running"
@@ -317,15 +488,12 @@ def run_scrape_sync(job_id, url, company_name):
         # Initialize Firecrawl
         app = AsyncFirecrawlApp(api_key=FIRECRAWL_API_KEY)
         
-        print(f"Starting concurrent scraping and research for {company_name}...")
-        
         # Step 1: Start both Firecrawl and Perplexity concurrently
         import concurrent.futures
         
         def run_firecrawl():
             """Run Firecrawl scraping"""
             try:
-                print(f"Starting Firecrawl crawl for {url}...")
                 crawl_response = loop.run_until_complete(app.crawl_url(
                     url=url,
                     limit=2,
@@ -339,16 +507,13 @@ def run_scrape_sync(job_id, url, company_name):
                 ))
                 return crawl_response
             except Exception as e:
-                print(f"Firecrawl error: {str(e)}")
                 return None
         
         def run_perplexity():
             """Run Perplexity research"""
             try:
-                print(f"Starting Perplexity research for {company_name}...")
-                return get_perplexity_research(company_name)
+                return get_perplexity_research(company_name, industry)
             except Exception as e:
-                print(f"Perplexity error: {str(e)}")
                 return None
         
         # Run both tasks concurrently
@@ -360,28 +525,15 @@ def run_scrape_sync(job_id, url, company_name):
             crawl_response = firecrawl_future.result()
             perplexity_research = perplexity_future.result()
         
-        print(f"Both tasks completed. Processing results...")
-        
         # Step 2: Process Firecrawl results
         if not crawl_response:
             raise Exception("Firecrawl failed to start")
         
-        print(f"Initial response type: {type(crawl_response)}")
-        if hasattr(crawl_response, 'status'):
-            print(f"Initial response status: {crawl_response.status}")
-        if hasattr(crawl_response, 'total'):
-            print(f"Initial response total: {crawl_response.total}")
-        if hasattr(crawl_response, 'completed'):
-            print(f"Initial response completed: {crawl_response.completed}")
-        
         # Check if the response is already completed (immediate completion)
         if hasattr(crawl_response, 'status') and crawl_response.status == 'completed':
-            print("Crawl completed immediately, processing results directly")
-            print(f"Immediate completion - Total pages: {getattr(crawl_response, 'total', 'unknown')}")
             status_response = crawl_response
             crawl_job_id = f"immediate-{job_id}"
         else:
-            print("Crawl started as background job, polling for completion...")
             # Extract job ID from the response for background job
             crawl_job_id = None
             
@@ -404,22 +556,11 @@ def run_scrape_sync(job_id, url, company_name):
                         crawl_job_id = crawl_response.data.id
             
             if not crawl_job_id:
-                print(f"Response type: {type(crawl_response)}")
-                print(f"Response attributes: {[attr for attr in dir(crawl_response) if not attr.startswith('_')]}")
-                if hasattr(crawl_response, 'status'):
-                    print(f"Response status: {crawl_response.status}")
-                if hasattr(crawl_response, 'success'):
-                    print(f"Response success: {crawl_response.success}")
                 raise Exception(f"Could not extract job ID from response")
-            
-            print(f"Firecrawl job ID: {crawl_job_id}")
             
             # Step 3: Poll for completion and get results (only for background jobs)
             max_attempts = 30  # 30 attempts with 10 second delays = 5 minutes max
             for attempt in range(max_attempts):
-                if attempt % 5 == 0:  # Log every 5th attempt to reduce noise
-                    print(f"Checking crawl status, attempt {attempt + 1}/{max_attempts}")
-                
                 try:
                     status_response = loop.run_until_complete(app.check_crawl_status(crawl_job_id))
                     
@@ -432,7 +573,6 @@ def run_scrape_sync(job_id, url, company_name):
                     
                     if status:
                         if status == 'completed':
-                            print("Crawl completed, processing results")
                             break
                         elif status == 'failed':
                             error_msg = "Unknown error"
@@ -442,27 +582,15 @@ def run_scrape_sync(job_id, url, company_name):
                                 error_msg = getattr(status_response, 'error', error_msg)
                             raise Exception(f"Crawl failed: {error_msg}")
                         else:
-                            # Log progress if available
-                            if isinstance(status_response, dict):
-                                completed = status_response.get('completed', 0)
-                                total = status_response.get('total', 0)
-                            else:
-                                completed = getattr(status_response, 'completed', 0)
-                                total = getattr(status_response, 'total', 0)
-                            
-                            if completed and total:
-                                print(f"Progress: {completed}/{total} pages")
                             time.sleep(10)  # Wait 10 seconds before next check
                     else:
                         time.sleep(10)
                 except Exception as e:
-                    print(f"Error checking status: {e}")
                     time.sleep(10)
             else:
                 raise Exception("Crawl timed out after 5 minutes")
         
         # Step 4: Process the results from the status response
-        print("Processing scraped content...")
         processed_content = []
         
         # Extract data from status response - handle both dict and object
@@ -473,7 +601,6 @@ def run_scrape_sync(job_id, url, company_name):
             data = getattr(status_response, 'data', [])
         
         if data:
-            print(f"Processing {len(data)} content items")
             for item in data:
                 # Handle both dict and object items
                 if isinstance(item, dict):
@@ -539,17 +666,11 @@ def run_scrape_sync(job_id, url, company_name):
                                 "url": getattr(item, 'url', ''),
                                 "content": metadata.description
                             })
-        else:
-            print(f"No data found in status response")
-        
-        print(f"Successfully processed {len(processed_content)} content items")
         
         # Step 5: Perplexity research is already completed from concurrent execution
-        print("Perplexity research status:")
-        if perplexity_research and perplexity_research.get("success"):
-            print("✅ Perplexity research completed successfully")
-        else:
-            print(f"❌ Perplexity research failed: {perplexity_research.get('error', 'Unknown error') if perplexity_research else 'No response'}")
+        
+        # Step 6: Generate fake customer account using the fake user prompt
+        fake_customer_account = generate_fake_customer_account(company_name, industry, perplexity_research)
         
         # Process and store results
         scraped_data = {
@@ -557,10 +678,12 @@ def run_scrape_sync(job_id, url, company_name):
             "firecrawl_job_id": crawl_job_id,
             "url": url,
             "company_name": company_name,
+            "industry": industry, # Include industry in scraped data
             "scraped_at": datetime.now().isoformat(),
             "processed_content": processed_content,
             "content_count": len(processed_content),
             "perplexity_research": perplexity_research,
+            "fake_customer_account": fake_customer_account,  # Include fake customer account in scraped data
             "status": "completed"
         }        
         # Save to file
@@ -576,10 +699,12 @@ def run_scrape_sync(job_id, url, company_name):
         
         if existing_company:
             existing_company['scraped_data'] = scraped_data
+            existing_company['industry'] = industry  # Update industry if it changed
             existing_company['updated_at'] = datetime.now().isoformat()
         else:
             companies.append({
                 "name": company_name,
+                "industry": industry,  # Include industry when creating new company
                 "scraped_data": scraped_data,
                 "created_at": datetime.now().isoformat(),
                 "updated_at": datetime.now().isoformat()
@@ -590,10 +715,8 @@ def run_scrape_sync(job_id, url, company_name):
         loop.close()
         
     except Exception as e:
-        print(f"Scraping error for job {job_id}: {str(e)}")
         if hasattr(e, '__traceback__'):
             import traceback
-            print(f"Error details: {traceback.format_exc().split('Traceback')[-1].strip()}")
         crawl_jobs[job_id]["status"] = "failed"
         crawl_jobs[job_id]["error"] = str(e)
 
@@ -712,6 +835,7 @@ def start_scrape():
         
         url = data['url']
         company_name = data.get('company_name', 'Unknown Company')
+        industry = data.get('industry', 'Unknown Industry')  # Extract industry from request
         
         # Validate URL format
         if not url.startswith(('http://', 'https://')):
@@ -720,20 +844,19 @@ def start_scrape():
         # Generate job ID
         job_id = str(uuid.uuid4())
         
-        # Store job info
+        # Store job info including industry
         crawl_jobs[job_id] = {
             "url": url,
             "company_name": company_name,
+            "industry": industry,  # Store industry in job data
             "status": "pending",
             "created_at": datetime.now().isoformat(),
             "result": None,
             "error": None
         }
         
-        print(f"Starting scrape job {job_id} for {url}")
-        
-        # Start scraping in a separate thread
-        thread = threading.Thread(target=run_scrape_sync, args=(job_id, url, company_name))
+        # Start scraping in a separate thread, passing industry
+        thread = threading.Thread(target=run_scrape_sync, args=(job_id, url, company_name, industry))
         thread.daemon = True
         thread.start()
         
@@ -741,11 +864,11 @@ def start_scrape():
             "message": "Scraping job started",
             "job_id": job_id,
             "status": "pending",
-            "company_name": company_name
+            "company_name": company_name,
+            "industry": industry  # Include industry in response
         }), 202
         
     except Exception as e:
-        print(f"Error starting scrape job: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/pitch/ingest/scrape/<job_id>/status', methods=['GET'])
@@ -759,6 +882,7 @@ def get_scrape_status(job_id):
         "job_id": job_id,
         "status": job["status"],
         "company_name": job["company_name"],
+        "industry": job.get("industry", "Unknown Industry"),  # Include industry in status
         "created_at": job["created_at"],
         "url": job["url"]
     }
@@ -807,15 +931,17 @@ def get_company(company_name):
 def test_perplexity():
     """Test Perplexity API connectivity"""
     try:
-        # Test with a simple company name
+        # Test with a simple company name and industry
         test_company = "Microsoft"
-        result = get_perplexity_research(test_company)
+        test_industry = "Technology"
+        result = get_perplexity_research(test_company, test_industry)
         
         if result.get("success"):
             return jsonify({
                 "status": "success",
                 "message": "Perplexity API is working",
                 "test_company": test_company,
+                "test_industry": test_industry,
                 "model": result.get("model", "unknown"),
                 "usage": result.get("usage", {}),
                 "content_preview": result.get("content", "")[:200] + "..." if len(result.get("content", "")) > 200 else result.get("content", "")
@@ -831,6 +957,39 @@ def test_perplexity():
         return jsonify({
             "status": "error",
             "message": "Failed to test Perplexity API",
+            "error": str(e)
+        }), 500
+
+@app.route('/api/test/openai', methods=['GET'])
+def test_openai():
+    """Test OpenAI GPT API connectivity"""
+    try:
+        # Test with a simple persona generation request
+        test_company = "Microsoft"
+        test_industry = "Technology"
+        result = generate_buyer_personas(test_company, test_industry)
+        
+        if result.get("success"):
+            return jsonify({
+                "status": "success",
+                "message": "OpenAI GPT API is working",
+                "test_company": test_company,
+                "test_industry": test_industry,
+                "model": result.get("model", "unknown"),
+                "usage": result.get("usage", {}),
+                "content_preview": result.get("content", "")[:200] + "..." if len(result.get("content", "")) > 200 else result.get("content", "")
+            })
+        else:
+            return jsonify({
+                "status": "error",
+                "message": "OpenAI GPT API test failed",
+                "error": result.get("content", "Unknown error")
+            }), 500
+            
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": "Failed to test OpenAI GPT API",
             "error": str(e)
         }), 500
 
@@ -899,11 +1058,14 @@ def delete_prompt(prompt_name):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/research/company/<company_name>', methods=['GET'])
+@app.route('/api/research/company/<company_name>', methods=['POST'])
 def research_company(company_name):
     """Get AI research for a company"""
     try:
-        research = get_perplexity_research(company_name)
+        data = request.get_json() or {}
+        industry = data.get('industry', 'Unknown Industry')
+        
+        research = get_perplexity_research(company_name, industry)
         return jsonify(research)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -912,17 +1074,11 @@ def research_company(company_name):
 def analyze_market():
     """Generate market analysis for a company"""
     try:
-        print("=== Market Analysis Request ===")
         data = request.get_json()
-        print(f"Received data: {data}")
         
         # Extract whatever data is available
         company_name = data.get('company_name', 'Unknown Company')
         industry = data.get('industry', 'Unknown Industry')
-        
-        print(f"Extracted values:")
-        print(f"  company_name: {company_name}")
-        print(f"  industry: {industry}")
         
         # Use company name if available, otherwise try to get from existing company data
         if not company_name or company_name == 'Unknown Company':
@@ -932,14 +1088,9 @@ def analyze_market():
                 # Use the first available company
                 company_name = companies[0]['name']
                 industry = companies[0].get('industry', 'Unknown Industry')
-                print(f"Using existing company: {company_name} in {industry}")
-        
-        print("Calling generate_market_analysis...")
         
         # Generate market analysis
         result = generate_market_analysis(company_name, industry)
-        
-        print(f"Market analysis result: {result.get('success', False)}")
         
         if result['success']:
             # Save market analysis to company data
@@ -954,35 +1105,23 @@ def analyze_market():
                     "created_at": datetime.now().isoformat()
                 })
                 save_companies(companies)
-                print(f"Saved market analysis to company data")
-            else:
-                print(f"Company {company_name} not found in companies list")
         
         return jsonify(result)
         
     except Exception as e:
-        print(f"Error in analyze_market endpoint: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/personas/generate', methods=['POST'])
 def generate_personas():
     """Generate buyer personas for a company"""
     try:
-        print("=== Persona Generation Request ===")
         data = request.get_json()
-        print(f"Received data: {data}")
         
         # Extract whatever data is available
         company_name = data.get('company_name', 'Unknown Company')
         industry = data.get('industry', 'Unknown Industry')
         scraped_content = data.get('scraped_content')
         ai_research = data.get('ai_research')
-        
-        print(f"Extracted values:")
-        print(f"  company_name: {company_name}")
-        print(f"  industry: {industry}")
-        print(f"  scraped_content: {bool(scraped_content)}")
-        print(f"  ai_research: {bool(ai_research)}")
         
         # Use company name if available, otherwise try to get from existing company data
         if not company_name or company_name == 'Unknown Company':
@@ -992,14 +1131,9 @@ def generate_personas():
                 # Use the first available company
                 company_name = companies[0]['name']
                 industry = companies[0].get('industry', 'Unknown Industry')
-                print(f"Using existing company: {company_name} in {industry}")
         
-        print("Calling generate_buyer_personas...")
-        
-        # Use the new centralized persona customization system
-        result = customize_personas_for_company(company_name, industry, None, scraped_content, ai_research)
-        
-        print(f"Persona customization result: {result.get('success', False)}")
+        # Generate personas using GPT with the persona prompt
+        result = generate_buyer_personas(company_name, industry, scraped_content, ai_research)
         
         if result['success']:
             # Save personas to company data
@@ -1009,16 +1143,123 @@ def generate_personas():
             if company:
                 if 'personas' not in company:
                     company['personas'] = []
-                company['personas'].extend(result['personas'])
+                # Store the generated content as a persona entry
+                company['personas'].append({
+                    "id": str(uuid.uuid4()),
+                    "type": "ai_generated",
+                    "content": result['content'],
+                    "company_name": company_name,
+                    "industry": industry,
+                    "created_at": datetime.now().isoformat(),
+                    "model": result.get('model', 'unknown'),
+                    "usage": result.get('usage', {})
+                })
                 save_companies(companies)
-                print(f"Saved {len(result['personas'])} personas to company data")
-            else:
-                print(f"Company {company_name} not found in companies list")
         
         return jsonify(result)
         
     except Exception as e:
-        print(f"Error in generate_personas endpoint: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/fake-customer/generate', methods=['POST'])
+def generate_fake_customer():
+    """Generate a fake customer account for a company"""
+    try:
+        data = request.get_json()
+        
+        # Extract whatever data is available
+        company_name = data.get('company_name', 'Unknown Company')
+        industry = data.get('industry', 'Unknown Industry')
+        ai_research = data.get('ai_research')
+        
+        # Use company name if available, otherwise try to get from existing company data
+        if not company_name or company_name == 'Unknown Company':
+            # Try to get company info from existing data
+            companies = load_companies()
+            if companies:
+                # Use the first available company
+                company_name = companies[0]['name']
+                industry = companies[0].get('industry', 'Unknown Industry')
+        
+        # Generate fake customer account using the fake user prompt
+        result = generate_fake_customer_account(company_name, industry, ai_research)
+        
+        if result['success']:
+            # Save fake customer account to company data
+            companies = load_companies()
+            company = next((c for c in companies if c['name'].lower() == company_name.lower()), None)
+            
+            if company:
+                if 'fake_customer_accounts' not in company:
+                    company['fake_customer_accounts'] = []
+                # Store the generated content as a fake customer account entry
+                company['fake_customer_accounts'].append({
+                    "id": str(uuid.uuid4()),
+                    "type": "ai_generated",
+                    "content": result['content'],
+                    "company_name": company_name,
+                    "industry": industry,
+                    "created_at": datetime.now().isoformat(),
+                    "model": result.get('model', 'unknown'),
+                    "usage": result.get('usage', {})
+                })
+                save_companies(companies)
+        
+        return jsonify(result)
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/prospect-expansion/generate', methods=['POST'])
+def generate_prospect_expansion_endpoint():
+    """Generate prospect expansion opportunities based on existing customer account"""
+    try:
+        data = request.get_json()
+        
+        # Extract whatever data is available
+        company_name = data.get('company_name', 'Unknown Company')
+        industry = data.get('industry', 'Unknown Industry')
+        existing_customer_account = data.get('existing_customer_account')
+        
+        # Use company name if available, otherwise try to get from existing company data
+        if not company_name or company_name == 'Unknown Company':
+            # Try to get company info from existing data
+            companies = load_companies()
+            if companies:
+                # Use the first available company
+                company_name = companies[0]['name']
+                industry = companies[0].get('industry', 'Unknown Industry')
+        
+        # Generate prospect expansion opportunities
+        result = generate_prospect_expansion(company_name, industry, existing_customer_account)
+        
+        if result.get('success'):
+            # Save prospect expansion to company data
+            companies = load_companies()
+            company = next((c for c in companies if c['name'].lower() == company_name.lower()), None)
+            
+            if company:
+                if 'prospect_expansions' not in company:
+                    company['prospect_expansions'] = []
+                # Store the generated content as a prospect expansion entry
+                company['prospect_expansions'].append({
+                    "id": str(uuid.uuid4()),
+                    "type": "ai_generated",
+                    "content": result['content'],
+                    "company_name": company_name,
+                    "industry": industry,
+                    "existing_customer_account": existing_customer_account,
+                    "created_at": datetime.now().isoformat(),
+                    "model": result.get('model', 'unknown'),
+                    "usage": result.get('usage', {})
+                })
+                save_companies(companies)
+        
+        return jsonify(result)
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/personas/<company_name>', methods=['GET'])
@@ -1191,8 +1432,8 @@ def customize_single_persona(base_persona, company_name, industry, company_stage
     return customized
 
 def format_customized_personas(personas, company_name, industry, company_stage):
-    """Format customized personas into strategic, actionable narratives"""
-    output = f"🎯 STRATEGIC PERSONA ANALYSIS FOR {company_name.upper()}\n"
+    """Format customized personas into clean, focused raw text"""
+    output = f"STRATEGIC PERSONA ANALYSIS FOR {company_name.upper()}\n"
     output += f"Industry: {industry} | Stage: {company_stage.title()}\n\n"
     
     # Add strategic context
@@ -1202,7 +1443,7 @@ def format_customized_personas(personas, company_name, industry, company_stage):
         stage_context = core_data["company_stage_modifiers"].get(company_stage, {}).get("land_expand_context", "")
         
         if industry_context or stage_context:
-            output += "📊 STRATEGIC CONTEXT:\n"
+            output += "STRATEGIC CONTEXT:\n"
             if industry_context:
                 output += f"• Industry Focus: {industry_context}\n"
             if stage_context:
@@ -1210,76 +1451,82 @@ def format_customized_personas(personas, company_name, industry, company_stage):
             output += "\n"
     
     # Add land-and-expand roadmap
-    output += "🗺️ LAND-AND-EXPAND ROADMAP:\n"
+    output += "LAND-AND-EXPAND ROADMAP:\n"
     output += "Based on market research and company analysis, here's your strategic approach:\n\n"
     
     for i, persona in enumerate(personas):
-        output += f"👤 PERSONA {i+1}: {persona['base_role']}\n"
+        output += f"PERSONA {i+1}: {persona['base_role']}\n"
         output += f"Department: {persona['department']}\n"
         output += f"Land & Expand Strategy: {persona['land_expand_strategy']}\n\n"
         
-        output += f"🎯 WHY THIS PERSONA MATTERS:\n"
+        output += f"WHY THIS PERSONA MATTERS:\n"
         output += f"• {persona['sales_approach']}\n"
         output += f"• {persona['expansion_opportunities']}\n\n"
         
-        output += f"🔍 CHAMPION INDICATORS:\n"
+        output += f"CHAMPION INDICATORS:\n"
         for indicator in persona.get('champion_indicators', []):
             output += f"• {indicator}\n"
         output += "\n"
         
-        output += f"🚀 EXPANSION PATHS:\n"
+        output += f"EXPANSION PATHS:\n"
         for path in persona.get('expansion_paths', []):
             output += f"• {path}\n"
         output += "\n"
         
-        output += f"📋 CUSTOMIZED INSIGHTS:\n"
+        output += f"CUSTOMIZED INSIGHTS:\n"
         output += f"Priorities:\n"
-        for priority in persona['priorities']:
+        # Only show core priorities, not generic ones
+        core_priorities = [p for p in persona.get('priorities', []) if p not in ['Cloud security', 'API integration', 'Scalability', 'Data privacy', 'Process standardization', 'Market expansion', 'Operational efficiency']]
+        for priority in core_priorities[:5]:  # Limit to 5 most relevant
             output += f"• {priority}\n"
         output += f"\nPain Points:\n"
-        for pain in persona['pain_points']:
+        # Only show core pain points, not generic ones
+        core_pain_points = [p for p in persona.get('pain_points', []) if p not in ['Data privacy concerns', 'Vendor lock-in risks', 'Integration complexity', 'Growing pains', 'Process inefficiencies', 'Scaling challenges']]
+        for pain in core_pain_points[:5]:  # Limit to 5 most relevant
             output += f"• {pain}\n"
         output += f"\nDecision Criteria:\n"
-        for criteria in persona['decision_criteria']:
+        # Only show core decision criteria, not generic ones
+        core_decision_criteria = [c for c in persona.get('decision_criteria', []) if c not in ['Cloud compliance', 'API ecosystem', 'Data sovereignty', 'Scalability', 'Ease of expansion', 'Process improvement']]
+        for criteria in core_decision_criteria[:5]:  # Limit to 5 most relevant
             output += f"• {criteria}\n"
-        output += f"\n"
+        output += "\n"
         
-        output += f"💼 SALES APPROACH:\n"
+        output += f"SALES APPROACH:\n"
         output += f"{persona['sales_approach']}\n\n"
         
-        output += f"🔗 EXPANSION OPPORTUNITIES:\n"
+        output += f"EXPANSION OPPORTUNITIES:\n"
         output += f"{persona['expansion_opportunities']}\n\n"
         
-        output += f"📊 INFLUENCE & AUTHORITY:\n"
+        output += f"INFLUENCE & AUTHORITY:\n"
         output += f"• Influence Level: {persona['influence_level']}\n"
         output += f"• Budget Authority: {persona['budget_authority']}\n"
         output += f"• Technical Expertise: {persona['technical_expertise']}\n\n"
         
-        output += "─" * 80 + "\n\n"
+        output += "-" * 60 + "\n\n"
     
     # Add strategic recommendations
-    output += "🎯 STRATEGIC RECOMMENDATIONS:\n"
+    output += "STRATEGIC RECOMMENDATIONS:\n"
     output += "Based on this analysis:\n\n"
     
     # Identify primary champion
     primary_champion = next((p for p in personas if p['influence_level'] == 'high' and p['budget_authority'] == 'high'), None)
     if primary_champion:
-        output += f"1. 🎯 PRIMARY CHAMPION: {primary_champion['base_role']}\n"
+        output += f"1. PRIMARY CHAMPION: {primary_champion['base_role']}\n"
         output += f"   Start here - they have the influence and budget to drive adoption.\n\n"
     
     # Identify operational champions
     operational_champions = [p for p in personas if 'operations' in p['department'].lower()]
     if operational_champions:
-        output += f"2. 🔧 OPERATIONAL CHAMPIONS: {', '.join([p['base_role'] for p in operational_champions])}\n"
+        output += f"2. OPERATIONAL CHAMPIONS: {', '.join([p['base_role'] for p in operational_champions])}\n"
         output += f"   These personas feel the daily pain and can demonstrate immediate value.\n\n"
     
     # Identify expansion targets
     expansion_targets = [p for p in personas if p['influence_level'] == 'medium' and p['budget_authority'] == 'medium']
     if expansion_targets:
-        output += f"3. 🚀 EXPANSION TARGETS: {', '.join([p['base_role'] for p in expansion_targets])}\n"
+        output += f"3. EXPANSION TARGETS: {', '.join([p['base_role'] for p in expansion_targets])}\n"
         output += f"   Once you have champions, expand to these personas for broader adoption.\n\n"
     
-    output += "💡 NEXT STEPS:\n"
+    output += "NEXT STEPS:\n"
     output += "1. Identify your current champion or primary contact\n"
     output += "2. Use the customized insights to tailor your pitch\n"
     output += "3. Focus on the expansion paths to grow your footprint\n"
@@ -1417,6 +1664,7 @@ def calculate_expansion_potential(persona):
         potential += 30
     elif persona["influence_level"] == "medium":
         potential += 20
+    
     
     # Operations roles have high expansion potential
     if "operations" in persona["department"].lower():

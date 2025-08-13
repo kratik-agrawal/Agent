@@ -26,7 +26,8 @@ import {
   ExternalLink,
   AlertCircle,
   RefreshCw,
-  Loader2
+  Loader2,
+  User
 } from "lucide-react"
 
 // Flask backend URL
@@ -50,6 +51,7 @@ interface ScrapedData {
   processed_content: any[]
   content_count: number
   perplexity_research: any
+  fake_customer_account?: any
   status: string
 }
 
@@ -65,6 +67,12 @@ export default function CompanyPage() {
   const [generatingMarketAnalysis, setGeneratingMarketAnalysis] = useState(false)
   const [marketAnalysis, setMarketAnalysis] = useState<any[]>([])
   const [marketAnalysisError, setMarketAnalysisError] = useState<string | null>(null)
+  const [generatingFakeCustomer, setGeneratingFakeCustomer] = useState(false)
+  const [fakeCustomerAccounts, setFakeCustomerAccounts] = useState<any[]>([])
+  const [fakeCustomerError, setFakeCustomerError] = useState<string | null>(null)
+  const [generatingProspectExpansion, setGeneratingProspectExpansion] = useState(false)
+  const [prospectExpansions, setProspectExpansions] = useState<any[]>([])
+  const [prospectExpansionError, setProspectExpansionError] = useState<string | null>(null)
 
   const companyName = decodeURIComponent(params.name as string)
 
@@ -79,12 +87,47 @@ export default function CompanyPage() {
       
       if (response.ok) {
         const data = await response.json()
+        console.log('Loaded company data:', data)
         setCompany(data)
         
         // Load existing personas if available
         if (data.personas) {
           setPersonas(data.personas)
         }
+        
+        // Load existing fake customer accounts if available
+        if (data.fake_customer_accounts) {
+          console.log('Found fake_customer_accounts:', data.fake_customer_accounts)
+          setFakeCustomerAccounts(data.fake_customer_accounts)
+        }
+        
+        // Load existing prospect expansions if available
+        if (data.prospect_expansions) {
+          console.log('Found prospect_expansions:', data.prospect_expansions)
+          setProspectExpansions(data.prospect_expansions)
+        }
+        
+        // Load fake customer accounts from scraped data if available
+        if (data.scraped_data?.fake_customer_account) {
+          console.log('Found fake_customer_account in scraped_data:', data.scraped_data.fake_customer_account)
+          // Check if it's already in the format we expect
+          if (data.scraped_data.fake_customer_account.content) {
+            console.log('Setting fake customer accounts from scraped_data.content')
+            setFakeCustomerAccounts([data.scraped_data.fake_customer_account])
+          } else {
+            // If it's just the content string, wrap it in the expected format
+            console.log('Wrapping fake_customer_account content in expected format')
+            setFakeCustomerAccounts([{ content: data.scraped_data.fake_customer_account }])
+          }
+        }
+        
+        // Also check if there are any fake customer accounts in the scraped data that might have been missed
+        if (data.scraped_data && !data.fake_customer_accounts && !data.scraped_data.fake_customer_account) {
+          console.log('No fake customer accounts found in company data')
+        }
+        
+        // Log the final state we're setting
+        console.log('Final fakeCustomerAccounts state being set:', fakeCustomerAccounts)
       } else if (response.status === 404) {
         setError("Company not found")
       } else {
@@ -189,6 +232,151 @@ export default function CompanyPage() {
       setMarketAnalysisError('Error generating market analysis')
     } finally {
       setGeneratingMarketAnalysis(false)
+    }
+  }
+
+  const generateFakeCustomerAccount = async () => {
+    if (!company) return
+    
+    try {
+      setGeneratingFakeCustomer(true)
+      setFakeCustomerError(null)
+      
+      // Send minimal data - just company name and industry
+      const requestData = {
+        company_name: company.name,
+        industry: company.industry
+      }
+      
+      console.log('Generating fake customer account for:', company.name, 'in industry:', company.industry)
+      
+      const response = await fetch(`${FLASK_BASE_URL}/api/fake-customer/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      })
+      
+      if (response.ok) {
+        const result = await response.json()
+        console.log('Fake customer account generation result:', result)
+        
+        if (result.success) {
+          console.log('Successfully generated fake customer account, content:', result.content)
+          // Store the generated content immediately
+          const fakeAccount = { content: result.content }
+          setFakeCustomerAccounts([fakeAccount])
+          console.log('Set fake customer accounts state to:', [fakeAccount])
+          
+          // Also refresh company data to get updated fake customer accounts
+          await loadCompany()
+        } else {
+          console.error('Failed to generate fake customer account:', result.content)
+          setFakeCustomerError(result.content || 'Failed to generate fake customer account')
+        }
+      } else {
+        const errorData = await response.json()
+        console.error('HTTP error generating fake customer account:', errorData)
+        setFakeCustomerError(errorData.error || 'Failed to generate fake customer account')
+      }
+    } catch (error) {
+      console.error('Error generating fake customer account:', error)
+      setFakeCustomerError('Error generating fake customer account')
+    } finally {
+      setGeneratingFakeCustomer(false)
+    }
+  }
+
+  const generateProspectExpansion = async () => {
+    if (!company || fakeCustomerAccounts.length === 0) {
+      console.log('Cannot generate prospect expansion:', { 
+        hasCompany: !!company, 
+        fakeCustomerAccountsLength: fakeCustomerAccounts.length 
+      })
+      return
+    }
+    
+    try {
+      setGeneratingProspectExpansion(true)
+      setProspectExpansionError(null)
+      
+      // Get the existing customer account content
+      const existingCustomerAccount = fakeCustomerAccounts[0]
+      const accountContent = existingCustomerAccount.content || existingCustomerAccount
+      
+      console.log('DEBUG: Starting prospect expansion generation')
+      console.log('DEBUG: Company:', company)
+      console.log('DEBUG: Fake customer accounts:', fakeCustomerAccounts)
+      console.log('DEBUG: Existing customer account:', existingCustomerAccount)
+      console.log('DEBUG: Account content:', accountContent)
+      
+      // Extract company information from the existing customer account
+      // This helps the API understand the context better for generating expansion prospects
+      const requestData = {
+        company_name: company.name,
+        industry: company.industry,
+        existing_customer_account: accountContent,
+        // Add additional context to help with prospect expansion
+        target_company_context: {
+          name: company.name,
+          industry: company.industry,
+          existing_champion_profile: accountContent
+        }
+      }
+      
+      console.log('Generating prospect expansion for:', company.name, 'in industry:', company.industry)
+      console.log('Using existing customer account:', accountContent)
+      console.log('Target company context:', requestData.target_company_context)
+      console.log('DEBUG: Request data being sent:', requestData)
+      
+      const response = await fetch(`${FLASK_BASE_URL}/api/prospect-expansion/generate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      })
+      
+      console.log('DEBUG: Response status:', response.status)
+      console.log('DEBUG: Response ok:', response.ok)
+      
+      if (response.ok) {
+        const result = await response.json()
+        console.log('Prospect expansion generation result:', result)
+        
+        if (result.success) {
+          console.log('Successfully generated prospect expansion, content:', result.content)
+          // Store the generated content immediately with proper structure
+          const prospectExpansion = {
+            id: Date.now().toString(), // Temporary ID
+            type: 'ai_generated',
+            content: result.content,
+            company_name: company.name,
+            industry: company.industry,
+            created_at: new Date().toISOString(),
+            model: result.model || 'unknown',
+            usage: result.usage || {}
+          }
+          setProspectExpansions([prospectExpansion])
+          console.log('Set prospect expansions state to:', [prospectExpansion])
+          
+          // Also refresh company data to get updated prospect expansions
+          await loadCompany()
+        } else {
+          console.error('Failed to generate prospect expansion:', result.content)
+          setProspectExpansionError(result.content || 'Failed to generate prospect expansion')
+        }
+      } else {
+        const errorData = await response.json()
+        console.error('HTTP error generating prospect expansion:', errorData)
+        setProspectExpansionError(errorData.error || 'Failed to generate prospect expansion')
+      }
+    } catch (error) {
+      console.error('Error generating prospect expansion:', error)
+      setProspectExpansionError('Error generating prospect expansion')
+    } finally {
+      setGeneratingProspectExpansion(false)
     }
   }
 
@@ -439,10 +627,10 @@ export default function CompanyPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Panel - Company Overview & Key Insights */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Company Overview */}
+        {/* First Row - Company Overview and Quick Actions side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          {/* Company Overview */}
+          <div className="lg:col-span-2">
             <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200/50 pb-6">
                 <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
@@ -477,13 +665,13 @@ export default function CompanyPage() {
                         <p className="text-gray-900">{formatDate(company.created_at)}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
+                    {/* <div className="flex items-center gap-3">
                       <Calendar className="h-5 w-5 text-blue-600" />
                       <div>
                         <p className="text-sm font-medium text-gray-500">Last Updated</p>
                         <p className="text-gray-900">{formatDate(company.updated_at)}</p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   
                   <div className="space-y-4">
@@ -526,75 +714,10 @@ export default function CompanyPage() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Key Insights */}
-            {keyInsights.length > 0 && (
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
-                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                    <Lightbulb className="h-5 w-5" />
-                    Key Insights Available
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    AI-powered research and analysis results
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-8 pb-8">
-                  <div className="flex flex-wrap gap-2">
-                    {keyInsights.map((insight, index) => (
-                      <Badge 
-                        key={index} 
-                        variant="secondary" 
-                        className="bg-emerald-100 text-emerald-800 border-emerald-200 font-medium"
-                      >
-                        {insight}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* AI Research Results */}
-            {scrapedData?.perplexity_research && (
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200/50 pb-6">
-                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5" />
-                    AI Research & Analysis
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    Comprehensive market intelligence from Perplexity AI
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-8 pb-8">
-                  {renderPerplexityResearch(scrapedData.perplexity_research)}
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Scraped Content */}
-            {scrapedData?.processed_content && (
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-orange-50 to-orange-100 border-b border-orange-200/50 pb-6">
-                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                    <FileText className="h-5 w-5" />
-                    Scraped Website Content
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    Raw content extracted from the company website
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-8 pb-8">
-                  {renderScrapedContent(scrapedData)}
-                </CardContent>
-              </Card>
-            )}
           </div>
 
-          {/* Right Panel - Actionable Insights & Tools */}
-          <div className="space-y-6">
-            {/* Quick Actions */}
+          {/* Quick Actions */}
+          <div>
             <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-indigo-50 to-indigo-100 border-b border-indigo-200/50 pb-6">
                 <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
@@ -644,83 +767,302 @@ export default function CompanyPage() {
                     </div>
                   )}
                   
-                  <Button className="w-full justify-start" variant="outline">
-                    <MessageSquare className="h-4 w-4 mr-2" />
-                    Generate Sales Script
+                  <Button 
+                    onClick={generateFakeCustomerAccount}
+                    disabled={generatingFakeCustomer}
+                    className="w-full justify-start" 
+                    variant="outline"
+                  >
+                    {generatingFakeCustomer ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <UserCheck className="h-4 w-4 mr-2" />
+                    )}
+                    {generatingFakeCustomer ? 'Generating...' : 'Generate Fake Customer Account'}
                   </Button>
-                  {/* <Button className="w-full justify-start" variant="outline">
-                    <TrendingUp className="h-4 w-4 mr-2" />
-                    Market Analysis
-                  </Button>
-                  <Button className="w-full justify-start" variant="outline">
-                    <FileText className="h-4 w-4 mr-2" />
-                    Export Report
-                  </Button> */}
+                  
+                  {fakeCustomerError && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                      {fakeCustomerError}
+                    </div>
+                  )}
+                  
+                  {fakeCustomerAccounts.length > 0 && (
+                    <Button 
+                      onClick={generateProspectExpansion}
+                      disabled={generatingProspectExpansion}
+                      className="w-full justify-start" 
+                      variant="outline"
+                    >
+                      {generatingProspectExpansion ? (
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      ) : (
+                        <Target className="h-4 w-4 mr-2" />
+                      )}
+                      {generatingProspectExpansion ? 'Generating...' : 'Generate Expansion Prospects'}
+                    </Button>
+                  )}
+                  
+                  {prospectExpansionError && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                      {prospectExpansionError}
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
 
-            {/* Buyer Personas */}
-            {personas.length > 0 && (
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
-                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                    <UserCheck className="h-5 w-5" />
-                    Buyer Personas
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    AI-generated buyer personas for sales targeting
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-6 pb-6">
-                  <div className="space-y-4">
-                    {personas.map((persona, index) => (
-                      <div key={index} className="prose prose-sm max-w-none">
-                        <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                          {persona.content}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Market Analysis */}
-            {marketAnalysis.length > 0 && (
-              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200/50 pb-6">
-                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5" />
-                    Market Analysis
-                  </CardTitle>
-                  <CardDescription className="text-gray-600 text-base">
-                    Market landscape and similar companies for prospecting
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-8 px-6 pb-6">
-                  <div className="space-y-4">
-                    {marketAnalysis.map((analysis, index) => (
-                      <div key={index} className="prose prose-sm max-w-none">
-                        <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                          {analysis.content}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Data Sources */}
+        {/* Second Row - Fake Customer Account and Prospect Expansion side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          {/* Fake Customer Account */}
+          <div>
             <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-cyan-50 to-cyan-100 border-b border-cyan-200/50 pb-6">
-                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                  <Globe className="h-5 w-5" />
-                  Data Sources
+              <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
+                <CardTitle className="flex items-center gap-3 text-gray-900 text-xl">
+                  <div className="p-2.5 bg-emerald-600 rounded-xl">
+                    <User className="h-5 w-5 text-white" />
+                  </div>
+                  Current Customer Account
                 </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  Generate a realistic customer account with internal champion
+                </CardDescription>
               </CardHeader>
-              <CardContent className="pt-8 px-6 pb-6">
+              <CardContent className="pt-8 px-8 pb-8">
+                {fakeCustomerError && (
+                  <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-700 text-sm">{fakeCustomerError}</p>
+                  </div>
+                )}
+                
+                {fakeCustomerAccounts.length === 0 ? (
+                  <div className="text-center py-8">
+                    <UserCheck className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-gray-500 mb-4">No customer account generated yet</p>
+                    <Button 
+                      onClick={generateFakeCustomerAccount} 
+                      disabled={generatingFakeCustomer}
+                      className="bg-emerald-600 hover:bg-emerald-700"
+                    >
+                      {generatingFakeCustomer ? (
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      ) : (
+                        <UserCheck className="h-4 w-4 mr-2" />
+                      )}
+                      {generatingFakeCustomer ? 'Generating...' : 'Generate Fake Customer Account'}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {fakeCustomerAccounts.map((account, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                        <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">
+                          {account.content}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Prospect Expansion */}
+          {fakeCustomerAccounts.length > 0 && (
+            <div>
+              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200/50 pb-6">
+                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                    <Target className="h-5 w-5" />
+                    Prospect Expansion Opportunities
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 text-base">
+                    Additional prospects within the same company for product expansion
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 px-8 pb-8">
+                  {prospectExpansionError && (
+                    <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-700 text-sm">{prospectExpansionError}</p>
+                    </div>
+                  )}
+                  
+                  {prospectExpansions.length > 0 ? (
+                    <div className="space-y-4">
+                      {prospectExpansions.map((expansion, index) => (
+                        <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                          <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">
+                            {expansion.content}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8">
+                      <Target className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                      {fakeCustomerAccounts.length === 0 ? (
+                        <>
+                          <p className="text-gray-500 mb-4">You need to generate a fake customer account first</p>
+                          <p className="text-gray-400 text-sm mb-4">Prospect expansion requires an existing customer profile to work with</p>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-gray-500 mb-4">No prospect expansion opportunities generated yet</p>
+                          <p className="text-gray-400 text-sm mb-4">Click below to identify cross-sell opportunities within the same company</p>
+                        </>
+                      )}
+                      <Button 
+                        onClick={generateProspectExpansion}
+                        disabled={generatingProspectExpansion || fakeCustomerAccounts.length === 0}
+                        className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                      >
+                        {generatingProspectExpansion ? (
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        ) : (
+                          <Target className="h-4 w-4 mr-2" />
+                        )}
+                        {generatingProspectExpansion ? 'Generating...' : 
+                         fakeCustomerAccounts.length === 0 ? 'Generate Customer Account First' : 
+                         'Generate Expansion Prospects'}
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </div>
+
+        {/* All other sections - Full width */}
+        <div className="space-y-6">
+          {/* Key Insights */}
+          {/* {keyInsights.length > 0 && (
+            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
+                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5" />
+                  Key Insights Available
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  AI-powered research and analysis results
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-8 px-8 pb-8">
+                <div className="flex flex-wrap gap-2">
+                  {keyInsights.map((insight, index) => (
+                    <Badge 
+                      key={index} 
+                      variant="secondary" 
+                      className="bg-emerald-100 text-emerald-800 border-emerald-200 font-medium"
+                    >
+                      {insight}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )} */}
+
+          {/* AI Research Results */}
+          {scrapedData?.perplexity_research && (
+            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200/50 pb-6">
+                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5" />
+                  AI Research & Analysis
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  Comprehensive market intelligence from Perplexity AI
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-8 px-8 pb-8">
+                {renderPerplexityResearch(scrapedData.perplexity_research)}
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Scraped Content */}
+          {scrapedData?.processed_content && (
+            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-orange-50 to-orange-100 border-b border-orange-200/50 pb-6">
+                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                  <FileText className="h-5 w-5" />
+                  Scraped Website Content
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  Raw content extracted from the company website
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-8 px-8 pb-8">
+                {renderScrapedContent(scrapedData)}
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Buyer Personas */}
+          {personas.length > 0 && (
+            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-emerald-50 to-emerald-100 border-b border-emerald-200/50 pb-6">
+                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                  <UserCheck className="h-5 w-5" />
+                  Buyer Personas
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  AI-generated buyer personas for sales targeting
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-8 px-8 pb-8">
+                <div className="space-y-4">
+                  {personas.map((persona, index) => (
+                    <div key={index} className="prose prose-sm max-w-none">
+                      <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                        {persona.content}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Market Analysis */}
+          {marketAnalysis.length > 0 && (
+            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200/50 pb-6">
+                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5" />
+                  Market Analysis
+                </CardTitle>
+                <CardDescription className="text-gray-600 text-base">
+                  Market landscape and similar companies for prospecting
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-8 px-8 pb-8">
+                <div className="space-y-4">
+                  {marketAnalysis.map((analysis, index) => (
+                    <div key={index} className="prose prose-sm max-w-none">
+                      <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                        {analysis.content}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Data Sources */}
+          <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-cyan-50 to-cyan-100 border-b border-cyan-200/50 pb-6">
+              <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                <Globe className="h-5 w-5" />
+                Data Sources
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-8 px-8 pb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Web Scraping</span>
@@ -734,6 +1076,8 @@ export default function CompanyPage() {
                       {scrapedData?.perplexity_research?.success ? '✓ Available' : '✗ Not Available'}
                     </Badge>
                   </div>
+                </div>
+                <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Manual Pitch</span>
                     <Badge variant="secondary" className="bg-green-100 text-green-800">
@@ -747,28 +1091,33 @@ export default function CompanyPage() {
                     </Badge>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </CardContent>
+          </Card>
 
-            {/* Placeholder for Future Features */}
-            <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-amber-50 to-amber-100 border-b border-amber-200/50 pb-6">
-                <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5" />
-                  Coming Soon
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-8 px-6 pb-6">
+          {/* Placeholder for Future Features */}
+          <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-amber-50 to-amber-100 border-b border-amber-200/50 pb-6">
+              <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                <Lightbulb className="h-5 w-5" />
+                Coming Soon
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-8 px-8 pb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3 text-sm text-gray-600">
                   <p>• Target Customer Profiles</p>
                   <p>• Sample Sales Scripts</p>
                   <p>• Competitive Analysis</p>
+                </div>
+                <div className="space-y-3 text-sm text-gray-600">
                   <p>• Market Trends Dashboard</p>
                   <p>• Lead Scoring Tools</p>
+                  <p>• Sales Performance Analytics</p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

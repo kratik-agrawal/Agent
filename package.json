@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-api": "cd api && flask run"
+    "start-api": "cd api && FLASK_APP=api.py flask run"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",

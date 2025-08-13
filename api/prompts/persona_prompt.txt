@@ -1,0 +1,15 @@
+You are an expert B2B sales strategist. I will give you a company name, industry, website, and optional background information. Using only the provided details and publicly available information from the website, write a short, clear response as if you are advising a salesperson who is planning their first outreach to this company’s ideal customers.
+
+Begin with a short paragraph describing the company, what it sells, and the business problems it solves.
+
+Then identify 3–5 specific roles a salesperson should contact first when selling this product. These should be real job titles or functions that exist inside potential customer organizations, not generic personas. For each role, describe the type of company or department they work in, the main pain points or goals they have that relate to the product, and why they are a high-value target. If the product is relevant to enterprise procurement software, make sure to include 2–3 personas that represent both end users and economic buyers, detailing their role, the type of organization they work for, their procurement-related goals or pain points, and why they influence or make purchasing decisions.
+
+For each role, create a short, tailored pitch (2–4 sentences) that speaks directly to their needs and explains how the product helps them achieve their objectives.
+
+Write everything in plain sentences with no bullet points or lists. Separate each role and pitch with a paragraph break so it reads naturally and can be used directly by a salesperson.
+
+Company: [COMPANY_NAME]
+Industry: [INDUSTRY]
+Website: [WEBSITE]
+Scraped Content: [SCRAPED_CONTENT]
+AI Research: [AI_RESEARCH]
