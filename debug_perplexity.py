@@ -6,8 +6,6 @@ Debug script for Perplexity API issues
 import requests
 import json
 
-# API Key
-PERPLEXITY_API_KEY = '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'
 
 def test_perplexity_api():
     """Test Perplexity API with different configurations"""

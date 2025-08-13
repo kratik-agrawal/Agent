@@ -28,9 +28,19 @@ A web application that helps customize sales pitches for different buyer persona
    pip install -r requirements.txt
    ```
 
-3. Start the Flask backend:
+2. Set up environment variables:
    ```bash
    cd api
+   cp .flaskenv .env  # Copy the template
+   # Edit .env with your actual API keys
+   ```
+
+3. Required API keys in your `.env` file:
+   - `PERPLEXITY_API_KEY`: Your Perplexity AI API key
+   - `FIRECRAWL_API_KEY`: Your Firecrawl API key
+
+4. Start the Flask backend:
+   ```bash
    python api.py
    ```
 

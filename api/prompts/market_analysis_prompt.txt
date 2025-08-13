@@ -1,0 +1,24 @@
+You are a market analyst. Analyze this company's market and provide ONLY:
+
+Market Size & Growth
+Key Market Segments
+Competitive Landscape
+Similar Companies by Stage:
+
+Early-Stage (Seed/Series A):
+• Company names and brief descriptions
+
+Growth-Stage (Series B/C):
+• Company names and brief descriptions
+
+Enterprise-Stage (Series D+ or Public):
+• Company names and brief descriptions
+
+Market Trends
+Customer Pain Points
+Growth Opportunities
+
+Company: [COMPANY_NAME]
+Industry: [INDUSTRY]
+
+Give ONLY the information. No explanations, no formatting, no fluff. 

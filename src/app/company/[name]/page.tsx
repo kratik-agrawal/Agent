@@ -62,6 +62,9 @@ export default function CompanyPage() {
   const [generatingPersonas, setGeneratingPersonas] = useState(false)
   const [personas, setPersonas] = useState<any[]>([])
   const [personaError, setPersonaError] = useState<string | null>(null)
+  const [generatingMarketAnalysis, setGeneratingMarketAnalysis] = useState(false)
+  const [marketAnalysis, setMarketAnalysis] = useState<any[]>([])
+  const [marketAnalysisError, setMarketAnalysisError] = useState<string | null>(null)
 
   const companyName = decodeURIComponent(params.name as string)
 
@@ -102,14 +105,13 @@ export default function CompanyPage() {
       setGeneratingPersonas(true)
       setPersonaError(null)
       
-      // Prepare the request data
+      // Send minimal data - just company name and industry
       const requestData = {
         company_name: company.name,
-        industry: company.industry,
-        scraped_content: company.scraped_data?.processed_content ? 
-          company.scraped_data.processed_content.map((item: any) => item.content).join('\n\n') : undefined,
-        ai_research: company.scraped_data?.perplexity_research?.content
+        industry: company.industry
       }
+      
+      console.log('Generating personas for:', company.name, 'in industry:', company.industry)
       
       const response = await fetch(`${FLASK_BASE_URL}/api/personas/generate`, {
         method: 'POST',
@@ -121,9 +123,11 @@ export default function CompanyPage() {
       
       if (response.ok) {
         const result = await response.json()
+        console.log('Persona generation result:', result)
         
         if (result.success) {
-          setPersonas(result.personas)
+          // Just store the text content
+          setPersonas([{ content: result.content }])
           // Refresh company data to get updated personas
           loadCompany()
         } else {
@@ -138,6 +142,53 @@ export default function CompanyPage() {
       setPersonaError('Error generating personas')
     } finally {
       setGeneratingPersonas(false)
+    }
+  }
+
+  const generateMarketAnalysis = async () => {
+    if (!company) return
+    
+    try {
+      setGeneratingMarketAnalysis(true)
+      setMarketAnalysisError(null)
+      
+      // Send minimal data - just company name and industry
+      const requestData = {
+        company_name: company.name,
+        industry: company.industry
+      }
+      
+      console.log('Generating market analysis for:', company.name, 'in industry:', company.industry)
+      
+      const response = await fetch(`${FLASK_BASE_URL}/api/market/analyze`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      })
+      
+      if (response.ok) {
+        const result = await response.json()
+        console.log('Market analysis result:', result)
+        
+        if (result.success) {
+          // Just store the text content
+          setMarketAnalysis([{ content: result.content }])
+          // Refresh company data to get updated market analysis
+          loadCompany()
+        } else {
+          setMarketAnalysisError(result.content || 'Failed to generate market analysis')
+        }
+      } else {
+        const errorData = await response.json()
+        setMarketAnalysisError(errorData.error || 'Failed to generate market analysis')
+      }
+    } catch (error) {
+      console.error('Error generating market analysis:', error)
+      setMarketAnalysisError('Error generating market analysis')
+    } finally {
+      setGeneratingMarketAnalysis(false)
     }
   }
 
@@ -555,7 +606,7 @@ export default function CompanyPage() {
                 <div className="space-y-3">
                   <Button 
                     onClick={generatePersonas}
-                    disabled={generatingPersonas || !company?.scraped_data}
+                    disabled={generatingPersonas}
                     className="w-full justify-start" 
                     variant="outline"
                   >
@@ -573,18 +624,38 @@ export default function CompanyPage() {
                     </div>
                   )}
                   
+                  <Button 
+                    onClick={generateMarketAnalysis}
+                    disabled={generatingMarketAnalysis}
+                    className="w-full justify-start" 
+                    variant="outline"
+                  >
+                    {generatingMarketAnalysis ? (
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    ) : (
+                      <TrendingUp className="h-4 w-4 mr-2" />
+                    )}
+                    {generatingMarketAnalysis ? 'Analyzing Market...' : 'Market Analysis'}
+                  </Button>
+                  
+                  {marketAnalysisError && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
+                      {marketAnalysisError}
+                    </div>
+                  )}
+                  
                   <Button className="w-full justify-start" variant="outline">
                     <MessageSquare className="h-4 w-4 mr-2" />
                     Generate Sales Script
                   </Button>
-                  <Button className="w-full justify-start" variant="outline">
+                  {/* <Button className="w-full justify-start" variant="outline">
                     <TrendingUp className="h-4 w-4 mr-2" />
                     Market Analysis
                   </Button>
                   <Button className="w-full justify-start" variant="outline">
                     <FileText className="h-4 w-4 mr-2" />
                     Export Report
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>
@@ -604,49 +675,35 @@ export default function CompanyPage() {
                 <CardContent className="pt-8 px-6 pb-6">
                   <div className="space-y-4">
                     {personas.map((persona, index) => (
-                      <div key={persona.id || index} className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <h4 className="font-semibold text-gray-900">{persona.title}</h4>
-                            <p className="text-sm text-gray-600">{persona.role} • {persona.department}</p>
-                          </div>
-                          <div className="flex gap-2">
-                            <Badge variant="secondary" className="text-xs">
-                              {persona.influence_level} influence
-                            </Badge>
-                            <Badge variant="secondary" className="text-xs">
-                              {persona.budget_authority} budget
-                            </Badge>
-                          </div>
+                      <div key={index} className="prose prose-sm max-w-none">
+                        <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                          {persona.content}
                         </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                          <div>
-                            <p className="font-medium text-gray-700 mb-1">Priorities</p>
-                            <ul className="space-y-1">
-                              {persona.priorities?.slice(0, 3).map((priority: string, i: number) => (
-                                <li key={i} className="text-gray-600">• {priority}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          
-                          <div>
-                            <p className="font-medium text-gray-700 mb-1">Pain Points</p>
-                            <ul className="space-y-1">
-                              {persona.pain_points?.slice(0, 3).map((pain: string, i: number) => (
-                                <li key={i} className="text-gray-600">• {pain}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          
-                          <div>
-                            <p className="font-medium text-gray-700 mb-1">Decision Criteria</p>
-                            <ul className="space-y-1">
-                              {persona.decision_criteria?.slice(0, 3).map((criteria: string, i: number) => (
-                                <li key={i} className="text-gray-600">• {criteria}</li>
-                              ))}
-                            </ul>
-                          </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Market Analysis */}
+            {marketAnalysis.length > 0 && (
+              <Card className="bg-white border-0 shadow-xl rounded-2xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200/50 pb-6">
+                  <CardTitle className="text-gray-900 text-xl flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5" />
+                    Market Analysis
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 text-base">
+                    Market landscape and similar companies for prospecting
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 px-6 pb-6">
+                  <div className="space-y-4">
+                    {marketAnalysis.map((analysis, index) => (
+                      <div key={index} className="prose prose-sm max-w-none">
+                        <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
+                          {analysis.content}
                         </div>
                       </div>
                     ))}

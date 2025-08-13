@@ -1,0 +1,248 @@
+{
+  "personas": {
+    "cio_cto": {
+      "base_role": "Chief Information Officer / Chief Technology Officer",
+      "department": "IT / Executive Leadership",
+      "land_expand_strategy": "Primary expansion target - they control IT strategy and budget",
+      "champion_indicators": ["IT budget owner", "Digital transformation driver", "Technology decision maker"],
+      "expansion_paths": ["VP Operations", "CFO", "IT Director"],
+      "core_priorities": [
+        "Digital transformation and innovation",
+        "IT infrastructure scalability and security",
+        "Cost optimization and ROI",
+        "Data management and analytics",
+        "Technology enablement for business growth"
+      ],
+      "core_pain_points": [
+        "Legacy system maintenance and integration",
+        "Security vulnerabilities and compliance risks",
+        "IT budget constraints and justification",
+        "Talent shortages and skills gaps in IT teams",
+        "Balancing innovation with operational stability"
+      ],
+      "core_decision_criteria": [
+        "Solution scalability and integration ease",
+        "Security and compliance features",
+        "Vendor reputation and support quality",
+        "Total cost of ownership (TCO) and ROI",
+        "Alignment with long-term IT strategy"
+      ],
+      "sales_approach": "Focus on strategic value and long-term partnership. They want to see how your solution fits their 3-5 year IT roadmap.",
+      "expansion_opportunities": "Once they're a champion, they can introduce you to operations and finance leaders for broader adoption.",
+      "influence_level": "high",
+      "budget_authority": "high",
+      "technical_expertise": "high"
+    },
+    "vp_operations": {
+      "base_role": "VP of Operations / Chief Operating Officer",
+      "department": "Operations / Executive Leadership",
+      "land_expand_strategy": "Key operational champion - they feel the pain of inefficiency daily",
+      "champion_indicators": ["Process optimization focus", "Operational efficiency metrics", "Cross-functional influence"],
+      "expansion_paths": ["CIO/CTO", "CFO", "Department Heads"],
+      "core_priorities": [
+        "Process efficiency and optimization",
+        "Cost reduction and operational excellence",
+        "Quality improvement and standardization",
+        "Scalability and growth enablement",
+        "Risk management and compliance"
+      ],
+      "core_pain_points": [
+        "Manual and inefficient processes",
+        "Lack of operational visibility",
+        "Compliance and regulatory issues",
+        "Resource constraints and bottlenecks",
+        "Difficulty scaling operations"
+      ],
+      "core_decision_criteria": [
+        "Ease of implementation and user adoption",
+        "Process improvement potential",
+        "Integration with existing systems",
+        "Cost-effectiveness and ROI",
+        "Vendor support and reliability"
+      ],
+      "sales_approach": "Lead with operational pain points and process inefficiencies. They want to see immediate impact on daily operations.",
+      "expansion_opportunities": "They can champion your solution to department heads and influence IT decisions for broader deployment.",
+      "influence_level": "high",
+      "budget_authority": "medium",
+      "technical_expertise": "medium"
+    },
+    "cfo": {
+      "base_role": "Chief Financial Officer",
+      "department": "Finance / Executive Leadership",
+      "land_expand_strategy": "Budget gatekeeper - need CIO/CTO champion first, then CFO for expansion",
+      "champion_indicators": ["ROI focus", "Cost control mindset", "Budget planning authority"],
+      "expansion_paths": ["CIO/CTO", "VP Operations", "Procurement"],
+      "core_priorities": [
+        "Cost control and optimization",
+        "ROI and financial performance",
+        "Risk management and compliance",
+        "Budget planning and forecasting",
+        "Financial strategy alignment"
+      ],
+      "core_pain_points": [
+        "Justifying large technology expenditures",
+        "Lack of clear ROI or cost-benefit analysis",
+        "Budget constraints and competing priorities",
+        "Financial risks from vendor lock-in",
+        "Complex contract terms and payment models"
+      ],
+      "core_decision_criteria": [
+        "Clear ROI and cost savings potential",
+        "Transparent pricing and contract terms",
+        "Vendor financial stability and reputation",
+        "Flexibility in payment and licensing models",
+        "Risk mitigation and compliance assurances"
+      ],
+      "sales_approach": "Lead with financial metrics and ROI. They need to see the numbers and understand the payback period.",
+      "expansion_opportunities": "Once they approve budget, they can influence other departments to adopt your solution.",
+      "influence_level": "high",
+      "budget_authority": "high",
+      "technical_expertise": "medium"
+    },
+    "procurement_manager": {
+      "base_role": "Procurement Manager / Director",
+      "department": "Procurement / Supply Chain",
+      "land_expand_strategy": "Operational user who can become internal champion for broader adoption",
+      "champion_indicators": ["Process improvement focus", "Vendor relationship management", "Cross-functional collaboration"],
+      "expansion_paths": ["VP Operations", "CIO/CTO", "Department Heads"],
+      "core_priorities": [
+        "Cost savings and spend optimization",
+        "Supplier management and risk mitigation",
+        "Contract negotiation and compliance",
+        "Process efficiency and automation",
+        "Strategic sourcing and partnerships"
+      ],
+      "core_pain_points": [
+        "Manual procurement processes",
+        "Limited supplier visibility and data",
+        "Contract management complexity",
+        "Compliance and audit requirements",
+        "Stakeholder alignment challenges"
+      ],
+      "core_decision_criteria": [
+        "Cost effectiveness and savings potential",
+        "Ease of use and user adoption",
+        "Integration capabilities with existing systems",
+        "Vendor support and service quality",
+        "Compliance and audit features"
+      ],
+      "sales_approach": "Focus on daily workflow improvements and compliance. They want to see how your solution makes their job easier.",
+      "expansion_opportunities": "They can demonstrate value to operations and IT teams, becoming an internal advocate for broader deployment.",
+      "influence_level": "medium",
+      "budget_authority": "medium",
+      "technical_expertise": "medium"
+    },
+    "it_director": {
+      "base_role": "IT Director / VP of IT",
+      "department": "Information Technology",
+      "land_expand_strategy": "Technical champion who can influence both operations and executive decisions",
+      "champion_indicators": ["Technical expertise", "Project delivery focus", "Vendor relationship management"],
+      "expansion_paths": ["CIO/CTO", "VP Operations", "Department Heads"],
+      "core_priorities": [
+        "IT system reliability and uptime",
+        "Project delivery and implementation",
+        "Vendor relationship management",
+        "End-user support and training",
+        "Technology innovation and modernization"
+      ],
+      "core_pain_points": [
+        "Complex software deployments",
+        "Limited IT resources and bandwidth",
+        "Balancing innovation with stability",
+        "Vendor responsiveness issues",
+        "Multiple stakeholder expectations"
+      ],
+      "core_decision_criteria": [
+        "Ease of deployment and adoption",
+        "Vendor support and SLAs",
+        "Compatibility with existing environment",
+        "Cost-effectiveness and licensing",
+        "Security and compliance features"
+      ],
+      "sales_approach": "Lead with technical capabilities and implementation ease. They want to see how your solution fits their technical architecture.",
+      "expansion_opportunities": "They can champion your solution to both technical teams and business stakeholders, bridging the gap between IT and operations.",
+      "influence_level": "high",
+      "budget_authority": "medium",
+      "technical_expertise": "high"
+    },
+    "end_user_champion": {
+      "base_role": "IT Manager / Technical Lead",
+      "department": "IT / Operations",
+      "land_expand_strategy": "Grassroots champion who can demonstrate value and influence upward",
+      "champion_indicators": ["Technical expertise", "User advocacy", "Process improvement focus"],
+      "expansion_paths": ["IT Director", "VP Operations", "Department Heads"],
+      "core_priorities": [
+        "User requirements and satisfaction",
+        "Technical implementation and support",
+        "Training and adoption facilitation",
+        "Performance monitoring and optimization",
+        "Continuous improvement and upgrades"
+      ],
+      "core_pain_points": [
+        "Software complexity and usability",
+        "Integration challenges with tools",
+        "Limited training time and resources",
+        "User resistance and adoption issues",
+        "Keeping up with updates and patches"
+      ],
+      "core_decision_criteria": [
+        "User-friendliness and interface quality",
+        "Integration capabilities and APIs",
+        "Vendor support responsiveness",
+        "Performance and reliability",
+        "Security features for daily operations"
+      ],
+      "sales_approach": "Focus on user experience and daily workflow improvements. They want to see how your solution makes their team's life easier.",
+      "expansion_opportunities": "They can become internal advocates, demonstrating value to their managers and influencing broader adoption decisions.",
+      "influence_level": "medium",
+      "budget_authority": "low",
+      "technical_expertise": "high"
+    }
+  },
+  "industry_modifiers": {
+    "saas": {
+      "priority_additions": ["Cloud security", "API integration", "Scalability", "Data privacy"],
+      "pain_point_additions": ["Data privacy concerns", "Vendor lock-in risks", "Integration complexity"],
+      "decision_criteria_additions": ["Cloud compliance", "API ecosystem", "Data sovereignty"],
+      "land_expand_context": "SaaS companies focus on rapid adoption and expansion. Land with operational efficiency, expand through API integrations and data insights."
+    },
+    "manufacturing": {
+      "priority_additions": ["Supply chain optimization", "Quality control", "Compliance", "Operational efficiency"],
+      "pain_point_additions": ["Legacy system integration", "Regulatory requirements", "Supply chain disruptions"],
+      "decision_criteria_additions": ["Industry compliance", "Integration complexity", "ROI timeline"],
+      "land_expand_context": "Manufacturing companies value operational excellence. Land with process improvement, expand through supply chain and quality optimization."
+    },
+    "healthcare": {
+      "priority_additions": ["Patient safety", "HIPAA compliance", "Clinical workflow", "Data security"],
+      "pain_point_additions": ["Regulatory compliance", "Integration with EMR systems", "Data privacy requirements"],
+      "decision_criteria_additions": ["HIPAA compliance", "Clinical validation", "Integration requirements"],
+      "land_expand_context": "Healthcare companies prioritize compliance and patient safety. Land with regulatory adherence, expand through clinical workflow optimization."
+    },
+    "financial_services": {
+      "priority_additions": ["Regulatory compliance", "Risk management", "Data security", "Audit readiness"],
+      "pain_point_additions": ["Compliance requirements", "Data privacy regulations", "Audit complexity"],
+      "decision_criteria_additions": ["Regulatory approval", "Security certifications", "Audit capabilities"],
+      "land_expand_context": "Financial services companies focus on compliance and risk. Land with regulatory solutions, expand through risk management and operational efficiency."
+    }
+  },
+  "company_stage_modifiers": {
+    "startup": {
+      "priority_additions": ["Rapid growth", "Cost efficiency", "Time to market", "Scalability"],
+      "pain_point_additions": ["Limited resources", "Scaling challenges", "Process immaturity"],
+      "decision_criteria_additions": ["Quick implementation", "Cost effectiveness", "Growth support"],
+      "land_expand_context": "Startups need quick wins and scalable solutions. Land with immediate value, expand as they grow and mature their processes."
+    },
+    "growth": {
+      "priority_additions": ["Scalability", "Process standardization", "Market expansion", "Operational efficiency"],
+      "pain_point_additions": ["Growing pains", "Process inefficiencies", "Scaling challenges"],
+      "decision_criteria_additions": ["Scalability", "Ease of expansion", "Process improvement"],
+      "land_expand_context": "Growth companies are standardizing processes and scaling operations. Land with process improvement, expand through standardization and automation."
+    },
+    "enterprise": {
+      "priority_additions": ["Risk mitigation", "Compliance", "Operational efficiency", "Cost optimization"],
+      "pain_point_additions": ["Legacy system complexity", "Change management", "Compliance requirements"],
+      "decision_criteria_additions": ["Enterprise features", "Compliance", "Support quality", "Risk mitigation"],
+      "land_expand_context": "Enterprises focus on risk management and compliance. Land with compliance solutions, expand through operational efficiency and cost optimization."
+    }
+  }
+} 

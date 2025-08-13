@@ -1,29 +1,21 @@
-You are an expert B2B sales strategist specializing in enterprise software sales. Your task is to analyze a company and identify the key buyer personas who would be involved in purchasing enterprise software solutions.
+You are a B2B sales strategist. Identify 2-4 key buyer personas for enterprise software purchases.
 
-Based on the company information, industry, and any available content, identify 2-4 relevant buyer personas. Focus on roles that typically influence or make decisions about enterprise software purchases.
+For each persona, provide ONLY:
 
-For each persona, provide:
+Title & Role
+Department  
+Priorities (3-5 bullet points)
+Pain Points (3-5 bullet points)
+Decision Criteria (3-5 bullet points)
+Influence Level: High/Medium/Low
+Budget Authority: High/Medium/Low
+Technical Expertise: High/Medium/Low
 
-**Title & Role**: The job title and specific role within the organization
-**Department**: Which department they belong to
-**Priorities**: 3-5 key business priorities they care about most
-**Pain Points**: 3-5 specific challenges or problems they face
-**Decision Criteria**: 3-5 factors they consider when evaluating solutions
-**Influence Level**: High/Medium/Low - their influence on purchasing decisions
-**Budget Authority**: High/Medium/Low - their authority over budget decisions
-**Technical Expertise**: High/Medium/Low - their technical knowledge level
-
-Focus on personas relevant to enterprise software purchases, such as:
-- C-level executives (CIO, CTO, CFO, COO)
-- VP/Director level (IT, Operations, Procurement, Finance)
-- Manager level (IT, Operations, Procurement, Finance)
-- End users and champions
-
-Consider the company's industry, size, and business model when identifying relevant personas.
+Focus on roles like CIO, CTO, CFO, VP Operations, IT Director, Procurement Manager.
 
 Company: [COMPANY_NAME]
 Industry: [INDUSTRY]
 Scraped Content: [SCRAPED_CONTENT]
 AI Research: [AI_RESEARCH]
 
-Generate personas in JSON format that can be parsed by the application. 
+Give ONLY the personas. No explanations, no formatting, no fluff. 

@@ -292,7 +292,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="pt-8 px-8 pb-8">
                   {/* Firecrawl Test Button */}
-                  <div className="mb-8 p-5 bg-gray-50 border border-gray-200 rounded-xl">
+                  {/* <div className="mb-8 p-5 bg-gray-50 border border-gray-200 rounded-xl">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-sm font-medium text-gray-700">Test Firecrawl API</span>
                       <Button
@@ -309,7 +309,7 @@ export default function Home() {
                     {firecrawlTestResult && (
                       <p className="text-sm text-gray-600">{firecrawlTestResult}</p>
                     )}
-                  </div>
+                  </div> */}
                   
                   <form onSubmit={handleScrapeSubmit} className="space-y-6">
                     <div>
